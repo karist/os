@@ -12,8 +12,12 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.PrintWriter;
+import java.io.StringReader;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JButton;
@@ -22,6 +26,20 @@ import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.filechooser.FileFilter;
+import javax.swing.filechooser.FileNameExtensionFilter;
+import opennlp.tools.cmdline.PerformanceMonitor;
+import opennlp.tools.cmdline.postag.POSModelLoader;
+import opennlp.tools.postag.POSModel;
+import opennlp.tools.postag.POSSample;
+import opennlp.tools.postag.POSTaggerME;
+import opennlp.tools.tokenize.Tokenizer;
+import opennlp.tools.tokenize.TokenizerME;
+import opennlp.tools.tokenize.TokenizerModel;
+import opennlp.tools.tokenize.WhitespaceTokenizer;
+import opennlp.tools.util.InvalidFormatException;
+import opennlp.tools.util.ObjectStream;
+import opennlp.tools.util.PlainTextByLineStream;
+import org.apache.commons.io.FilenameUtils;
 import org.apache.tika.exception.TikaException;
 import org.apache.tika.metadata.Metadata;
 import org.apache.tika.parser.ParseContext;
@@ -37,27 +55,33 @@ public class Controller {
 
     JScrollPane spane;
     JButton button;
-    JTextArea teks;
+    JTextArea displayedText;
+    static List<String> textList = new ArrayList<>();
 
     public Controller(JScrollPane jScrollPane1, JButton browseBtn, JTextArea selectedTxt) {
         spane = jScrollPane1;
         button = browseBtn;
-        teks = selectedTxt;
+        displayedText = selectedTxt;
     }
 
     public void browse() {
-        JFileChooser chooser = new JFileChooser(".");
-        FileFilter pdfFilter = new ExtensionFileFilter(null, new String[]{"PDF"});
-        chooser.addChoosableFileFilter(pdfFilter);
-        chooser.setMultiSelectionEnabled(true);
-        chooser.showOpenDialog(null);
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("PDF Files", "pdf", "PDF");
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setFileFilter(filter);
+        fileChooser.setAcceptAllFileFilterUsed(false);
+        fileChooser.setMultiSelectionEnabled(true);
+        fileChooser.showOpenDialog(null);
 
-        File[] files = chooser.getSelectedFiles();
-        String fileName;
-        for (File f : files) {
-            teks.append(f.getName() + "\n");
-            creatthread(files, f.getName());
-        }
+        File[] files = fileChooser.getSelectedFiles();
+//        if (checkSelection(files) == true) {
+            for (File f : files) {
+                displayedText.append(f.getName() + "\n");
+                creatthread(files, f.getName());
+            }
+            displayedText.append("You've selected " + files.length + " PDF file(s).\n");
+//        } else {
+//            JOptionPane.showMessageDialog(fileChooser, "Please select PDF file(s) only");
+//        }
     }
 
     public void creatthread(File[] files, String fileName) {
@@ -68,8 +92,8 @@ public class Controller {
                 try {
                     Date date = new Date();
                     String tname = Thread.currentThread().getName();
-                    System.out.println(date + "\t" +tname +"\t" +fileName);
-                    pdfParse(fileName);
+                    System.out.println(date + "\t" + tname + "\t" + fileName);
+                    fileProcessing(fileName);
                 } catch (IOException | SAXException | TikaException ex) {
                     Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -78,10 +102,24 @@ public class Controller {
         thread.start();
     }
 
-    public void pdfParse(String fileName) throws FileNotFoundException, IOException, SAXException, TikaException {
+    public void fileProcessing(String fileName) throws IOException, FileNotFoundException, SAXException, TikaException {
+        String textFile = pdfParse(fileName);
+        String textTokenized = Tokenize(textFile);
+        String textAfterPOSTagging = POSTag(textTokenized);
+        createTxt(fileName, textAfterPOSTagging);
+        createTxt("text prop", fileName + "\t: " + textFile.length());
+    }
+
+    public String pdfParse(String fileName) throws IOException, SAXException, TikaException {
         BodyContentHandler handler = new BodyContentHandler();
         Metadata metadata = new Metadata();
-        FileInputStream inputstream = new FileInputStream(new File(fileName));
+        FileInputStream inputstream = null;
+        try {
+            inputstream = new FileInputStream(new File(fileName));
+        } catch (FileNotFoundException ex) {
+            JOptionPane.showMessageDialog(null, fileName + "Not Found");
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        }
         ParseContext pcontext = new ParseContext();
 
         //parsing the document using PDF parser
@@ -89,17 +127,16 @@ public class Controller {
         pdfparser.parse(inputstream, handler, metadata, pcontext);
 
         //getting the content of the document
-        System.out.println("Contents of the PDF :" + handler.toString());
-
+//        System.out.println("Contents of the PDF :" + handler.toString());
         //getting metadata of the document
-        System.out.println("Metadata of the PDF:");
-        String[] metadataNames = metadata.names();
-
-        for (String name : metadataNames) {
-            System.out.println(name + " : " + metadata.get(name));
-        }
-        createTxt(fileName, textPOSTagging(handler.toString()));
-        System.out.println(handler.toString().length());
+//        System.out.println("Metadata of the PDF:");
+//        String[] metadataNames = metadata.names();
+//        for (String name : metadataNames) {
+//            System.out.println(name + " : " + metadata.get(name));
+//        }
+//        createTxt(fileName, textPOSTagging(handler.toString()));
+        String result = handler.toString();
+        return result;
     }
 
     public String textPOSTagging(String a) {
@@ -125,50 +162,60 @@ public class Controller {
         JOptionPane.showMessageDialog(null, "File Saved");
     }
 
-    class ExtensionFileFilter extends FileFilter {
+    public static String POSTag(String a) throws IOException {
+        POSModel model = new POSModelLoader().load(new File("en-pos-maxent.bin"));
+        PerformanceMonitor perfMon = new PerformanceMonitor(System.err, "sent");
+        POSTaggerME tagger = new POSTaggerME(model);
 
-        String description;
-        String extensions[];
+        ObjectStream<String> lineStream = new PlainTextByLineStream(new StringReader(a));
 
-        public ExtensionFileFilter(String description, String extension) {
-            this(description, new String[]{extension});
+        perfMon.start();
+        String line, result = "";
+        while ((line = lineStream.read()) != null) {
+
+            String whitespaceTokenizerLine[] = WhitespaceTokenizer.INSTANCE.tokenize(line);
+            String[] tags = tagger.tag(whitespaceTokenizerLine);
+
+            POSSample sample = new POSSample(whitespaceTokenizerLine, tags);
+            result = result + sample.toString();
+
+            perfMon.incrementCounter();
+        }
+        perfMon.stopAndPrintFinalResult();
+        textList.add(result);
+        return result;
+    }
+
+    public static String Tokenize(String teks) throws InvalidFormatException, IOException {
+        InputStream is = new FileInputStream("en-token.bin");
+
+        TokenizerModel model = new TokenizerModel(is);
+
+        Tokenizer tokenizer = new TokenizerME(model);
+
+        String tokens[] = tokenizer.tokenize(teks);
+        String result = "";
+
+        for (String a : tokens) {
+            result = result + " " + a;
         }
 
-        public ExtensionFileFilter(String description, String extensions[]) {
-            if (description == null) {
-                this.description = extensions[0] + " files";
-            } else {
-                this.description = description;
-            }
-            this.extensions = (String[]) extensions.clone();
-            toLower(this.extensions);
-        }
+        is.close();
 
-        private void toLower(String array[]) {
-            for (int i = 0, n = array.length; i < n; i++) {
-                array[i] = array[i].toLowerCase();
-            }
-        }
+        return result;
+    }
 
-        @Override
-        public boolean accept(File file) {
-            if (file.isDirectory()) {
-                return true;
-            } else {
-                String path = file.getAbsolutePath().toLowerCase();
-                for (int i = 0, n = extensions.length; i < n; i++) {
-                    String extension = extensions[i];
-                    if ((path.endsWith(extension) && (path.charAt(path.length() - extension.length() - 1)) == '.')) {
-                        return true;
-                    }
+    private boolean checkSelection(File[] files) {
+        boolean check = true;
+        while (check == true) {
+            for (File file : files) {
+                String ext = FilenameUtils.getExtension(file.getName());
+                if (ext.equals("pdf") == false) {
+                    check = false;
+                    break;
                 }
             }
-            return false;
         }
-
-        @Override
-        public String getDescription() {
-            return description;
-        }
+        return check;
     }
 }

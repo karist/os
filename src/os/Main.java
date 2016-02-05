@@ -5,6 +5,10 @@
  */
 package os;
 
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Ristika Nugraha [12.7350]
@@ -16,10 +20,9 @@ public class Main extends javax.swing.JFrame {
     /**
      * Creates new form Main
      */
-    public Main() {
+    public Main() throws IOException {
         initComponents();
         con = new Controller(jScrollPane1, browseBtn, selectedTxt);
-
     }
 
     /**
@@ -94,8 +97,12 @@ public class Main extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            // begin with the interactive portion of the program
-            new Main().setVisible(true);
+            try {
+                // begin with the interactive portion of the program
+                new Main().setVisible(true);
+            } catch (IOException ex) {
+                Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            }
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
