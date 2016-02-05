@@ -76,7 +76,7 @@ public class Controller {
 //        if (checkSelection(files) == true) {
             for (File f : files) {
                 displayedText.append(f.getName() + "\n");
-                creatthread(files, f.getName());
+                creatthread(files, f.getAbsolutePath());
             }
             displayedText.append("You've selected " + files.length + " PDF file(s).\n");
 //        } else {
@@ -84,7 +84,7 @@ public class Controller {
 //        }
     }
 
-    public void creatthread(File[] files, String fileName) {
+    public void creatthread(File[] files, String uri) {
         Thread thread = new Thread(new Runnable() {
 
             @Override
@@ -92,8 +92,8 @@ public class Controller {
                 try {
                     Date date = new Date();
                     String tname = Thread.currentThread().getName();
-                    System.out.println(date + "\t" + tname + "\t" + fileName);
-                    fileProcessing(fileName);
+                    System.out.println(date + "\t" + tname + "\t" + uri);
+                    fileProcessing(uri);
                 } catch (IOException | SAXException | TikaException ex) {
                     Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -102,22 +102,22 @@ public class Controller {
         thread.start();
     }
 
-    public void fileProcessing(String fileName) throws IOException, FileNotFoundException, SAXException, TikaException {
-        String textFile = pdfParse(fileName);
+    public void fileProcessing(String uri) throws IOException, FileNotFoundException, SAXException, TikaException {
+        String textFile = pdfParse(uri);
         String textTokenized = Tokenize(textFile);
         String textAfterPOSTagging = POSTag(textTokenized);
-        createTxt(fileName, textAfterPOSTagging);
-        createTxt("text prop", fileName + "\t: " + textFile.length());
+        createTxt(FilenameUtils.getBaseName(uri), textAfterPOSTagging);
+        createTxt("text prop", uri + "\t: " + textFile.length());
     }
 
-    public String pdfParse(String fileName) throws IOException, SAXException, TikaException {
+    public String pdfParse(String uri) throws IOException, SAXException, TikaException {
         BodyContentHandler handler = new BodyContentHandler();
         Metadata metadata = new Metadata();
         FileInputStream inputstream = null;
         try {
-            inputstream = new FileInputStream(new File(fileName));
+            inputstream = new FileInputStream(new File(uri));
         } catch (FileNotFoundException ex) {
-            JOptionPane.showMessageDialog(null, fileName + "Not Found");
+            JOptionPane.showMessageDialog(null, uri + "Not Found");
             Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
         ParseContext pcontext = new ParseContext();

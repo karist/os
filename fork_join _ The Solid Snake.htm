@@ -1,0 +1,892 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="id"><head profile="http://gmpg.org/xfn/11">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>fork/join | The Solid Snake</title>
+	<link rel="pingback" href="https://thesolidsnake.wordpress.com/xmlrpc.php">
+	<meta name="google-site-verification" content="NzqoVBd6y1tcqROmJBAmbetOCuCBoo2o_OJUI7bpI9U">
+<link rel="alternate" type="application/rss+xml" title="The Solid Snake » Feed" href="https://thesolidsnake.wordpress.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="The Solid Snake » Umpan Komentar" href="https://thesolidsnake.wordpress.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="The Solid Snake » fork/join Umpan Tag" href="https://thesolidsnake.wordpress.com/tag/forkjoin/feed/">
+	<script type="text/javascript">
+		/* <![CDATA[ */
+		function addLoadEvent(func) {
+			var oldonload = window.onload;
+			if (typeof window.onload != 'function') {
+				window.onload = func;
+			} else {
+				window.onload = function () {
+					oldonload();
+					func();
+				}
+			}
+		}
+		/* ]]> */
+	</script>
+	<link rel="stylesheet" id="all-css-0" href="fork_join%20_%20The%20Solid%20Snake_files/a_002.css" type="text/css" media="all">
+<link rel="stylesheet" id="print-css-1" href="fork_join%20_%20The%20Solid%20Snake_files/global-print.css" type="text/css" media="print">
+<link rel="stylesheet" id="all-css-2" href="fork_join%20_%20The%20Solid%20Snake_files/a.css" type="text/css" media="all">
+<script type="text/javascript">
+/* <![CDATA[ */
+var LoggedOutFollow = {"invalid_email":"Langganan Anda tidak berhasil. Silakan coba lagi dengan alamat email yang baru."};
+/* ]]> */
+</script>
+<script type="text/javascript" src="fork_join%20_%20The%20Solid%20Snake_files/a_003.js"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://thesolidsnake.wordpress.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://s1.wp.com/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress.com">
+<link rel="shortcut icon" type="image/x-icon" href="https://s2.wp.com/i/favicon.ico" sizes="16x16 24x24 32x32 48x48">
+<link rel="icon" type="image/x-icon" href="https://s2.wp.com/i/favicon.ico" sizes="16x16 24x24 32x32 48x48">
+<link rel="apple-touch-icon-precomposed" href="https://s0.wp.com/i/webclip.png">
+<link rel="openid.server" href="https://thesolidsnake.wordpress.com/?openidserver=1">
+<link rel="openid.delegate" href="https://thesolidsnake.wordpress.com/">
+<link rel="search" type="application/opensearchdescription+xml" href="https://thesolidsnake.wordpress.com/osd.xml" title="The Solid Snake">
+<link rel="search" type="application/opensearchdescription+xml" href="https://s1.wp.com/opensearch.xml" title="WordPress.com">
+<meta name="theme-color" content="#aaaaaa">
+		<style id="wpcom-hotfix-masterbar-style">
+			@media screen and (min-width: 783px) {
+				#wpadminbar .quicklinks li#wp-admin-bar-my-account.with-avatar > a img {
+					margin-top: 5px;
+				}
+			}
+		</style>
+		<meta name="application-name" content="The Solid Snake"><meta name="msapplication-window" content="width=device-width;height=device-height"><meta name="msapplication-tooltip" content="Catatan Harian Seorang Developer"><meta name="msapplication-task" content="name=Berlangganan;action-uri=https://thesolidsnake.wordpress.com/feed/;icon-uri=https://s2.wp.com/i/favicon.ico"><meta name="msapplication-task" content="name=Mendaftar untuk blog gratis;action-uri=http://wordpress.com/signup/;icon-uri=https://s2.wp.com/i/favicon.ico"><meta name="msapplication-task" content="name=Dukungan WordPress.com;action-uri=http://support.wordpress.com/;icon-uri=https://s2.wp.com/i/favicon.ico"><meta name="msapplication-task" content="name=Forum WordPress.com;action-uri=http://forums.wordpress.com/;icon-uri=https://s2.wp.com/i/favicon.ico"><meta name="title" content="Pos-pos tentang fork/join di The Solid Snake">
+<meta name="description" content="Posts about fork/join written by Solid Snake">
+		<style type="text/css">
+			#header {
+				background: transparent url(https://thesolidsnake.files.wordpress.com/2013/05/cropped-google1.png) no-repeat;
+				border: none;
+			}
+		</style>
+		<style type="text/css">
+			#header h1,
+			#header h1 a,
+			#header h1 a:visited,
+			#header h4,
+			#header h4 a,
+			#header h4 a:visited,
+			.header-left {
+				color: #ffffff;
+			}
+		</style>
+<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #aaaaaa; }
+</style>
+<link href="fork_join%20_%20The%20Solid%20Snake_files/shCore.css" type="text/css" rel="stylesheet"><link href="fork_join%20_%20The%20Solid%20Snake_files/shThemeDefault.css" type="text/css" rel="stylesheet"><style type="text/css" id="syntaxhighlighteranchor"></style>
+<script src="fork_join%20_%20The%20Solid%20Snake_files/rating-top.php" charset="utf-8"></script></head>
+
+<body class="archive tag tag-forkjoin tag-23417522 custom-background mp6 customizer-styles-applied highlander-enabled highlander-light">
+
+<div id="header">
+	<div class="header-left">
+					<h4><a href="https://thesolidsnake.wordpress.com/">The Solid Snake</a></h4>
+				<p id="description">Catatan Harian Seorang Developer</p>
+	</div>
+	<div class="header-right">
+		<form method="get" id="searchform" action="https://thesolidsnake.wordpress.com/">
+			<div><label class="hidden" for="s">Search:</label>
+			<input name="s" id="s" type="text">
+			<input id="searchsubmit" value="Lanjut" type="submit"></div>
+		</form>
+	</div>
+</div>
+<div id="access">
+	<div id="nav">
+		<div id="supernav" class="navleft nav">
+			<div class="menu"><ul><li><a href="https://thesolidsnake.wordpress.com/">Beranda</a></li><li class="page_item page-item-1269"><a href="https://thesolidsnake.wordpress.com/1269-2/">Hubungi Saya</a></li></ul></div>
+		</div>
+		<div class="navright">
+			<a class="rsslink" rel="nofollow" href="https://thesolidsnake.wordpress.com/feed/">Pos</a>
+			<a class="rsslink" rel="nofollow" href="https://thesolidsnake.wordpress.com/comments/feed/">Komentar</a>
+		</div>
+	</div>
+
+	<div id="subnav" class="subnav nav">
+		<div class="menu-second-menu-container"><ul id="menu-second-menu" class="menu"><li id="menu-item-1722" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-1722"><a href="https://thesolidsnake.wordpress.com/category/java-technology/">Java</a>
+<ul class="sub-menu">
+	<li id="menu-item-1727" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1727"><a href="https://thesolidsnake.wordpress.com/category/java-technology/java-programming-language/">Java Programming Language</a></li>
+	<li id="menu-item-1725" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1725"><a href="https://thesolidsnake.wordpress.com/category/java-technology/java-ide-tools/">Java IDE &amp; Tools</a></li>
+	<li id="menu-item-1724" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1724"><a href="https://thesolidsnake.wordpress.com/category/java-technology/java-frameworks-libraries/">Java Frameworks &amp; Libraries</a></li>
+	<li id="menu-item-1723" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1723"><a href="https://thesolidsnake.wordpress.com/category/java-technology/java-enterprise-edition/">Java Enterprise Edition</a></li>
+	<li id="menu-item-1726" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1726"><a href="https://thesolidsnake.wordpress.com/category/java-technology/java-micro-edition/">Java Micro Edition</a></li>
+</ul>
+</li>
+<li id="menu-item-1741" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-1741"><a href="https://thesolidsnake.wordpress.com/category/groovy/">Groovy</a>
+<ul class="sub-menu">
+	<li id="menu-item-1905" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1905"><a href="https://thesolidsnake.wordpress.com/category/groovy/groovy-languange/">Groovy Languange</a></li>
+	<li id="menu-item-2023" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2023"><a href="https://thesolidsnake.wordpress.com/category/groovy/griffon/">Griffon</a></li>
+	<li id="menu-item-1906" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1906"><a href="https://thesolidsnake.wordpress.com/category/groovy/groovy-tools-libraries/">Groovy Tools &amp; Libraries</a></li>
+</ul>
+</li>
+<li id="menu-item-1974" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-1974"><a href="https://thesolidsnake.wordpress.com/category/php/">PHP</a>
+<ul class="sub-menu">
+	<li id="menu-item-1744" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1744"><a href="https://thesolidsnake.wordpress.com/category/php/php-programming-language/">PHP Programming Language</a></li>
+	<li id="menu-item-1743" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1743"><a>PHP Framework &amp; Libraries</a></li>
+</ul>
+</li>
+<li id="menu-item-1739" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-1739"><a href="https://thesolidsnake.wordpress.com/category/pemograman-lainnya/">Pemograman Lainnya</a>
+<ul class="sub-menu">
+	<li id="menu-item-2024" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2024"><a href="https://thesolidsnake.wordpress.com/category/pemograman-lainnya/android/">Android</a></li>
+	<li id="menu-item-1740" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1740"><a href="https://thesolidsnake.wordpress.com/category/pemograman-lainnya/assembly/">Assembly</a></li>
+	<li id="menu-item-3740" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3740"><a href="https://thesolidsnake.wordpress.com/category/pemograman-lainnya/c-sharp/">C#</a></li>
+	<li id="menu-item-3647" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3647"><a href="https://thesolidsnake.wordpress.com/category/pemograman-lainnya/r/">R</a></li>
+	<li id="menu-item-2265" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2265"><a href="https://thesolidsnake.wordpress.com/category/pemograman-lainnya/visual-c/">Visual C++</a></li>
+</ul>
+</li>
+<li id="menu-item-1745" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-1745"><a href="https://thesolidsnake.wordpress.com/category/web-front-end/">Web Front End</a>
+<ul class="sub-menu">
+	<li id="menu-item-1746" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1746"><a href="https://thesolidsnake.wordpress.com/category/web-front-end/javascript-web-front-end/">JavaScript</a></li>
+	<li id="menu-item-1747" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1747"><a href="https://thesolidsnake.wordpress.com/category/web-front-end/javascript-libraries/">JavaScript Libraries</a></li>
+	<li id="menu-item-1748" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1748"><a href="https://thesolidsnake.wordpress.com/category/web-front-end/web-front-end-tools/">Web Front-End Tools</a></li>
+</ul>
+</li>
+<li id="menu-item-1736" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-1736"><a>Database</a>
+<ul class="sub-menu">
+	<li id="menu-item-1737" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1737"><a href="https://thesolidsnake.wordpress.com/category/database/oracle-database/">Oracle Database</a></li>
+	<li id="menu-item-2107" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2107"><a href="https://thesolidsnake.wordpress.com/category/database/mysql/">MySQL</a></li>
+	<li id="menu-item-2108" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2108"><a href="https://thesolidsnake.wordpress.com/category/database/oracle-timesten/">Oracle TimesTen</a></li>
+	<li id="menu-item-4190" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4190"><a href="https://thesolidsnake.wordpress.com/category/database/nosql/">NoSQL</a></li>
+</ul>
+</li>
+<li id="menu-item-1733" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-1733"><a href="https://thesolidsnake.wordpress.com/category/operating-system/">Operating System</a>
+<ul class="sub-menu">
+	<li id="menu-item-1734" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1734"><a href="https://thesolidsnake.wordpress.com/category/operating-system/linux/">Linux</a></li>
+	<li id="menu-item-1735" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1735"><a href="https://thesolidsnake.wordpress.com/category/operating-system/windows-7/">Windows 7</a></li>
+</ul>
+</li>
+<li id="menu-item-1728" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-1728"><a href="https://thesolidsnake.wordpress.com/category/lain-lain/">Lain-Lain</a>
+<ul class="sub-menu">
+	<li id="menu-item-1729" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1729"><a href="https://thesolidsnake.wordpress.com/category/lain-lain/algoritma/">Algoritma</a></li>
+	<li id="menu-item-1730" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1730"><a href="https://thesolidsnake.wordpress.com/category/lain-lain/computer-hardware/">Computer Hardware</a></li>
+	<li id="menu-item-1731" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1731"><a href="https://thesolidsnake.wordpress.com/category/lain-lain/computer-networking/">Computer Networking</a></li>
+	<li id="menu-item-1732" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1732"><a href="https://thesolidsnake.wordpress.com/category/lain-lain/software-engineering/">Software Engineering</a></li>
+</ul>
+</li>
+</ul></div>	</div>
+</div>
+
+<div id="wrap">
+<div id="content">
+
+	<div id="content-left">
+
+		
+			<div class="post-3038 post type-post status-publish format-standard hentry category-groovy-languange tag-concurrency tag-forkjoin tag-gpars">
+
+				<div class="entry">
+
+					<h2><a href="https://thesolidsnake.wordpress.com/2014/05/18/memakai-forkjoin-framework-di-groovy/">Memakai Fork/Join Framework Di&nbsp;Groovy</a></h2>
+
+					<div class="post-info">
+						<p>
+							<span class="time">18 Mei 2014</span>
+																						<span class="post-comments"><a href="https://thesolidsnake.wordpress.com/2014/05/18/memakai-forkjoin-framework-di-groovy/#respond">Tinggalkan komentar</a></span>
+																				</p>
+					</div>
+
+					<p>Salah satu masalah yang timbul pada percobaan saya di artikel sebelumnya (<a href="https://thesolidsnake.wordpress.com/2014/05/18/multithreading-di-groovy/" title="Multithreading Di Groovy" target="_blank">Multithreading Di Groovy</a>)
+ adalah walaupun saya membuat beberapa thread berbeda, thread yang sudah
+ menyelesaikan tugasnya terlebih dahulu akan nganggur (berada dalam 
+kondisi <em>wait</em>).  Untuk mengatasi permasalahan tersebut, Java 7 
+telah dilengkapi dengan framework Fork/Join dengan kemampuan 
+work-stealing.  Groovy kemudian menyediakan cara mudah memakai Fork/Join
+ Framework melalui GPars.</p>
+<p>Sebagai latihan, saya akan mencoba membuat kode program sebelumnya 
+yang memakai framework Executor menjadi menggunakan framework Fork/Join 
+seperti berikut ini:</p>
+<div><div id="highlighter_814614" class="syntaxhighlighter  groovy"><table border="0" cellspacing="0" cellpadding="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div><div class="line number13 index12 alt2">13</div><div class="line number14 index13 alt1">14</div><div class="line number15 index14 alt2">15</div><div class="line number16 index15 alt1">16</div><div class="line number17 index16 alt2">17</div><div class="line number18 index17 alt1">18</div><div class="line number19 index18 alt2">19</div><div class="line number20 index19 alt1">20</div><div class="line number21 index20 alt2">21</div><div class="line number22 index21 alt1">22</div><div class="line number23 index22 alt2">23</div><div class="line number24 index23 alt1">24</div><div class="line number25 index24 alt2">25</div><div class="line number26 index25 alt1">26</div><div class="line number27 index26 alt2">27</div><div class="line number28 index27 alt1">28</div><div class="line number29 index28 alt2">29</div><div class="line number30 index29 alt1">30</div><div class="line number31 index30 alt2">31</div><div class="line number32 index31 alt1">32</div><div class="line number33 index32 alt2">33</div><div class="line number34 index33 alt1">34</div><div class="line number35 index34 alt2">35</div><div class="line number36 index35 alt1">36</div><div class="line number37 index36 alt2">37</div><div class="line number38 index37 alt1">38</div><div class="line number39 index38 alt2">39</div><div class="line number40 index39 alt1">40</div><div class="line number41 index40 alt2">41</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="groovy keyword">import</code> <code class="groovy plain">groovy.transform.CompileStatic</code></div><div class="line number2 index1 alt1"><code class="groovy keyword">import</code> <code class="groovy plain">javax.swing.JOptionPane</code></div><div class="line number3 index2 alt2"><code class="groovy keyword">import</code> <code class="groovy keyword">static</code> <code class="groovy plain">groovyx.gpars.GParsPool.runForkJoin</code></div><div class="line number4 index3 alt1"><code class="groovy keyword">import</code> <code class="groovy keyword">static</code> <code class="groovy plain">groovyx.gpars.GParsPool.withPool</code></div><div class="line number5 index4 alt2">&nbsp;</div><div class="line number6 index5 alt1"><code class="groovy plain">JOptionPane.showMessageDialog(</code><code class="groovy constants">null</code><code class="groovy plain">, </code><code class="groovy string">'Attach Terlebih Dahulu Profiler Bila Perlu...'</code><code class="groovy plain">)</code></div><div class="line number7 index6 alt2">&nbsp;</div><div class="line number8 index7 alt1"><code class="groovy color1">long</code> <code class="groovy plain">waktuMulai = System.nanoTime()</code></div><div class="line number9 index8 alt2">&nbsp;</div><div class="line number10 index9 alt1"><code class="groovy plain">@CompileStatic</code></div><div class="line number11 index10 alt2"><code class="groovy color1">boolean</code> <code class="groovy plain">isPrimary(</code><code class="groovy color1">long</code> <code class="groovy plain">angka) {</code></div><div class="line number12 index11 alt1"><code class="groovy spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="groovy plain">for (</code><code class="groovy color1">int</code> <code class="groovy plain">i=</code><code class="groovy value">2</code><code class="groovy plain">; i&lt;angka-</code><code class="groovy value">1</code><code class="groovy plain">; i++) {</code></div><div class="line number13 index12 alt2"><code class="groovy spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="groovy keyword">if</code> <code class="groovy plain">((angka % i) == </code><code class="groovy value">0</code><code class="groovy plain">) </code><code class="groovy keyword">return</code> <code class="groovy plain">false</code></div><div class="line number14 index13 alt1"><code class="groovy spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="groovy plain">}</code></div><div class="line number15 index14 alt2"><code class="groovy spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="groovy plain">true</code></div><div class="line number16 index15 alt1"><code class="groovy plain">}</code></div><div class="line number17 index16 alt2">&nbsp;</div><div class="line number18 index17 alt1"><code class="groovy plain">List hasil</code></div><div class="line number19 index18 alt2">&nbsp;</div><div class="line number20 index19 alt1"><code class="groovy plain">withPool(</code><code class="groovy value">4</code><code class="groovy plain">) {</code></div><div class="line number21 index20 alt2"><code class="groovy spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="groovy plain">hasil = runForkJoin(</code><code class="groovy value">2</code><code class="groovy plain">, </code><code class="groovy value">100000</code><code class="groovy plain">) { angka1, angka2 -&gt;</code></div><div class="line number22 index21 alt1"><code class="groovy spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="groovy plain">List hasilSementara = []</code></div><div class="line number23 index22 alt2"><code class="groovy spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="groovy keyword">if</code> <code class="groovy plain">((angka2 - angka1) &gt; </code><code class="groovy value">500</code><code class="groovy plain">) {</code></div><div class="line number24 index23 alt1"><code class="groovy spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="groovy keyword">def</code> <code class="groovy plain">tengah = (</code><code class="groovy color1">int</code><code class="groovy plain">)((angka2-angka1)/</code><code class="groovy value">2</code><code class="groovy plain">)</code></div><div class="line number25 index24 alt2"><code class="groovy spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="groovy plain">forkOffChild(angka1, angka1+tengah-</code><code class="groovy value">1</code><code class="groovy plain">)</code></div><div class="line number26 index25 alt1"><code class="groovy spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="groovy plain">forkOffChild(angka1+tengah, angka2)</code></div><div class="line number27 index26 alt2"><code class="groovy spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="groovy plain">childrenResults.</code><code class="groovy functions">each</code> <code class="groovy plain">{ hasilSementara.addAll(it) }</code></div><div class="line number28 index27 alt1"><code class="groovy spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="groovy plain">} </code><code class="groovy keyword">else</code> <code class="groovy plain">{</code></div><div class="line number29 index28 alt2"><code class="groovy spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="groovy plain">for (</code><code class="groovy color1">long</code> <code class="groovy plain">angka=angka1; angka&lt;=angka2; angka++) {</code></div><div class="line number30 index29 alt1"><code class="groovy spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="groovy keyword">if</code> <code class="groovy plain">(isPrimary(angka)) {</code></div><div class="line number31 index30 alt2"><code class="groovy spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="groovy plain">hasilSementara &lt;&lt; angka</code></div><div class="line number32 index31 alt1"><code class="groovy spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="groovy plain">}</code></div><div class="line number33 index32 alt2"><code class="groovy spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="groovy plain">}</code></div><div class="line number34 index33 alt1"><code class="groovy spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="groovy plain">}</code></div><div class="line number35 index34 alt2"><code class="groovy spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="groovy plain">hasilSementara</code></div><div class="line number36 index35 alt1"><code class="groovy spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="groovy plain">}</code></div><div class="line number37 index36 alt2"><code class="groovy plain">}</code></div><div class="line number38 index37 alt1">&nbsp;</div><div class="line number39 index38 alt2"><code class="groovy plain">hasil.</code><code class="groovy functions">sort</code><code class="groovy plain">()</code></div><div class="line number40 index39 alt1"><code class="groovy color1">long</code> <code class="groovy plain">waktuSelesai = System.nanoTime()</code></div><div class="line number41 index40 alt2"><code class="groovy functions">println</code> <code class="groovy string">"Waktu Eksekusi: ${waktuSelesai - waktuMulai}"</code></div></div></td></tr></tbody></table></div></div>
+<p>Pada kode program di atas, saya perlu meletakkan kode program dalam <code>withPool()</code>
+ yang akan memakai framework Fork/Join.  Saya juga dapat menentukan 
+jumlah thread yang akan dipakai dengan memberikan parameter angka 
+seperti <code>withPool(4) { ... }</code>.  Setelah itu, saya meletakkan kode program yang memakai algoritma <em>divide and conquer</em> pada closure di <code>runForkJoin()</code>.  Di dalam closure untuk <code>runForkJoin()</code>, saya dapat memanggil method <code>forkOffChild()</code> dan <code>getChildrenResults()</code>.  Method <code>forkOffChild()</code> akan menjadwalkan pemanggilan dan langsung lanjut ke perintah berikutnya (setara dengan <em>fork</em>).  Method <code>getChildrenResults()</code> akan menunggu hingga seluruh child selesai di-eksekusi (setara dengan <em>join</em>) dan mengembalikan hasilnya dalam bentuk <code>List</code>.  Tanpa <code>@CompileStatic</code> di method <code>isPrimary()</code>, kode program akan berjalan sangat lambat, bahkan lebih lambat dari versi yang hanya memakai thread tunggal.</p>
+<p>Bila saya menjalankan kode program di atas dan melihat daftar thread 
+melalui JVisualVM, saya akan memperoleh hasil seperti pada gambar 
+berikut ini:</p>
+<div data-shortcode="caption" id="attachment_3039" style="width: 403px" class="wp-caption aligncenter"><a href="https://thesolidsnake.files.wordpress.com/2014/05/gambar12.png"><img src="fork_join%20_%20The%20Solid%20Snake_files/gambar12.png" alt="Tampilan thread yang sibuk semua" class="size-full wp-image-3039"></a><p class="wp-caption-text">Tampilan thread yang sibuk semua</p></div>
+<p>Kali ini terlihat bahwa thread yang ada semuanya sibuk dan tidak ada 
+lagi yang ‘santai’.  Walaupun demikian, secara garis besar, kinerjanya 
+tidak lebih baik daripada versi sebelumnya yang memakai framework 
+Executor.  Hal ini karena kode program harus melakukan hal baru yang 
+sebelumnya tidak ada seperti menjadwalkan tugas (dengan <code>forkOffChild()</code>) dan mengisi/menggabungkan <code>List</code>.</p>
+<p>Setidaknya bila dibandingkan dengan kode program versi Java di artikel <a href="https://thesolidsnake.wordpress.com/2013/05/21/seberapa-jauh-bedanya-program-yang-multithreading/" title="Seberapa Jauh Bedanya Program Yang Multithreading?" target="_blank">Seberapa Jauh Bedanya Program Yang Multithreading?</a>,
+ versi Groovy-nya terasa lebih sederhana dan lebih mudah dipahami.  
+Bukan hanya itu, kode program di atas sebenarnya masih dapat 
+disederhanakan lagi menjadi seperti:</p>
+<div><div id="highlighter_870412" class="syntaxhighlighter  groovy"><table border="0" cellspacing="0" cellpadding="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div><div class="line number13 index12 alt2">13</div><div class="line number14 index13 alt1">14</div><div class="line number15 index14 alt2">15</div><div class="line number16 index15 alt1">16</div><div class="line number17 index16 alt2">17</div><div class="line number18 index17 alt1">18</div><div class="line number19 index18 alt2">19</div><div class="line number20 index19 alt1">20</div><div class="line number21 index20 alt2">21</div><div class="line number22 index21 alt1">22</div><div class="line number23 index22 alt2">23</div><div class="line number24 index23 alt1">24</div><div class="line number25 index24 alt2">25</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="groovy keyword">import</code> <code class="groovy plain">groovy.transform.CompileStatic</code></div><div class="line number2 index1 alt1"><code class="groovy keyword">import</code> <code class="groovy plain">javax.swing.JOptionPane</code></div><div class="line number3 index2 alt2"><code class="groovy keyword">import</code> <code class="groovy keyword">static</code> <code class="groovy plain">groovyx.gpars.GParsPool.withPool</code></div><div class="line number4 index3 alt1">&nbsp;</div><div class="line number5 index4 alt2"><code class="groovy plain">JOptionPane.showMessageDialog(</code><code class="groovy constants">null</code><code class="groovy plain">, </code><code class="groovy string">'Attach Terlebih Dahulu Profiler Bila Perlu...'</code><code class="groovy plain">)</code></div><div class="line number6 index5 alt1">&nbsp;</div><div class="line number7 index6 alt2"><code class="groovy color1">long</code> <code class="groovy plain">waktuMulai = System.nanoTime()</code></div><div class="line number8 index7 alt1">&nbsp;</div><div class="line number9 index8 alt2"><code class="groovy plain">@CompileStatic</code></div><div class="line number10 index9 alt1"><code class="groovy color1">boolean</code> <code class="groovy plain">isPrimary(</code><code class="groovy color1">long</code> <code class="groovy plain">angka) {</code></div><div class="line number11 index10 alt2"><code class="groovy spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="groovy plain">for (</code><code class="groovy color1">int</code> <code class="groovy plain">i=</code><code class="groovy value">2</code><code class="groovy plain">; i&lt;angka-</code><code class="groovy value">1</code><code class="groovy plain">; i++) {</code></div><div class="line number12 index11 alt1"><code class="groovy spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="groovy keyword">if</code> <code class="groovy plain">((angka % i) == </code><code class="groovy value">0</code><code class="groovy plain">) </code><code class="groovy keyword">return</code> <code class="groovy plain">false</code></div><div class="line number13 index12 alt2"><code class="groovy spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="groovy plain">}</code></div><div class="line number14 index13 alt1"><code class="groovy spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="groovy plain">true</code></div><div class="line number15 index14 alt2"><code class="groovy plain">}</code></div><div class="line number16 index15 alt1">&nbsp;</div><div class="line number17 index16 alt2"><code class="groovy plain">List hasil</code></div><div class="line number18 index17 alt1">&nbsp;</div><div class="line number19 index18 alt2"><code class="groovy plain">withPool(</code><code class="groovy value">4</code><code class="groovy plain">) {</code></div><div class="line number20 index19 alt1"><code class="groovy spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="groovy plain">hasil = (</code><code class="groovy value">2</code><code class="groovy plain">..</code><code class="groovy value">100000</code><code class="groovy plain">).findAllParallel { isPrimary(it) }</code></div><div class="line number21 index20 alt2"><code class="groovy spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="groovy plain">hasil.</code><code class="groovy functions">sort</code><code class="groovy plain">()</code></div><div class="line number22 index21 alt1"><code class="groovy plain">}</code></div><div class="line number23 index22 alt2">&nbsp;</div><div class="line number24 index23 alt1"><code class="groovy color1">long</code> <code class="groovy plain">waktuSelesai = System.nanoTime()</code></div><div class="line number25 index24 alt2"><code class="groovy functions">println</code> <code class="groovy string">"Waktu Eksekusi: ${waktuSelesai - waktuMulai}"</code></div></div></td></tr></tbody></table></div></div>
+<p>Kode program di atas memakai <code>findAllParallel()</code> yang akan menggunakan framework Fork/Join untuk mengerjakan operasi pada <code>List</code> secara paralel.  Pada Groovy, range seperti <code>(2..100000)</code> adalah sebuah <code>List</code> (<code>Range</code> diturunkan dari <code>List</code>).</p>
+<p>Bila saya ingin mencetak setiap bilangan prima ke layar, saya dapat menggunakan kode program seperti:</p>
+<div><div id="highlighter_776995" class="syntaxhighlighter  groovy"><table border="0" cellspacing="0" cellpadding="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="groovy plain">withPool {</code></div><div class="line number2 index1 alt1"><code class="groovy spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="groovy plain">(</code><code class="groovy value">2</code><code class="groovy plain">..</code><code class="groovy value">100000</code><code class="groovy plain">).eachParallel {</code></div><div class="line number3 index2 alt2"><code class="groovy spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="groovy keyword">if</code> <code class="groovy plain">(isPrimary(it)) </code><code class="groovy functions">println</code> <code class="groovy plain">it</code></div><div class="line number4 index3 alt1"><code class="groovy spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="groovy plain">}</code></div><div class="line number5 index4 alt2"><code class="groovy plain">}</code></div></div></td></tr></tbody></table></div></div>
+<div class="clear"></div>
+
+				</div>
+
+				<div class="post-meta">
+					<p>
+						<span class="categories">Filed under <a href="https://thesolidsnake.wordpress.com/category/groovy/groovy-languange/" rel="category tag">Groovy Languange</a></span>
+						<span class="tags">Tagged with <a href="https://thesolidsnake.wordpress.com/tag/concurrency/" rel="tag">concurrency</a>, <a href="https://thesolidsnake.wordpress.com/tag/forkjoin/" rel="tag">fork/join</a>, <a href="https://thesolidsnake.wordpress.com/tag/gpars/" rel="tag">GPars</a></span>					</p>
+				</div>
+
+			</div>
+
+		
+			<div class="post-1595 post type-post status-publish format-standard hentry category-java-programming-language tag-concurrency tag-forkjoin tag-netbeans tag-performance">
+
+				<div class="entry">
+
+					<h2><a href="https://thesolidsnake.wordpress.com/2013/05/21/seberapa-jauh-bedanya-program-yang-multithreading/">Seberapa Jauh Bedanya Program Yang&nbsp;Multithreading?</a></h2>
+
+					<div class="post-info">
+						<p>
+							<span class="time">21 Mei 2013</span>
+																						<span class="post-comments"><a href="https://thesolidsnake.wordpress.com/2013/05/21/seberapa-jauh-bedanya-program-yang-multithreading/#comments">4 Komentar</a></span>
+																				</p>
+					</div>
+
+					<p>Satu fitur dari bahasa Java yang sudah ada sejak awal adalah dukungan <em>multi-threading</em> atau <em>concurrency</em>.&nbsp;
+ Saya masih ingat saat pertama kali mengenal Java, saya sering 
+diberitahu bahwa salah satu kelebihan Java dibanding C++ adalah dukungan
+ <em>concurrency</em>-nya.&nbsp; Salah satu buktinya adalah Java memiliki keyword <code>synchronized</code> yang dapat dipakai pada method atau blok kode program.&nbsp; Selain itu, pada Java 5, terdapat <strong>Executor Framework</strong> untuk melakukan pooling thread yang berguna dalam meningkatkan kinerja <em>concurrency</em>.&nbsp; Pada Java 7, <strong>Fork/Join Framework</strong> diperkenalkan untuk memaksimalkan kinerja <em>concurrency</em> pada prosesor multicore.</p>
+<p><em>Concurrency</em> menjadi semakin penting karena saat ini sudah 
+semakin banyak komputer pengguna yang memiliki prosesor multicore.&nbsp;
+ Produsen prosesor sepertinya mengalami hambatan dalam meningkatkan <em>clock rate </em>CPU.&nbsp;
+ Sebagai gantinya, mereka menciptakan prosesor yang lebih ‘kencang’ 
+dengan multicore.&nbsp; Sebagai contoh, seri prosesor Intel Core i5 dan 
+Intel Core i7 memiliki <em>clock rate</em> yang tidak jauh berbeda 
+(maksimal 3.6 GHz), tetapi perbedaan signifikannya terletak pada jumlah 
+core. &nbsp; Sebagai contoh, Intel Core i5 2500K memiliki 4 core, 
+sementara itu Intel Core i7 2600K yang dijual lebih mahal $101 juga 
+memiliki 4 core tetapi disertai tambahan Intel <strong>Hyper-Threading Technology</strong> sehingga memiliki 8 <em>virtual core</em>.&nbsp;
+ Dari sisi clock rate sendiri, Intel Core i7 2600K&nbsp; 3.4 GHz hanya 
+lebih cepat 100 MHz dibanding Intel Core i5 2500K 3.3 GHz.</p>
+<p>Pertanyaannya adalah apakah memiliki 8 core selalu jauh lebih cepat 
+dibanding 4 core?&nbsp; Tidak juga.&nbsp; Semua kembali lagi ke <em>software</em>
+ yang dijalankan oleh CPU tersebut.&nbsp; Bila program yang dijalankan 
+hanya memakai 1 thread, maka tidak akan ada penambahan kinerja yang 
+berarti.&nbsp; Jadi, untuk mendukung prosesor multicore agar bisa 
+bekerja semaksimal mungkin, developer aplikasi desktop harus membuat 
+aplikasi <em>multithreading</em>.</p>
+<p>Pada kesempatan ini saya akan mencoba membandingkan perbedaan kinerja antara kode program Java yang <em>single thread</em> dengan aplikasi yang <em>multi thread</em>.&nbsp;Kedua
+ program akan melakukan hal yang sama, yaitu membaca isi dari seluruh 
+tulisan dari blog ini dan menampilkan informasi jumlah kata yang 
+ditemui.&nbsp; Agar gampang, saya terlebih dahulu menyimpan isi blog ini
+ dalam sebuah file (ukurannya 1.37 MB).</p>
+<p>Ini adalah kode program <strong>SingleThread.java</strong> yang melakukan proses secara <em>single thread</em>:</p>
+<div><div id="highlighter_13892" class="syntaxhighlighter  java"><table border="0" cellspacing="0" cellpadding="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div><div class="line number13 index12 alt2">13</div><div class="line number14 index13 alt1">14</div><div class="line number15 index14 alt2">15</div><div class="line number16 index15 alt1">16</div><div class="line number17 index16 alt2">17</div><div class="line number18 index17 alt1">18</div><div class="line number19 index18 alt2">19</div><div class="line number20 index19 alt1">20</div><div class="line number21 index20 alt2">21</div><div class="line number22 index21 alt1">22</div><div class="line number23 index22 alt2">23</div><div class="line number24 index23 alt1">24</div><div class="line number25 index24 alt2">25</div><div class="line number26 index25 alt1">26</div><div class="line number27 index26 alt2">27</div><div class="line number28 index27 alt1">28</div><div class="line number29 index28 alt2">29</div><div class="line number30 index29 alt1">30</div><div class="line number31 index30 alt2">31</div><div class="line number32 index31 alt1">32</div><div class="line number33 index32 alt2">33</div><div class="line number34 index33 alt1">34</div><div class="line number35 index34 alt2">35</div><div class="line number36 index35 alt1">36</div><div class="line number37 index36 alt2">37</div><div class="line number38 index37 alt1">38</div><div class="line number39 index38 alt2">39</div><div class="line number40 index39 alt1">40</div><div class="line number41 index40 alt2">41</div><div class="line number42 index41 alt1">42</div><div class="line number43 index42 alt2">43</div><div class="line number44 index43 alt1">44</div><div class="line number45 index44 alt2">45</div><div class="line number46 index45 alt1">46</div><div class="line number47 index46 alt2">47</div><div class="line number48 index47 alt1">48</div><div class="line number49 index48 alt2">49</div><div class="line number50 index49 alt1">50</div><div class="line number51 index50 alt2">51</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="java keyword">import</code> <code class="java plain">java.io.IOException;</code></div><div class="line number2 index1 alt1"><code class="java keyword">import</code> <code class="java plain">java.nio.charset.Charset;</code></div><div class="line number3 index2 alt2"><code class="java keyword">import</code> <code class="java plain">java.nio.file.Files;</code></div><div class="line number4 index3 alt1"><code class="java keyword">import</code> <code class="java plain">java.nio.file.Paths;</code></div><div class="line number5 index4 alt2"><code class="java keyword">import</code> <code class="java plain">java.util.ArrayList;</code></div><div class="line number6 index5 alt1"><code class="java keyword">import</code> <code class="java plain">java.util.Collections;</code></div><div class="line number7 index6 alt2"><code class="java keyword">import</code> <code class="java plain">java.util.Comparator;</code></div><div class="line number8 index7 alt1"><code class="java keyword">import</code> <code class="java plain">java.util.List;</code></div><div class="line number9 index8 alt2">&nbsp;</div><div class="line number10 index9 alt1"><code class="java keyword">public</code> <code class="java keyword">class</code> <code class="java plain">SingleThread {</code></div><div class="line number11 index10 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">public</code> <code class="java keyword">void</code> <code class="java plain">proses() </code><code class="java keyword">throws</code> <code class="java plain">IOException {</code></div><div class="line number12 index11 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">List&lt;Hasilpencarian&gt; listHasil = </code><code class="java keyword">new</code> <code class="java plain">ArrayList&lt;&gt;();</code></div><div class="line number13 index12 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">List&lt;String&gt; listBaris = Files.readAllLines(</code></div><div class="line number14 index13 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">Paths.get(</code><code class="java string">"C:\\data.txt"</code><code class="java plain">),</code></div><div class="line number15 index14 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">Charset.defaultCharset());</code></div><div class="line number16 index15 alt1">&nbsp;</div><div class="line number17 index16 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">for</code> <code class="java plain">(String baris: listBaris) {</code></div><div class="line number18 index17 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">for</code> <code class="java plain">(String kata: baris.split(</code><code class="java string">" "</code><code class="java plain">)) {</code></div><div class="line number19 index18 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">if</code> <code class="java plain">(kata.trim().length()==</code><code class="java value">0</code><code class="java plain">) </code><code class="java keyword">break</code><code class="java plain">;</code></div><div class="line number20 index19 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">kata = kata.toLowerCase();</code></div><div class="line number21 index20 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">HasilPencarian hasilPencarian = </code><code class="java keyword">new</code> <code class="java plain">HasilPencarian(kata, </code><code class="java value">1</code><code class="java plain">);</code></div><div class="line number22 index21 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">int</code> <code class="java plain">index = listHasil.indexOf(hasilPencarian);</code></div><div class="line number23 index22 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">if</code> <code class="java plain">(index &gt;= </code><code class="java value">0</code><code class="java plain">) {</code></div><div class="line number24 index23 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">listHasil.get(index).tambahJumlah(hasilPencarian);</code></div><div class="line number25 index24 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">} </code><code class="java keyword">else</code> <code class="java plain">{</code></div><div class="line number26 index25 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">listHasil.add(hasilPencarian);</code></div><div class="line number27 index26 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">}</code></div><div class="line number28 index27 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">}</code></div><div class="line number29 index28 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">}</code></div><div class="line number30 index29 alt1">&nbsp;</div><div class="line number31 index30 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">Collections.sort(listHasil, </code><code class="java keyword">new</code> <code class="java plain">Comparator&lt;HasilPencarian&gt;() {</code></div><div class="line number32 index31 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java color1">@Override</code></div><div class="line number33 index32 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">public</code> <code class="java keyword">int</code> <code class="java plain">compare(HasilPencarian o1, HasilPencarian o2) {</code></div><div class="line number34 index33 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">return</code> <code class="java plain">o2.getJumlah() - o1.getJumlah();</code></div><div class="line number35 index34 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">}</code></div><div class="line number36 index35 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">});</code></div><div class="line number37 index36 alt2">&nbsp;</div><div class="line number38 index37 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">for</code> <code class="java plain">(HasilPencarian hasilPencarian: listHasil) {</code></div><div class="line number39 index38 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">System.out.println(hasilPencarian);</code></div><div class="line number40 index39 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">}</code></div><div class="line number41 index40 alt2">&nbsp;</div><div class="line number42 index41 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">}</code></div><div class="line number43 index42 alt2">&nbsp;</div><div class="line number44 index43 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">public</code> <code class="java keyword">static</code> <code class="java keyword">void</code> <code class="java plain">main(String[] args) {</code></div><div class="line number45 index44 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">try</code> <code class="java plain">{</code></div><div class="line number46 index45 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">new</code> <code class="java plain">SingleThread().proses();</code></div><div class="line number47 index46 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">} </code><code class="java keyword">catch</code> <code class="java plain">(IOException ex) {</code></div><div class="line number48 index47 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">ex.printStackTrace();</code></div><div class="line number49 index48 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">}</code></div><div class="line number50 index49 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">}</code></div><div class="line number51 index50 alt2"><code class="java plain">}</code></div></div></td></tr></tbody></table></div></div>
+<p>Kode program tersebut membutuhkan sebuah class <strong>HasilPencarian.java</strong> yang isinya adalah:</p>
+<div><div id="highlighter_398945" class="syntaxhighlighter  java"><table border="0" cellspacing="0" cellpadding="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div><div class="line number13 index12 alt2">13</div><div class="line number14 index13 alt1">14</div><div class="line number15 index14 alt2">15</div><div class="line number16 index15 alt1">16</div><div class="line number17 index16 alt2">17</div><div class="line number18 index17 alt1">18</div><div class="line number19 index18 alt2">19</div><div class="line number20 index19 alt1">20</div><div class="line number21 index20 alt2">21</div><div class="line number22 index21 alt1">22</div><div class="line number23 index22 alt2">23</div><div class="line number24 index23 alt1">24</div><div class="line number25 index24 alt2">25</div><div class="line number26 index25 alt1">26</div><div class="line number27 index26 alt2">27</div><div class="line number28 index27 alt1">28</div><div class="line number29 index28 alt2">29</div><div class="line number30 index29 alt1">30</div><div class="line number31 index30 alt2">31</div><div class="line number32 index31 alt1">32</div><div class="line number33 index32 alt2">33</div><div class="line number34 index33 alt1">34</div><div class="line number35 index34 alt2">35</div><div class="line number36 index35 alt1">36</div><div class="line number37 index36 alt2">37</div><div class="line number38 index37 alt1">38</div><div class="line number39 index38 alt2">39</div><div class="line number40 index39 alt1">40</div><div class="line number41 index40 alt2">41</div><div class="line number42 index41 alt1">42</div><div class="line number43 index42 alt2">43</div><div class="line number44 index43 alt1">44</div><div class="line number45 index44 alt2">45</div><div class="line number46 index45 alt1">46</div><div class="line number47 index46 alt2">47</div><div class="line number48 index47 alt1">48</div><div class="line number49 index48 alt2">49</div><div class="line number50 index49 alt1">50</div><div class="line number51 index50 alt2">51</div><div class="line number52 index51 alt1">52</div><div class="line number53 index52 alt2">53</div><div class="line number54 index53 alt1">54</div><div class="line number55 index54 alt2">55</div><div class="line number56 index55 alt1">56</div><div class="line number57 index56 alt2">57</div><div class="line number58 index57 alt1">58</div><div class="line number59 index58 alt2">59</div><div class="line number60 index59 alt1">60</div><div class="line number61 index60 alt2">61</div><div class="line number62 index61 alt1">62</div><div class="line number63 index62 alt2">63</div><div class="line number64 index63 alt1">64</div><div class="line number65 index64 alt2">65</div><div class="line number66 index65 alt1">66</div><div class="line number67 index66 alt2">67</div><div class="line number68 index67 alt1">68</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="java keyword">import</code> <code class="java plain">java.util.Objects;</code></div><div class="line number2 index1 alt1">&nbsp;</div><div class="line number3 index2 alt2"><code class="java keyword">public</code> <code class="java keyword">class</code> <code class="java plain">HasilPencarian {</code></div><div class="line number4 index3 alt1">&nbsp;</div><div class="line number5 index4 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">private</code> <code class="java keyword">static</code> <code class="java keyword">final</code> <code class="java keyword">long</code> <code class="java plain">serialVersionUID = 1L;</code></div><div class="line number6 index5 alt1">&nbsp;</div><div class="line number7 index6 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">private</code> <code class="java plain">String kata;</code></div><div class="line number8 index7 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">private</code> <code class="java plain">Integer jumlah;</code></div><div class="line number9 index8 alt2">&nbsp;</div><div class="line number10 index9 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">public</code> <code class="java plain">HasilPencarian(String kata, Integer jumlah) {</code></div><div class="line number11 index10 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">this</code><code class="java plain">.kata = kata;</code></div><div class="line number12 index11 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">this</code><code class="java plain">.jumlah = jumlah;</code></div><div class="line number13 index12 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">}</code></div><div class="line number14 index13 alt1">&nbsp;</div><div class="line number15 index14 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">public</code> <code class="java plain">String getKata() {</code></div><div class="line number16 index15 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">return</code> <code class="java plain">kata;</code></div><div class="line number17 index16 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">}</code></div><div class="line number18 index17 alt1">&nbsp;</div><div class="line number19 index18 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">public</code> <code class="java keyword">void</code> <code class="java plain">setKata(String kata) {</code></div><div class="line number20 index19 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">this</code><code class="java plain">.kata = kata;</code></div><div class="line number21 index20 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">}</code></div><div class="line number22 index21 alt1">&nbsp;</div><div class="line number23 index22 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">public</code> <code class="java plain">Integer getJumlah() {</code></div><div class="line number24 index23 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">return</code> <code class="java plain">jumlah;</code></div><div class="line number25 index24 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">}</code></div><div class="line number26 index25 alt1">&nbsp;</div><div class="line number27 index26 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">public</code> <code class="java keyword">void</code> <code class="java plain">setJumlah(Integer jumlah) {</code></div><div class="line number28 index27 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">this</code><code class="java plain">.jumlah = jumlah;</code></div><div class="line number29 index28 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">}</code></div><div class="line number30 index29 alt1">&nbsp;</div><div class="line number31 index30 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">public</code> <code class="java keyword">void</code> <code class="java plain">tambahJumlah(Integer jumlah) {</code></div><div class="line number32 index31 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">this</code><code class="java plain">.jumlah+=jumlah;</code></div><div class="line number33 index32 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">}</code></div><div class="line number34 index33 alt1">&nbsp;</div><div class="line number35 index34 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">public</code> <code class="java keyword">void</code> <code class="java plain">tambahJumlah(HasilPencarian hasilLain) {</code></div><div class="line number36 index35 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">if</code> <code class="java plain">(!hasilLain.getKata().equals(getKata())) {</code></div><div class="line number37 index36 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">throw</code> <code class="java keyword">new</code> <code class="java plain">RuntimeException(</code><code class="java string">"Tidak dapat menjumlahkan kata yang berbeda!"</code><code class="java plain">);</code></div><div class="line number38 index37 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">}</code></div><div class="line number39 index38 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">tambahJumlah(hasilLain.getJumlah());</code></div><div class="line number40 index39 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">}</code></div><div class="line number41 index40 alt2">&nbsp;</div><div class="line number42 index41 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java color1">@Override</code></div><div class="line number43 index42 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">public</code> <code class="java keyword">int</code> <code class="java plain">hashCode() {</code></div><div class="line number44 index43 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">int</code> <code class="java plain">hash = </code><code class="java value">5</code><code class="java plain">;</code></div><div class="line number45 index44 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">return</code> <code class="java plain">hash;</code></div><div class="line number46 index45 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">}</code></div><div class="line number47 index46 alt2">&nbsp;</div><div class="line number48 index47 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java color1">@Override</code></div><div class="line number49 index48 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">public</code> <code class="java keyword">boolean</code> <code class="java plain">equals(Object obj) {</code></div><div class="line number50 index49 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">if</code> <code class="java plain">(obj == </code><code class="java keyword">null</code><code class="java plain">) {</code></div><div class="line number51 index50 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">return</code> <code class="java keyword">false</code><code class="java plain">;</code></div><div class="line number52 index51 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">}</code></div><div class="line number53 index52 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">if</code> <code class="java plain">(getClass() != obj.getClass()) {</code></div><div class="line number54 index53 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">return</code> <code class="java keyword">false</code><code class="java plain">;</code></div><div class="line number55 index54 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">}</code></div><div class="line number56 index55 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">final</code> <code class="java plain">HasilPencarian other = (HasilPencarian) obj;</code></div><div class="line number57 index56 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">if</code> <code class="java plain">(!Objects.equals(</code><code class="java keyword">this</code><code class="java plain">.kata, other.kata)) {</code></div><div class="line number58 index57 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">return</code> <code class="java keyword">false</code><code class="java plain">;</code></div><div class="line number59 index58 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">}</code></div><div class="line number60 index59 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">return</code> <code class="java keyword">true</code><code class="java plain">;</code></div><div class="line number61 index60 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">}</code></div><div class="line number62 index61 alt1">&nbsp;</div><div class="line number63 index62 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java color1">@Override</code></div><div class="line number64 index63 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">public</code> <code class="java plain">String toString() {</code></div><div class="line number65 index64 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">return</code> <code class="java plain">String.format(</code><code class="java string">"%s: %d"</code><code class="java plain">, getKata(), getJumlah());</code></div><div class="line number66 index65 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">}</code></div><div class="line number67 index66 alt2">&nbsp;</div><div class="line number68 index67 alt1"><code class="java plain">}</code></div></div></td></tr></tbody></table></div></div>
+<p>Kode program <strong>SingleThread.java</strong> cukup sederhana dan 
+mudah dimengerti.&nbsp; Ia akan membaca baris dari file, kemudian 
+memecah setiap baris menjadi kata, lalu menghitung jumlah kata yang 
+unik.&nbsp; Setelah selesai, ia akan mengurutkan berdasarkan jumlah kata
+ terbanyak dan menampilkannya.&nbsp; Contoh hasil akan terlihat seperti:</p>
+<pre>yang: 3448
+di: 2071
+saya: 1783
+akan: 1645
+dengan: 1513
+untuk: 1496
+pada: 1357
+dan: 1268
+adalah: 1057
+seperti: 986
+...</pre>
+<p>Terlihat bahwa selama ini kata yang paling sering saya tulis adalah 
+‘yang’ :)&nbsp; Ok, tapi bukan itu tujuan saya.&nbsp; Saya ingin 
+memperlihatkan seperti apa kinerja program ini.&nbsp; Untuk itu, saya 
+akan melakukan <em>profiling</em> dengan menggunakan NetBeans Profiler.&nbsp; Untuk itu, saya men-klik icon <strong>Profile Project</strong> yang terilhat seperti pada gambar berikut ini:</p>
+<div data-shortcode="caption" id="attachment_1602" style="width: 202px" class="wp-caption aligncenter"><a href="https://thesolidsnake.files.wordpress.com/2013/05/gambar14.png"><img class="size-full wp-image-1602" alt="Icon ProfileProject Di NetBeans" src="fork_join%20_%20The%20Solid%20Snake_files/gambar14.png"></a><p class="wp-caption-text">Icon ProfileProject Di NetBeans</p></div>
+<p>Saya kemudian memilih <strong>CPU</strong>, <strong>Analyze Performance</strong>, dan men-klik tombol <strong>Run</strong>.&nbsp; Setelah proses <em>profiling</em> selesai, saya dapat melihat hasil <em>snapshot</em> seperti pada gambar berikut ini:</p>
+<div data-shortcode="caption" id="attachment_1603" style="width: 630px" class="wp-caption aligncenter"><a href="https://thesolidsnake.files.wordpress.com/2013/05/gambar24.png"><img class="size-full wp-image-1603" alt="CPU Sampling Pada Aplikasi Versi Single Thread" src="fork_join%20_%20The%20Solid%20Snake_files/gambar24.png"></a><p class="wp-caption-text">CPU Sampling Pada Aplikasi Versi Single Thread</p></div>
+<p>Terlihat bahwa dibutuhkan sekitar 24,6 detik untuk mengerjakan 
+program ini (ini adalah penantian yang cukup lama!).&nbsp; Waktu paling 
+lama habis dipakai untuk mengerjakan method <code>indexOf()</code> milik <code>ArrayList</code> (karena berada dalam looping).</p>
+<p>Saya kembali men-klik icon <strong>Profile Project</strong>.&nbsp; Kali ini saya memilih <strong>Monitor</strong>, memberi tanda centang pada <strong>Enable threads monitoring</strong> dan <strong>Sample threads states</strong>.&nbsp; Setelah men-klik <strong>Run</strong> dan membiarkan proses <em>profiling</em> selesai, saya dapat melihat daftar <em>threads</em> seperti yang terlihat di gambar berikut ini:</p>
+<div data-shortcode="caption" id="attachment_1604" style="width: 630px" class="wp-caption aligncenter"><a href="https://thesolidsnake.files.wordpress.com/2013/05/gambar34.png"><img class="size-full wp-image-1604" alt="Tampilan Thread Pada Aplikasi Single Thread" src="fork_join%20_%20The%20Solid%20Snake_files/gambar34.png"></a><p class="wp-caption-text">Tampilan Thread Pada Aplikasi Single Thread</p></div>
+<p>Disini terlihat bahwa thread pada aplikasi saya hanya satu, yaitu <strong>main</strong>.&nbsp; Sisanya adalah thread milik JVM yang selalu ada, misalnya untuk keperluan <em>garbage collector</em>.</p>
+<p>Sekarang, saya akan membuat program versi multithread yang memakai <strong>Fork/Join Framework</strong> dari Java 7.&nbsp; Kode program ini tidak akan bisa dijalankan pada Java versi sebelumnya.</p>
+<p>Saya akan membuat class <strong>MultiThread.java</strong> yang isinya adalah:</p>
+<div><div id="highlighter_6323" class="syntaxhighlighter  java"><table border="0" cellspacing="0" cellpadding="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div><div class="line number13 index12 alt2">13</div><div class="line number14 index13 alt1">14</div><div class="line number15 index14 alt2">15</div><div class="line number16 index15 alt1">16</div><div class="line number17 index16 alt2">17</div><div class="line number18 index17 alt1">18</div><div class="line number19 index18 alt2">19</div><div class="line number20 index19 alt1">20</div><div class="line number21 index20 alt2">21</div><div class="line number22 index21 alt1">22</div><div class="line number23 index22 alt2">23</div><div class="line number24 index23 alt1">24</div><div class="line number25 index24 alt2">25</div><div class="line number26 index25 alt1">26</div><div class="line number27 index26 alt2">27</div><div class="line number28 index27 alt1">28</div><div class="line number29 index28 alt2">29</div><div class="line number30 index29 alt1">30</div><div class="line number31 index30 alt2">31</div><div class="line number32 index31 alt1">32</div><div class="line number33 index32 alt2">33</div><div class="line number34 index33 alt1">34</div><div class="line number35 index34 alt2">35</div><div class="line number36 index35 alt1">36</div><div class="line number37 index36 alt2">37</div><div class="line number38 index37 alt1">38</div><div class="line number39 index38 alt2">39</div><div class="line number40 index39 alt1">40</div><div class="line number41 index40 alt2">41</div><div class="line number42 index41 alt1">42</div><div class="line number43 index42 alt2">43</div><div class="line number44 index43 alt1">44</div><div class="line number45 index44 alt2">45</div><div class="line number46 index45 alt1">46</div><div class="line number47 index46 alt2">47</div><div class="line number48 index47 alt1">48</div><div class="line number49 index48 alt2">49</div><div class="line number50 index49 alt1">50</div><div class="line number51 index50 alt2">51</div><div class="line number52 index51 alt1">52</div><div class="line number53 index52 alt2">53</div><div class="line number54 index53 alt1">54</div><div class="line number55 index54 alt2">55</div><div class="line number56 index55 alt1">56</div><div class="line number57 index56 alt2">57</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="java keyword">import</code> <code class="java plain">java.io.IOException;</code></div><div class="line number2 index1 alt1"><code class="java keyword">import</code> <code class="java plain">java.nio.charset.Charset;</code></div><div class="line number3 index2 alt2"><code class="java keyword">import</code> <code class="java plain">java.nio.file.Files;</code></div><div class="line number4 index3 alt1"><code class="java keyword">import</code> <code class="java plain">java.nio.file.Paths;</code></div><div class="line number5 index4 alt2"><code class="java keyword">import</code> <code class="java plain">java.util.Collections;</code></div><div class="line number6 index5 alt1"><code class="java keyword">import</code> <code class="java plain">java.util.Comparator;</code></div><div class="line number7 index6 alt2"><code class="java keyword">import</code> <code class="java plain">java.util.List;</code></div><div class="line number8 index7 alt1"><code class="java keyword">import</code> <code class="java plain">java.util.concurrent.ForkJoinPool;</code></div><div class="line number9 index8 alt2">&nbsp;</div><div class="line number10 index9 alt1"><code class="java keyword">public</code> <code class="java keyword">class</code> <code class="java plain">MultiThread {</code></div><div class="line number11 index10 alt2">&nbsp;</div><div class="line number12 index11 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">public</code> <code class="java keyword">void</code> <code class="java plain">proses() </code><code class="java keyword">throws</code> <code class="java plain">IOException {</code></div><div class="line number13 index12 alt2">&nbsp;</div><div class="line number14 index13 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">List&lt;String&gt; listBaris = Files.readAllLines(</code></div><div class="line number15 index14 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">Paths.get(</code><code class="java string">"C:\\data.txt"</code><code class="java plain">),</code></div><div class="line number16 index15 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">Charset.defaultCharset());</code></div><div class="line number17 index16 alt2">&nbsp;</div><div class="line number18 index17 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">ForkJoinPool pool = </code><code class="java keyword">new</code> <code class="java plain">ForkJoinPool();</code></div><div class="line number19 index18 alt2">&nbsp;</div><div class="line number20 index19 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">TaskPemisah taskPemisah = </code><code class="java keyword">new</code> <code class="java plain">TaskPemisah(listBaris, </code><code class="java value">0</code><code class="java plain">, listBaris.size()-</code><code class="java value">1</code><code class="java plain">);</code></div><div class="line number21 index20 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">List&lt;HasilPencarian&gt; listHasil = pool.invoke(taskPemisah);</code></div><div class="line number22 index21 alt1">&nbsp;</div><div class="line number23 index22 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">Collections.sort(listHasil, </code><code class="java keyword">new</code> <code class="java plain">Comparator&lt;HasilPencarian&gt;() {</code></div><div class="line number24 index23 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java color1">@Override</code></div><div class="line number25 index24 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">public</code> <code class="java keyword">int</code> <code class="java plain">compare(HasilPencarian o1, HasilPencarian o2) {</code></div><div class="line number26 index25 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">return</code> <code class="java plain">o1.getKata().compareTo(o2.getKata());</code></div><div class="line number27 index26 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">}</code></div><div class="line number28 index27 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">});</code></div><div class="line number29 index28 alt2">&nbsp;</div><div class="line number30 index29 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">TaskPenghitung taskPenghitung = </code><code class="java keyword">new</code> <code class="java plain">TaskPenghitung(listHasil, </code><code class="java value">0</code><code class="java plain">, listHasil.size()-</code><code class="java value">1</code><code class="java plain">);</code></div><div class="line number31 index30 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">listHasil = pool.invoke(taskPenghitung);</code></div><div class="line number32 index31 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">pool.shutdown();</code></div><div class="line number33 index32 alt2">&nbsp;</div><div class="line number34 index33 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">Collections.sort(listHasil, </code><code class="java keyword">new</code> <code class="java plain">Comparator&lt;HasilPencarian&gt;() {</code></div><div class="line number35 index34 alt2">&nbsp;</div><div class="line number36 index35 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java color1">@Override</code></div><div class="line number37 index36 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">public</code> <code class="java keyword">int</code> <code class="java plain">compare(HasilPencarian o1, HasilPencarian o2) {</code></div><div class="line number38 index37 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">return</code> <code class="java plain">o2.getJumlah() - o1.getJumlah();</code></div><div class="line number39 index38 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">}</code></div><div class="line number40 index39 alt1">&nbsp;</div><div class="line number41 index40 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">});</code></div><div class="line number42 index41 alt1">&nbsp;</div><div class="line number43 index42 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">for</code> <code class="java plain">(HasilPencarian hasilPencarian: listHasil) {</code></div><div class="line number44 index43 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">System.out.println(hasilPencarian);</code></div><div class="line number45 index44 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">}</code></div><div class="line number46 index45 alt1">&nbsp;</div><div class="line number47 index46 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">}</code></div><div class="line number48 index47 alt1">&nbsp;</div><div class="line number49 index48 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">public</code> <code class="java keyword">static</code> <code class="java keyword">void</code> <code class="java plain">main(String[] args) {</code></div><div class="line number50 index49 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">try</code> <code class="java plain">{</code></div><div class="line number51 index50 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">new</code> <code class="java plain">MultiThread().proses();</code></div><div class="line number52 index51 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">} </code><code class="java keyword">catch</code> <code class="java plain">(IOException ex) {</code></div><div class="line number53 index52 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">ex.printStackTrace();</code></div><div class="line number54 index53 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">}</code></div><div class="line number55 index54 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">}</code></div><div class="line number56 index55 alt1">&nbsp;</div><div class="line number57 index56 alt2"><code class="java plain">}</code></div></div></td></tr></tbody></table></div></div>
+<p>Kode program <strong>MultiThread.java</strong> terlihat lebih rumit dibanding <strong>SingleThread.java</strong>.&nbsp;&nbsp; Setelah setiap baris dibaca dari file, kode program tersebut akan memakai sebuah <code>RecursiveTask</code> <strong></strong>untuk memisahkan setiap baris menjadi kata.&nbsp; Setelah selesai, hasilnya akan diproses lagi oleh <code>RecursiveTask</code> lain yang menghitung jumlah kata. Karena prosesnya dilakukan secara <em>concurrent</em>, saya perlu mengurutkan kata berdasarkan abjad terlebih dahulu. Tujuannya adalah agar kata yang sama tidak diproses oleh <em>thread</em> yang berbeda (bila hal ini terjadi, hasil perhitungan akan salah!).</p>
+<p><code>RecursiveTask</code> pertama yang bertugas untuk memisahkan setiap baris menjadi kata akan saya beri nama sebagai <code>TaskPemisah</code>, isinya akan terlihat seperti berikut ini:</p>
+<div><div id="highlighter_539477" class="syntaxhighlighter  java"><table border="0" cellspacing="0" cellpadding="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div><div class="line number13 index12 alt2">13</div><div class="line number14 index13 alt1">14</div><div class="line number15 index14 alt2">15</div><div class="line number16 index15 alt1">16</div><div class="line number17 index16 alt2">17</div><div class="line number18 index17 alt1">18</div><div class="line number19 index18 alt2">19</div><div class="line number20 index19 alt1">20</div><div class="line number21 index20 alt2">21</div><div class="line number22 index21 alt1">22</div><div class="line number23 index22 alt2">23</div><div class="line number24 index23 alt1">24</div><div class="line number25 index24 alt2">25</div><div class="line number26 index25 alt1">26</div><div class="line number27 index26 alt2">27</div><div class="line number28 index27 alt1">28</div><div class="line number29 index28 alt2">29</div><div class="line number30 index29 alt1">30</div><div class="line number31 index30 alt2">31</div><div class="line number32 index31 alt1">32</div><div class="line number33 index32 alt2">33</div><div class="line number34 index33 alt1">34</div><div class="line number35 index34 alt2">35</div><div class="line number36 index35 alt1">36</div><div class="line number37 index36 alt2">37</div><div class="line number38 index37 alt1">38</div><div class="line number39 index38 alt2">39</div><div class="line number40 index39 alt1">40</div><div class="line number41 index40 alt2">41</div><div class="line number42 index41 alt1">42</div><div class="line number43 index42 alt2">43</div><div class="line number44 index43 alt1">44</div><div class="line number45 index44 alt2">45</div><div class="line number46 index45 alt1">46</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="java keyword">import</code> <code class="java plain">java.util.ArrayList;</code></div><div class="line number2 index1 alt1"><code class="java keyword">import</code> <code class="java plain">java.util.List;</code></div><div class="line number3 index2 alt2"><code class="java keyword">import</code> <code class="java plain">java.util.concurrent.ExecutionException;</code></div><div class="line number4 index3 alt1"><code class="java keyword">import</code> <code class="java plain">java.util.concurrent.RecursiveTask;</code></div><div class="line number5 index4 alt2">&nbsp;</div><div class="line number6 index5 alt1"><code class="java keyword">public</code> <code class="java keyword">class</code> <code class="java plain">TaskPemisah </code><code class="java keyword">extends</code> <code class="java plain">RecursiveTask&lt;List&lt;HasilPencarian&gt;&gt; {</code></div><div class="line number7 index6 alt2">&nbsp;</div><div class="line number8 index7 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">private</code> <code class="java plain">List&lt;String&gt; listBaris;</code></div><div class="line number9 index8 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">private</code> <code class="java keyword">int</code> <code class="java plain">indexMulai;</code></div><div class="line number10 index9 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">private</code> <code class="java keyword">int</code> <code class="java plain">indexSelesai;</code></div><div class="line number11 index10 alt2">&nbsp;</div><div class="line number12 index11 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">public</code> <code class="java plain">TaskPemisah(List&lt;String&gt; listBaris, </code><code class="java keyword">int</code> <code class="java plain">indexMulai, </code><code class="java keyword">int</code> <code class="java plain">indexSelesai) {</code></div><div class="line number13 index12 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">this</code><code class="java plain">.listBaris = listBaris;</code></div><div class="line number14 index13 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">this</code><code class="java plain">.indexMulai = indexMulai;</code></div><div class="line number15 index14 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">this</code><code class="java plain">.indexSelesai = indexSelesai;</code></div><div class="line number16 index15 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">}</code></div><div class="line number17 index16 alt2">&nbsp;</div><div class="line number18 index17 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java color1">@Override</code></div><div class="line number19 index18 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">protected</code> <code class="java plain">List&lt;HasilPencarian&gt; compute() {</code></div><div class="line number20 index19 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">List&lt;HasilPencarian&gt; listHasil = </code><code class="java keyword">new</code> <code class="java plain">ArrayList&lt;&gt;();</code></div><div class="line number21 index20 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">if</code> <code class="java plain">((indexSelesai - indexMulai) &lt; </code><code class="java value">10</code><code class="java plain">) {</code></div><div class="line number22 index21 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">for</code> <code class="java plain">(</code><code class="java keyword">int</code> <code class="java plain">i=indexMulai; i&lt;=indexSelesai; i++) {</code></div><div class="line number23 index22 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">String baris = listBaris.get(i);</code></div><div class="line number24 index23 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">for</code> <code class="java plain">(String kata: baris.split(</code><code class="java string">" "</code><code class="java plain">)) {</code></div><div class="line number25 index24 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">if</code> <code class="java plain">(kata.trim().length()==</code><code class="java value">0</code><code class="java plain">) </code><code class="java keyword">break</code><code class="java plain">;</code></div><div class="line number26 index25 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">kata = kata.trim().toLowerCase();</code></div><div class="line number27 index26 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">HasilPencarian hasilPencarian = </code><code class="java keyword">new</code> <code class="java plain">HasilPencarian(kata, </code><code class="java value">1</code><code class="java plain">);</code></div><div class="line number28 index27 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">listHasil.add(hasilPencarian);</code></div><div class="line number29 index28 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">}</code></div><div class="line number30 index29 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">}</code></div><div class="line number31 index30 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">} </code><code class="java keyword">else</code> <code class="java plain">{</code></div><div class="line number32 index31 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">int</code> <code class="java plain">indexTengah = (indexSelesai + indexMulai) / </code><code class="java value">2</code><code class="java plain">;</code></div><div class="line number33 index32 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">TaskPemisah task1 = </code><code class="java keyword">new</code> <code class="java plain">TaskPemisah(listBaris, indexMulai, indexTengah);</code></div><div class="line number34 index33 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">TaskPemisah task2 = </code><code class="java keyword">new</code> <code class="java plain">TaskPemisah(listBaris, indexTengah+</code><code class="java value">1</code><code class="java plain">, indexSelesai);</code></div><div class="line number35 index34 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">invokeAll(task1, task2);</code></div><div class="line number36 index35 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">try</code> <code class="java plain">{</code></div><div class="line number37 index36 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">listHasil.addAll(task1.get());</code></div><div class="line number38 index37 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">listHasil.addAll(task2.get());</code></div><div class="line number39 index38 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">} </code><code class="java keyword">catch</code> <code class="java plain">(InterruptedException | ExecutionException ex) {</code></div><div class="line number40 index39 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">ex.printStackTrace();</code></div><div class="line number41 index40 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">}</code></div><div class="line number42 index41 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">}</code></div><div class="line number43 index42 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">return</code> <code class="java plain">listHasil;</code></div><div class="line number44 index43 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">}</code></div><div class="line number45 index44 alt2">&nbsp;</div><div class="line number46 index45 alt1"><code class="java plain">}</code></div></div></td></tr></tbody></table></div></div>
+<p><code>RecursiveTask</code> yang akan menghitung jumlah kata akan saya beri nama sebagai <code>TaskPenghitung</code>, isinya akan terlihat seperti berikut ini:</p>
+<div><div id="highlighter_462330" class="syntaxhighlighter  java"><table border="0" cellspacing="0" cellpadding="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div><div class="line number13 index12 alt2">13</div><div class="line number14 index13 alt1">14</div><div class="line number15 index14 alt2">15</div><div class="line number16 index15 alt1">16</div><div class="line number17 index16 alt2">17</div><div class="line number18 index17 alt1">18</div><div class="line number19 index18 alt2">19</div><div class="line number20 index19 alt1">20</div><div class="line number21 index20 alt2">21</div><div class="line number22 index21 alt1">22</div><div class="line number23 index22 alt2">23</div><div class="line number24 index23 alt1">24</div><div class="line number25 index24 alt2">25</div><div class="line number26 index25 alt1">26</div><div class="line number27 index26 alt2">27</div><div class="line number28 index27 alt1">28</div><div class="line number29 index28 alt2">29</div><div class="line number30 index29 alt1">30</div><div class="line number31 index30 alt2">31</div><div class="line number32 index31 alt1">32</div><div class="line number33 index32 alt2">33</div><div class="line number34 index33 alt1">34</div><div class="line number35 index34 alt2">35</div><div class="line number36 index35 alt1">36</div><div class="line number37 index36 alt2">37</div><div class="line number38 index37 alt1">38</div><div class="line number39 index38 alt2">39</div><div class="line number40 index39 alt1">40</div><div class="line number41 index40 alt2">41</div><div class="line number42 index41 alt1">42</div><div class="line number43 index42 alt2">43</div><div class="line number44 index43 alt1">44</div><div class="line number45 index44 alt2">45</div><div class="line number46 index45 alt1">46</div><div class="line number47 index46 alt2">47</div><div class="line number48 index47 alt1">48</div><div class="line number49 index48 alt2">49</div><div class="line number50 index49 alt1">50</div><div class="line number51 index50 alt2">51</div><div class="line number52 index51 alt1">52</div><div class="line number53 index52 alt2">53</div><div class="line number54 index53 alt1">54</div><div class="line number55 index54 alt2">55</div><div class="line number56 index55 alt1">56</div><div class="line number57 index56 alt2">57</div><div class="line number58 index57 alt1">58</div><div class="line number59 index58 alt2">59</div><div class="line number60 index59 alt1">60</div><div class="line number61 index60 alt2">61</div><div class="line number62 index61 alt1">62</div><div class="line number63 index62 alt2">63</div><div class="line number64 index63 alt1">64</div><div class="line number65 index64 alt2">65</div><div class="line number66 index65 alt1">66</div><div class="line number67 index66 alt2">67</div><div class="line number68 index67 alt1">68</div><div class="line number69 index68 alt2">69</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="java keyword">import</code> <code class="java plain">java.util.ArrayList;</code></div><div class="line number2 index1 alt1"><code class="java keyword">import</code> <code class="java plain">java.util.List;</code></div><div class="line number3 index2 alt2"><code class="java keyword">import</code> <code class="java plain">java.util.concurrent.ExecutionException;</code></div><div class="line number4 index3 alt1"><code class="java keyword">import</code> <code class="java plain">java.util.concurrent.RecursiveTask;</code></div><div class="line number5 index4 alt2">&nbsp;</div><div class="line number6 index5 alt1"><code class="java keyword">public</code> <code class="java keyword">class</code> <code class="java plain">TaskPenghitung </code><code class="java keyword">extends</code> <code class="java plain">RecursiveTask&lt;List&lt;HasilPencarian&gt;&gt;{</code></div><div class="line number7 index6 alt2">&nbsp;</div><div class="line number8 index7 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">private</code> <code class="java plain">List&lt;HasilPencarian&gt; listProses;</code></div><div class="line number9 index8 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">private</code> <code class="java keyword">int</code> <code class="java plain">indexMulai;</code></div><div class="line number10 index9 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">private</code> <code class="java keyword">int</code> <code class="java plain">indexSelesai;</code></div><div class="line number11 index10 alt2">&nbsp;</div><div class="line number12 index11 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">public</code> <code class="java plain">TaskPenghitung(List&lt;HasilPencarian&gt; listProses, </code><code class="java keyword">int</code> <code class="java plain">indexMulai, </code><code class="java keyword">int</code> <code class="java plain">indexSelesai) {</code></div><div class="line number13 index12 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">this</code><code class="java plain">.listProses = listProses;</code></div><div class="line number14 index13 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">this</code><code class="java plain">.indexMulai = indexMulai;</code></div><div class="line number15 index14 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">this</code><code class="java plain">.indexSelesai = indexSelesai;</code></div><div class="line number16 index15 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">}</code></div><div class="line number17 index16 alt2">&nbsp;</div><div class="line number18 index17 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">private</code> <code class="java keyword">void</code> <code class="java plain">proses(List&lt;HasilPencarian&gt; listHasil) {</code></div><div class="line number19 index18 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">for</code> <code class="java plain">(</code><code class="java keyword">int</code> <code class="java plain">i=indexMulai; i&lt;=indexSelesai; i++) {</code></div><div class="line number20 index19 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">HasilPencarian hasilPencarian = listProses.get(i);</code></div><div class="line number21 index20 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">int</code> <code class="java plain">index = listHasil.indexOf(hasilPencarian);</code></div><div class="line number22 index21 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">if</code> <code class="java plain">(index &gt;= </code><code class="java value">0</code><code class="java plain">) {</code></div><div class="line number23 index22 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">listHasil.get(index).tambahJumlah(hasilPencarian);</code></div><div class="line number24 index23 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">} </code><code class="java keyword">else</code> <code class="java plain">{</code></div><div class="line number25 index24 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">listHasil.add(hasilPencarian);</code></div><div class="line number26 index25 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">}</code></div><div class="line number27 index26 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">}</code></div><div class="line number28 index27 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">}</code></div><div class="line number29 index28 alt2">&nbsp;</div><div class="line number30 index29 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java color1">@Override</code></div><div class="line number31 index30 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">protected</code> <code class="java plain">List&lt;HasilPencarian&gt; compute() {</code></div><div class="line number32 index31 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">List&lt;HasilPencarian&gt; listHasil = </code><code class="java keyword">new</code> <code class="java plain">ArrayList&lt;&gt;();</code></div><div class="line number33 index32 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">if</code> <code class="java plain">((indexSelesai - indexMulai) &lt; </code><code class="java value">1000</code><code class="java plain">) {</code></div><div class="line number34 index33 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">proses(listHasil);</code></div><div class="line number35 index34 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">} </code><code class="java keyword">else</code> <code class="java plain">{</code></div><div class="line number36 index35 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">int</code> <code class="java plain">tengah = (indexMulai + indexSelesai) / </code><code class="java value">2</code><code class="java plain">;</code></div><div class="line number37 index36 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">while</code> <code class="java plain">(</code><code class="java keyword">true</code><code class="java plain">) {</code></div><div class="line number38 index37 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">if</code> <code class="java plain">(tengah==indexSelesai) {</code></div><div class="line number39 index38 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">proses(listHasil);</code></div><div class="line number40 index39 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">return</code> <code class="java plain">listHasil;</code></div><div class="line number41 index40 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">}</code></div><div class="line number42 index41 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">String kataSekarang = listProses.get(tengah).getKata();</code></div><div class="line number43 index42 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">String kataBerikut = listProses.get(tengah+</code><code class="java value">1</code><code class="java plain">).getKata();</code></div><div class="line number44 index43 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">if</code> <code class="java plain">(!kataSekarang.equals(kataBerikut)) </code><code class="java keyword">break</code><code class="java plain">;</code></div><div class="line number45 index44 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">tengah++;</code></div><div class="line number46 index45 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">}</code></div><div class="line number47 index46 alt2">&nbsp;</div><div class="line number48 index47 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">TaskPenghitung task1 = </code><code class="java keyword">new</code> <code class="java plain">TaskPenghitung(listProses, indexMulai, tengah);</code></div><div class="line number49 index48 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">invokeAll(task1);</code></div><div class="line number50 index49 alt1">&nbsp;</div><div class="line number51 index50 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">TaskPenghitung task2 = </code><code class="java keyword">null</code><code class="java plain">;</code></div><div class="line number52 index51 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">if</code> <code class="java plain">(tengah&lt;indexSelesai) {</code></div><div class="line number53 index52 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">task2 = </code><code class="java keyword">new</code> <code class="java plain">TaskPenghitung(listProses, tengah+</code><code class="java value">1</code><code class="java plain">, indexSelesai);</code></div><div class="line number54 index53 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">invokeAll(task2);</code></div><div class="line number55 index54 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">}</code></div><div class="line number56 index55 alt1">&nbsp;</div><div class="line number57 index56 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">try</code> <code class="java plain">{</code></div><div class="line number58 index57 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">listHasil.addAll(task1.get());</code></div><div class="line number59 index58 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">if</code> <code class="java plain">(task2!=</code><code class="java keyword">null</code><code class="java plain">) {</code></div><div class="line number60 index59 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">listHasil.addAll(task2.get());</code></div><div class="line number61 index60 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">}</code></div><div class="line number62 index61 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">} </code><code class="java keyword">catch</code> <code class="java plain">(InterruptedException | ExecutionException ex) {</code></div><div class="line number63 index62 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">ex.printStackTrace();</code></div><div class="line number64 index63 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">}</code></div><div class="line number65 index64 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">}</code></div><div class="line number66 index65 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">return</code> <code class="java plain">listHasil;</code></div><div class="line number67 index66 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">}</code></div><div class="line number68 index67 alt1">&nbsp;</div><div class="line number69 index68 alt2"><code class="java plain">}</code></div></div></td></tr></tbody></table></div></div>
+<p>Bila dijalankan, hasilnya akan sama persis seperti pada versi <strong>SingleThread.java</strong>.&nbsp; Yang jelas, kode program <strong>MultiThread.java</strong> lebih panjang, lebih rumit, dan jumlah class-nya tambah banyak.&nbsp; Apakah kerumitan ini memiliki manfaat?</p>
+<p>Saya akan mulai dengan melakukan <em>profiling</em> kinerja.&nbsp; Hasil CPU sampling dapat dilihat pada gambar berikut ini:</p>
+<div data-shortcode="caption" id="attachment_1605" style="width: 630px" class="wp-caption aligncenter"><a href="https://thesolidsnake.files.wordpress.com/2013/05/gambar43.png"><img class="size-full wp-image-1605" alt="CPU Sampling Pada Aplikasi Versi Multi Thread" src="fork_join%20_%20The%20Solid%20Snake_files/gambar43.png"></a><p class="wp-caption-text">CPU Sampling Pada Aplikasi Versi Multi Thread</p></div>
+<p>Terlihat bahwa waktu yang dibutuhkan oleh <strong>MultiThread.java</strong> hanya 7,1 detik;&nbsp; bandingkan dengan <strong>SingleThread.java</strong>
+ yang membutuhkan 24,6 detik.&nbsp;&nbsp; Peningkatan yang terjadi 
+mencapai 71 %.&nbsp; Ini adalah sebuah selisih yang cukup jauh.</p>
+<p>Untuk membuktikan bahwa ini adalah aplikasi <em>multithreading</em>, saya akan melakukan <em>profiling</em> untuk me-monitor <em>thread</em>, dimana hasilnya akan terlihat seperti pada gambar berikut ini:</p>
+<div data-shortcode="caption" id="attachment_1607" style="width: 630px" class="wp-caption aligncenter"><a href="https://thesolidsnake.files.wordpress.com/2013/05/gambar54.png"><img class="size-full wp-image-1607" alt="Tampilan Thread Pada Aplikasi Multi Thread" src="fork_join%20_%20The%20Solid%20Snake_files/gambar54.png"></a><p class="wp-caption-text">Tampilan Thread Pada Aplikasi Multi Thread</p></div>
+<p>Pada gambar di atas, selain terdapat thread untuk <strong>main</strong>, juga ada thread <strong>ForkJoinPool-1-worker-1</strong> dan <strong>ForkJoinPool-1-worker-1 </strong>(terlihat
+ bahwa kode program belum maksimal karena masih sedikit yang ‘hijau’ 
+secara bersamaan!).&nbsp; Mereka diciptakan oleh class <code>ForkJoinPool</code> yang dipakai di <strong>MultiThread.java</strong>.&nbsp;&nbsp;
+ Secara default, jumlah thread yang diciptakan berdasarkan jumlah core 
+CPU (prosesor) yang terdeteksi (pada prosesor yang memakai <strong>Hyper-Threading Technology</strong>,
+ yang dipakai adalah jumlah virtual core).&nbsp;&nbsp; Developer dapat 
+menentukan nilai yang berbeda dengan melewatkan sebuah angka yang 
+mewakili jumlah thread yang akan dibuat (nilai <em>parallelism</em>) di constructor <code>ForkJoinPool</code>.</p>
+<div class="clear"></div>
+
+				</div>
+
+				<div class="post-meta">
+					<p>
+						<span class="categories">Filed under <a href="https://thesolidsnake.wordpress.com/category/java-technology/java-programming-language/" rel="category tag">Java Programming Language</a></span>
+						<span class="tags">Tagged with <a href="https://thesolidsnake.wordpress.com/tag/concurrency/" rel="tag">concurrency</a>, <a href="https://thesolidsnake.wordpress.com/tag/forkjoin/" rel="tag">fork/join</a>, <a href="https://thesolidsnake.wordpress.com/tag/netbeans/" rel="tag">NetBeans</a>, <a href="https://thesolidsnake.wordpress.com/tag/performance/" rel="tag">performance</a></span>					</p>
+				</div>
+
+			</div>
+
+		
+		<div class="navlink">
+			<div class="nav-previous"><p></p></div>
+			<div class="nav-next"><p></p></div>
+		</div>
+
+	</div>
+
+<div id="sidebar">
+
+	<div id="categories-422845191" class="widget widget_categories"><h4>Kategori</h4>		<ul>
+	<li class="cat-item cat-item-475"><a href="https://thesolidsnake.wordpress.com/category/database/" title="Semua tulisan yang berhubungan dengan database seperti Oracle Database, MySQL Server, dsb.">Database</a> (93)
+<ul class="children">
+	<li class="cat-item cat-item-4419"><a href="https://thesolidsnake.wordpress.com/category/database/mysql/">MySQL</a> (8)
+</li>
+	<li class="cat-item cat-item-22319505"><a href="https://thesolidsnake.wordpress.com/category/database/nosql/">NoSQL</a> (1)
+</li>
+	<li class="cat-item cat-item-783555"><a href="https://thesolidsnake.wordpress.com/category/database/oracle-database/" title="Semua tulisan yang berhubungan dengan Oracle Database.">Oracle Database</a> (72)
+</li>
+	<li class="cat-item cat-item-63441525"><a href="https://thesolidsnake.wordpress.com/category/database/oracle-timesten/" title="Semua tulisan yang berhubungan dengan Oracle TimesTen In-Memory Database">Oracle TimesTen</a> (12)
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-883"><a href="https://thesolidsnake.wordpress.com/category/groovy/" title="Semua tulisan yang berhubungan dengan bahasa pemograman Groovy.">Groovy</a> (67)
+<ul class="children">
+	<li class="cat-item cat-item-1204152"><a href="https://thesolidsnake.wordpress.com/category/groovy/griffon/" title="Semua tulisan yang berhubungan dengan framework Griffon.">Griffon</a> (54)
+</li>
+	<li class="cat-item cat-item-179001239"><a href="https://thesolidsnake.wordpress.com/category/groovy/groovy-languange/" title="Bahasa pemograman Groovy">Groovy Languange</a> (8)
+</li>
+	<li class="cat-item cat-item-179001795"><a href="https://thesolidsnake.wordpress.com/category/groovy/groovy-tools-libraries/" title="Tools &amp; Libraries Untuk Groovy">Groovy Tools &amp; Libraries</a> (4)
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-12930"><a href="https://thesolidsnake.wordpress.com/category/java-technology/" title="Semua tulisan yang berhubungan dengan pemograman Java dan teknologi yang berkaitan dengan Java, baik Java SE, Java EE, maupun Java ME.">Java Technology</a> (129)
+<ul class="children">
+	<li class="cat-item cat-item-287207"><a href="https://thesolidsnake.wordpress.com/category/java-technology/java-enterprise-edition/" title="Semua tulisan yang berhubungan dengan Java Enterprise Edition.">Java Enterprise Edition</a> (16)
+</li>
+	<li class="cat-item cat-item-170107884"><a href="https://thesolidsnake.wordpress.com/category/java-technology/java-frameworks-libraries/" title="Semua tulisan yang berhubungan dengan framework dan APIs yang tidak termasuk dalam distribusi Java, seperti Spring, Strut, iTEXT, dsb.">Java Frameworks &amp; Libraries</a> (69)
+</li>
+	<li class="cat-item cat-item-133248283"><a href="https://thesolidsnake.wordpress.com/category/java-technology/java-ide-tools/" title="Semua tulisan yang berhubungan dengan IDE yang dapat dipergunakan untuk pengembangan aplikasi berbasis Java, seperti Eclipse dan pengembangan plug-in dengan Eclipse.">Java IDE &amp; Tools</a> (24)
+</li>
+	<li class="cat-item cat-item-4505536"><a href="https://thesolidsnake.wordpress.com/category/java-technology/java-micro-edition/">Java Micro Edition</a> (5)
+</li>
+	<li class="cat-item cat-item-6257908"><a href="https://thesolidsnake.wordpress.com/category/java-technology/java-programming-language/" title="Semua tulisan yang berhubungan dengan bahasa pemograman Java dan teknik-teknik yang dipakai dalam pemograman Java.">Java Programming Language</a> (22)
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-10740"><a href="https://thesolidsnake.wordpress.com/category/lain-lain/" title="Semua tulisan dalam kategori lainnya.">Lain-Lain</a> (43)
+<ul class="children">
+	<li class="cat-item cat-item-93517"><a href="https://thesolidsnake.wordpress.com/category/lain-lain/algoritma/">Algoritma</a> (3)
+</li>
+	<li class="cat-item cat-item-14163"><a href="https://thesolidsnake.wordpress.com/category/lain-lain/computer-hardware/" title="Semua tulisan yang berhubungan dengan perangkat keras komputer dan pemograman tingkat rendah seperti assembly.">Computer Hardware</a> (4)
+</li>
+	<li class="cat-item cat-item-298573"><a href="https://thesolidsnake.wordpress.com/category/lain-lain/computer-networking/" title="Semua tulisan yang berhubungan dengan computer networking seperti IP networking.">Computer Networking</a> (11)
+</li>
+	<li class="cat-item cat-item-11176"><a href="https://thesolidsnake.wordpress.com/category/lain-lain/software-engineering/" title="Semua tulisan yang berhubungan dengan software engineering dan cabang-cabangnya.">Software Engineering</a> (25)
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-5495"><a href="https://thesolidsnake.wordpress.com/category/operating-system/" title="Semua tulisan yang berhubungan dengan sistem operasi, seperti penggunaan sistem operasi atau pengembangan sistem operasi tersebut.">Operating System</a> (45)
+<ul class="children">
+	<li class="cat-item cat-item-610"><a href="https://thesolidsnake.wordpress.com/category/operating-system/linux/" title="Semua tulisan yang berhubungan dengan sistem operasi Linux.">Linux</a> (17)
+</li>
+	<li class="cat-item cat-item-729864"><a href="https://thesolidsnake.wordpress.com/category/operating-system/windows-7/" title="Semua tulisan yang berhubungan dengan sistem operasi Windows 7.">Windows 7</a> (28)
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-170503127"><a href="https://thesolidsnake.wordpress.com/category/pemograman-lainnya/" title="Semua tulisan yang berhubungan dengan bahasa pemograman DSL atau bahasa pemograman lain seperti Python, Ruby, R dan sebagainya.">Pemograman Lainnya</a> (60)
+<ul class="children">
+	<li class="cat-item cat-item-641922"><a href="https://thesolidsnake.wordpress.com/category/pemograman-lainnya/android/" title="Semua tulisan yang berkaitan dengan pemograman di Android.">Android</a> (24)
+</li>
+	<li class="cat-item cat-item-6595"><a href="https://thesolidsnake.wordpress.com/category/pemograman-lainnya/assembly/">Assembly</a> (4)
+</li>
+	<li class="cat-item cat-item-14056"><a href="https://thesolidsnake.wordpress.com/category/pemograman-lainnya/c-sharp/" title="Semua tulisan yang berkaitan dengan pemograman C#">C Sharp</a> (17)
+</li>
+	<li class="cat-item cat-item-10189"><a href="https://thesolidsnake.wordpress.com/category/pemograman-lainnya/r/" title="Artikel yang berhubungan dengan bahasa R.">R</a> (6)
+</li>
+	<li class="cat-item cat-item-87493"><a href="https://thesolidsnake.wordpress.com/category/pemograman-lainnya/visual-c/" title="Semua tulisan yang berkaitan dengan pemograman Visual C++">Visual C++</a> (9)
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-458"><a href="https://thesolidsnake.wordpress.com/category/php/">PHP</a> (29)
+<ul class="children">
+	<li class="cat-item cat-item-170520939"><a href="https://thesolidsnake.wordpress.com/category/php/php-frameworks-libraries/">PHP Frameworks &amp; Libraries</a> (20)
+</li>
+	<li class="cat-item cat-item-12976159"><a href="https://thesolidsnake.wordpress.com/category/php/php-programming-language/">PHP Programming Language</a> (9)
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-19148886"><a href="https://thesolidsnake.wordpress.com/category/web-front-end/" title="Semua tulisan yang berhubungan dengan pemograman web di sisi front-end yang berhubungan dengan tampilan, seperti JavaScript, jQuery,  jqGrid, dan sebagainya.">Web Front End</a> (47)
+<ul class="children">
+	<li class="cat-item cat-item-112392493"><a href="https://thesolidsnake.wordpress.com/category/web-front-end/javascript-web-front-end/" title="Semua tulisan yang berhubungan dengan JavaScript">JavaScript</a> (18)
+</li>
+	<li class="cat-item cat-item-2133618"><a href="https://thesolidsnake.wordpress.com/category/web-front-end/javascript-libraries/" title="Semua tulisan yang berhubungan dengan framework dan APIs di web front-end seperti jQuery, jQuery UI dan sebagainya.">JavaScript Libraries</a> (13)
+</li>
+	<li class="cat-item cat-item-132991840"><a href="https://thesolidsnake.wordpress.com/category/web-front-end/web-front-end-tools/" title="Tulisan yang berkaitan dengan tools yang digunakan dalam pengembangan web front end.">Web Front-End Tools</a> (21)
+</li>
+</ul>
+</li>
+		</ul>
+</div>		<div id="recent-posts-2" class="widget widget_recent_entries">		<h4>Pos-pos Terakhir</h4>		<ul>
+					<li>
+				<a href="https://thesolidsnake.wordpress.com/2015/05/10/memakai-graph-database-dengan-neo4j/">Memakai Graph Database Dengan&nbsp;Neo4j</a>
+							<span class="post-date">10 Mei 2015</span>
+						</li>
+					<li>
+				<a href="https://thesolidsnake.wordpress.com/2015/05/08/membuat-fitur-produk-serupa-dengan-predictionio/">Membuat Fitur “Produk Serupa” Dengan&nbsp;PredictionIO</a>
+							<span class="post-date">08 Mei 2015</span>
+						</li>
+					<li>
+				<a href="https://thesolidsnake.wordpress.com/2015/05/06/belajar-memakai-specification-di-spring-data-jpa/">Belajar Memakai Specification Di Spring Data&nbsp;JPA</a>
+							<span class="post-date">06 Mei 2015</span>
+						</li>
+					<li>
+				<a href="https://thesolidsnake.wordpress.com/2015/05/04/belajar-membuat-aplikasi-web-dengan-spring-framework/">Belajar Membuat Aplikasi Web Dengan Spring&nbsp;Framework</a>
+							<span class="post-date">04 Mei 2015</span>
+						</li>
+					<li>
+				<a href="https://thesolidsnake.wordpress.com/2015/04/09/mematikan-kamera-pada-perangkat-android-dengan-device-administrator-api/">Mematikan Kamera Pada Perangkat Android Dengan Device Administrator&nbsp;API</a>
+							<span class="post-date">09 April 2015</span>
+						</li>
+					<li>
+				<a href="https://thesolidsnake.wordpress.com/2015/04/08/membuat-keyboard-jarak-jauh-untuk-android/">Membuat Keyboard Jarak Jauh Untuk&nbsp;Android</a>
+							<span class="post-date">08 April 2015</span>
+						</li>
+					<li>
+				<a href="https://thesolidsnake.wordpress.com/2015/04/06/belajar-membuat-live-wallpaper-untuk-android/">Belajar Membuat Live Wallpaper Untuk&nbsp;Android</a>
+							<span class="post-date">06 April 2015</span>
+						</li>
+					<li>
+				<a href="https://thesolidsnake.wordpress.com/2015/04/04/belajar-membaca-nilai-sensor-accelerometer-di-android/">Belajar Membaca Nilai Sensor Accelerometer Di&nbsp;Android</a>
+							<span class="post-date">04 April 2015</span>
+						</li>
+					<li>
+				<a href="https://thesolidsnake.wordpress.com/2015/04/01/menampilkan-peta-dengan-google-maps-api/">Menampilkan Peta Dengan Google Maps&nbsp;API</a>
+							<span class="post-date">01 April 2015</span>
+						</li>
+					<li>
+				<a href="https://thesolidsnake.wordpress.com/2015/03/28/memakai-database-sqlite-di-android/">Memakai Database SQLite Di&nbsp;Android</a>
+							<span class="post-date">28 Maret 2015</span>
+						</li>
+					<li>
+				<a href="https://thesolidsnake.wordpress.com/2015/03/25/mencari-arah-dengan-kompas-digital-di-android/">Mencari Arah Dengan Kompas Digital Di&nbsp;Android</a>
+							<span class="post-date">25 Maret 2015</span>
+						</li>
+					<li>
+				<a href="https://thesolidsnake.wordpress.com/2015/03/24/mencari-lokasi-dengan-gps-di-android/">Mencari Lokasi Dengan GPS Di&nbsp;Android</a>
+							<span class="post-date">24 Maret 2015</span>
+						</li>
+					<li>
+				<a href="https://thesolidsnake.wordpress.com/2015/03/18/mengatur-wilayah-focus-pada-kamera-di-android/">Mengatur Wilayah Focus Pada Kamera Di&nbsp;Android</a>
+							<span class="post-date">18 Maret 2015</span>
+						</li>
+					<li>
+				<a href="https://thesolidsnake.wordpress.com/2015/03/16/memakai-efek-warna-di-kamera-pada-android/">Memakai Efek Warna Di Kamera Pada&nbsp;Android</a>
+							<span class="post-date">16 Maret 2015</span>
+						</li>
+					<li>
+				<a href="https://thesolidsnake.wordpress.com/2015/03/13/membuat-aplikasi-android-yang-diam-diam-merekam-video/">Membuat Aplikasi Android Yang Diam-Diam Merekam&nbsp;Video</a>
+							<span class="post-date">13 Maret 2015</span>
+						</li>
+					<li>
+				<a href="https://thesolidsnake.wordpress.com/2015/03/11/membaca-suara-dengan-perangkat-android/">Membaca Suara Dengan Perangkat&nbsp;Android</a>
+							<span class="post-date">11 Maret 2015</span>
+						</li>
+					<li>
+				<a href="https://thesolidsnake.wordpress.com/2015/03/09/menggambar-dengan-surfaceview-di-android/">Menggambar Dengan SurfaceView Di&nbsp;Android</a>
+							<span class="post-date">09 Maret 2015</span>
+						</li>
+					<li>
+				<a href="https://thesolidsnake.wordpress.com/2015/03/08/menggambar-dengan-canvas-di-android/">Menggambar Dengan Canvas Di&nbsp;Android</a>
+							<span class="post-date">08 Maret 2015</span>
+						</li>
+					<li>
+				<a href="https://thesolidsnake.wordpress.com/2015/02/25/membuat-animasi-pada-view-di-android/">Membuat Animasi Pada View Di&nbsp;Android</a>
+							<span class="post-date">25 Februari 2015</span>
+						</li>
+					<li>
+				<a href="https://thesolidsnake.wordpress.com/2015/02/19/belajar-membuat-widget-di-android/">Belajar Membuat Widget Di&nbsp;Android</a>
+							<span class="post-date">19 Februari 2015</span>
+						</li>
+				</ul>
+		</div>		<div id="archives-2" class="widget widget_archive"><h4>Arsip</h4>		<label class="screen-reader-text" for="archives-dropdown-2">Arsip</label>
+		<select id="archives-dropdown-2" name="archive-dropdown" onchange="document.location.href=this.options[this.selectedIndex].value;">
+			
+			<option selected="selected" value="">Pilih Bulan</option>
+				<option value="https://thesolidsnake.wordpress.com/2015/05/"> Mei 2015 </option>
+	<option value="https://thesolidsnake.wordpress.com/2015/04/"> April 2015 </option>
+	<option value="https://thesolidsnake.wordpress.com/2015/03/"> Maret 2015 </option>
+	<option value="https://thesolidsnake.wordpress.com/2015/02/"> Februari 2015 </option>
+	<option value="https://thesolidsnake.wordpress.com/2015/01/"> Januari 2015 </option>
+	<option value="https://thesolidsnake.wordpress.com/2014/12/"> Desember 2014 </option>
+	<option value="https://thesolidsnake.wordpress.com/2014/11/"> November 2014 </option>
+	<option value="https://thesolidsnake.wordpress.com/2014/10/"> Oktober 2014 </option>
+	<option value="https://thesolidsnake.wordpress.com/2014/09/"> September 2014 </option>
+	<option value="https://thesolidsnake.wordpress.com/2014/08/"> Agustus 2014 </option>
+	<option value="https://thesolidsnake.wordpress.com/2014/07/"> Juli 2014 </option>
+	<option value="https://thesolidsnake.wordpress.com/2014/06/"> Juni 2014 </option>
+	<option value="https://thesolidsnake.wordpress.com/2014/05/"> Mei 2014 </option>
+	<option value="https://thesolidsnake.wordpress.com/2014/03/"> Maret 2014 </option>
+	<option value="https://thesolidsnake.wordpress.com/2014/02/"> Februari 2014 </option>
+	<option value="https://thesolidsnake.wordpress.com/2014/01/"> Januari 2014 </option>
+	<option value="https://thesolidsnake.wordpress.com/2013/12/"> Desember 2013 </option>
+	<option value="https://thesolidsnake.wordpress.com/2013/11/"> November 2013 </option>
+	<option value="https://thesolidsnake.wordpress.com/2013/10/"> Oktober 2013 </option>
+	<option value="https://thesolidsnake.wordpress.com/2013/09/"> September 2013 </option>
+	<option value="https://thesolidsnake.wordpress.com/2013/08/"> Agustus 2013 </option>
+	<option value="https://thesolidsnake.wordpress.com/2013/07/"> Juli 2013 </option>
+	<option value="https://thesolidsnake.wordpress.com/2013/06/"> Juni 2013 </option>
+	<option value="https://thesolidsnake.wordpress.com/2013/05/"> Mei 2013 </option>
+	<option value="https://thesolidsnake.wordpress.com/2013/04/"> April 2013 </option>
+	<option value="https://thesolidsnake.wordpress.com/2013/03/"> Maret 2013 </option>
+	<option value="https://thesolidsnake.wordpress.com/2013/02/"> Februari 2013 </option>
+	<option value="https://thesolidsnake.wordpress.com/2013/01/"> Januari 2013 </option>
+	<option value="https://thesolidsnake.wordpress.com/2012/12/"> Desember 2012 </option>
+	<option value="https://thesolidsnake.wordpress.com/2012/11/"> November 2012 </option>
+	<option value="https://thesolidsnake.wordpress.com/2012/10/"> Oktober 2012 </option>
+	<option value="https://thesolidsnake.wordpress.com/2012/09/"> September 2012 </option>
+	<option value="https://thesolidsnake.wordpress.com/2012/08/"> Agustus 2012 </option>
+	<option value="https://thesolidsnake.wordpress.com/2012/07/"> Juli 2012 </option>
+	<option value="https://thesolidsnake.wordpress.com/2012/06/"> Juni 2012 </option>
+	<option value="https://thesolidsnake.wordpress.com/2012/05/"> Mei 2012 </option>
+	<option value="https://thesolidsnake.wordpress.com/2012/02/"> Februari 2012 </option>
+	<option value="https://thesolidsnake.wordpress.com/2012/01/"> Januari 2012 </option>
+	<option value="https://thesolidsnake.wordpress.com/2011/11/"> November 2011 </option>
+	<option value="https://thesolidsnake.wordpress.com/2011/10/"> Oktober 2011 </option>
+	<option value="https://thesolidsnake.wordpress.com/2011/08/"> Agustus 2011 </option>
+	<option value="https://thesolidsnake.wordpress.com/2011/07/"> Juli 2011 </option>
+	<option value="https://thesolidsnake.wordpress.com/2011/06/"> Juni 2011 </option>
+	<option value="https://thesolidsnake.wordpress.com/2011/02/"> Februari 2011 </option>
+	<option value="https://thesolidsnake.wordpress.com/2010/12/"> Desember 2010 </option>
+	<option value="https://thesolidsnake.wordpress.com/2010/10/"> Oktober 2010 </option>
+	<option value="https://thesolidsnake.wordpress.com/2010/09/"> September 2010 </option>
+	<option value="https://thesolidsnake.wordpress.com/2010/08/"> Agustus 2010 </option>
+	<option value="https://thesolidsnake.wordpress.com/2010/02/"> Februari 2010 </option>
+	<option value="https://thesolidsnake.wordpress.com/2010/01/"> Januari 2010 </option>
+	<option value="https://thesolidsnake.wordpress.com/2009/10/"> Oktober 2009 </option>
+	<option value="https://thesolidsnake.wordpress.com/2009/09/"> September 2009 </option>
+	<option value="https://thesolidsnake.wordpress.com/2009/08/"> Agustus 2009 </option>
+	<option value="https://thesolidsnake.wordpress.com/2009/07/"> Juli 2009 </option>
+	<option value="https://thesolidsnake.wordpress.com/2009/06/"> Juni 2009 </option>
+	<option value="https://thesolidsnake.wordpress.com/2009/05/"> Mei 2009 </option>
+	<option value="https://thesolidsnake.wordpress.com/2009/04/"> April 2009 </option>
+	<option value="https://thesolidsnake.wordpress.com/2009/01/"> Januari 2009 </option>
+	<option value="https://thesolidsnake.wordpress.com/2008/12/"> Desember 2008 </option>
+	<option value="https://thesolidsnake.wordpress.com/2008/11/"> November 2008 </option>
+	<option value="https://thesolidsnake.wordpress.com/2008/10/"> Oktober 2008 </option>
+	<option value="https://thesolidsnake.wordpress.com/2008/09/"> September 2008 </option>
+
+		</select>
+		</div><div id="wp_tag_cloud-2" class="widget wp_widget_tag_cloud"><h4></h4><div style="overflow:hidden"><a href="https://thesolidsnake.wordpress.com/tag/active-template-library/" class="tag-link-43967324" title="4 topik" style="font-size: 9.3461538461538pt;">Active Template Library</a>
+<a href="https://thesolidsnake.wordpress.com/tag/analysis-pattern/" class="tag-link-16509627" title="5 topik" style="font-size: 10.423076923077pt;">analysis pattern</a>
+<a href="https://thesolidsnake.wordpress.com/tag/apache-maven/" class="tag-link-7372522" title="4 topik" style="font-size: 9.3461538461538pt;">Apache Maven</a>
+<a href="https://thesolidsnake.wordpress.com/tag/apache-tomcat/" class="tag-link-137489" title="7 topik" style="font-size: 12.038461538462pt;">Apache Tomcat</a>
+<a href="https://thesolidsnake.wordpress.com/tag/aptana-studio/" class="tag-link-5494582" title="17 topik" style="font-size: 16.884615384615pt;">Aptana Studio</a>
+<a href="https://thesolidsnake.wordpress.com/tag/asm/" class="tag-link-52145" title="9 topik" style="font-size: 13.384615384615pt;">ASM</a>
+<a href="https://thesolidsnake.wordpress.com/tag/audio/" class="tag-link-413" title="3 topik" style="font-size: 8pt;">audio</a>
+<a href="https://thesolidsnake.wordpress.com/tag/auditing/" class="tag-link-84847" title="5 topik" style="font-size: 10.423076923077pt;">auditing</a>
+<a href="https://thesolidsnake.wordpress.com/tag/backup/" class="tag-link-5469" title="3 topik" style="font-size: 8pt;">backup</a>
+<a href="https://thesolidsnake.wordpress.com/tag/closure/" class="tag-link-126174" title="5 topik" style="font-size: 10.423076923077pt;">closure</a>
+<a href="https://thesolidsnake.wordpress.com/tag/compiler/" class="tag-link-9565" title="4 topik" style="font-size: 9.3461538461538pt;">compiler</a>
+<a href="https://thesolidsnake.wordpress.com/tag/component-object-model/" class="tag-link-10320423" title="4 topik" style="font-size: 9.3461538461538pt;">Component Object Model</a>
+<a href="https://thesolidsnake.wordpress.com/tag/computer-graphics/" class="tag-link-20055" title="6 topik" style="font-size: 11.365384615385pt;">computer graphics</a>
+<a href="https://thesolidsnake.wordpress.com/tag/concurrency/" class="tag-link-214618" title="5 topik" style="font-size: 10.423076923077pt;">concurrency</a>
+<a href="https://thesolidsnake.wordpress.com/tag/connectorc/" class="tag-link-105229155" title="4 topik" style="font-size: 9.3461538461538pt;">Connector/C++</a>
+<a href="https://thesolidsnake.wordpress.com/tag/database-administration/" class="tag-link-577011" title="13 topik" style="font-size: 15.403846153846pt;">database administration</a>
+<a href="https://thesolidsnake.wordpress.com/tag/eclipse/" class="tag-link-18466" title="23 topik" style="font-size: 18.5pt;">Eclipse</a>
+<a href="https://thesolidsnake.wordpress.com/tag/eclipse-plugin/" class="tag-link-820356" title="16 topik" style="font-size: 16.480769230769pt;">Eclipse Plugin</a>
+<a href="https://thesolidsnake.wordpress.com/tag/eclipse-rcp/" class="tag-link-368354" title="4 topik" style="font-size: 9.3461538461538pt;">Eclipse RCP</a>
+<a href="https://thesolidsnake.wordpress.com/tag/git/" class="tag-link-209196" title="5 topik" style="font-size: 10.423076923077pt;">Git</a>
+<a href="https://thesolidsnake.wordpress.com/tag/gradle/" class="tag-link-8644597" title="4 topik" style="font-size: 9.3461538461538pt;">Gradle</a>
+<a href="https://thesolidsnake.wordpress.com/tag/hibernate-jpa/" class="tag-link-25983930" title="8 topik" style="font-size: 12.711538461538pt;">Hibernate JPA</a>
+<a href="https://thesolidsnake.wordpress.com/tag/html5/" class="tag-link-53242" title="7 topik" style="font-size: 12.038461538462pt;">HTML5</a>
+<a href="https://thesolidsnake.wordpress.com/tag/in-memory-database/" class="tag-link-415784" title="12 topik" style="font-size: 14.865384615385pt;">in-memory database</a>
+<a href="https://thesolidsnake.wordpress.com/tag/intellij-idea/" class="tag-link-260955" title="5 topik" style="font-size: 10.423076923077pt;">IntelliJ IDEA</a>
+<a href="https://thesolidsnake.wordpress.com/tag/ireport/" class="tag-link-1818543" title="3 topik" style="font-size: 8pt;">iReport</a>
+<a href="https://thesolidsnake.wordpress.com/tag/itext/" class="tag-link-664489" title="5 topik" style="font-size: 10.423076923077pt;">iTEXT</a>
+<a href="https://thesolidsnake.wordpress.com/tag/jasperreports/" class="tag-link-703001" title="4 topik" style="font-size: 9.3461538461538pt;">JasperReports</a>
+<a href="https://thesolidsnake.wordpress.com/tag/java-persistence-api/" class="tag-link-2553635" title="24 topik" style="font-size: 18.769230769231pt;">Java Persistence API</a>
+<a href="https://thesolidsnake.wordpress.com/tag/jdbc/" class="tag-link-12920" title="8 topik" style="font-size: 12.711538461538pt;">JDBC</a>
+<a href="https://thesolidsnake.wordpress.com/tag/jetty/" class="tag-link-403647" title="4 topik" style="font-size: 9.3461538461538pt;">Jetty</a>
+<a href="https://thesolidsnake.wordpress.com/tag/jqgrid/" class="tag-link-6067296" title="4 topik" style="font-size: 9.3461538461538pt;">jqGrid</a>
+<a href="https://thesolidsnake.wordpress.com/tag/jquery/" class="tag-link-203308" title="10 topik" style="font-size: 13.923076923077pt;">jQuery</a>
+<a href="https://thesolidsnake.wordpress.com/tag/jquery-ui/" class="tag-link-8431750" title="4 topik" style="font-size: 9.3461538461538pt;">jQuery UI</a>
+<a href="https://thesolidsnake.wordpress.com/tag/jsf/" class="tag-link-51468" title="3 topik" style="font-size: 8pt;">JSF</a>
+<a href="https://thesolidsnake.wordpress.com/tag/kali-linux/" class="tag-link-139664097" title="4 topik" style="font-size: 9.3461538461538pt;">Kali Linux</a>
+<a href="https://thesolidsnake.wordpress.com/tag/laravel/" class="tag-link-86504237" title="8 topik" style="font-size: 12.711538461538pt;">Laravel</a>
+<a href="https://thesolidsnake.wordpress.com/tag/linux/" class="tag-link-610" title="4 topik" style="font-size: 9.3461538461538pt;">Linux</a>
+<a href="https://thesolidsnake.wordpress.com/tag/microsoft-excel/" class="tag-link-4834" title="4 topik" style="font-size: 9.3461538461538pt;">Microsoft Excel</a>
+<a href="https://thesolidsnake.wordpress.com/tag/netbeans/" class="tag-link-12962" title="9 topik" style="font-size: 13.384615384615pt;">NetBeans</a>
+<a href="https://thesolidsnake.wordpress.com/tag/object-database/" class="tag-link-8194902" title="3 topik" style="font-size: 8pt;">object database</a>
+<a href="https://thesolidsnake.wordpress.com/tag/object-oriented-programming/" class="tag-link-20106" title="15 topik" style="font-size: 16.076923076923pt;">Object Oriented Programming</a>
+<a href="https://thesolidsnake.wordpress.com/tag/oracle-text/" class="tag-link-694693" title="3 topik" style="font-size: 8pt;">Oracle Text</a>
+<a href="https://thesolidsnake.wordpress.com/tag/oracle-workflow/" class="tag-link-6915709" title="3 topik" style="font-size: 8pt;">Oracle Workflow</a>
+<a href="https://thesolidsnake.wordpress.com/tag/performance/" class="tag-link-1930" title="12 topik" style="font-size: 14.865384615385pt;">performance</a>
+<a href="https://thesolidsnake.wordpress.com/tag/plsql/" class="tag-link-51018" title="11 topik" style="font-size: 14.461538461538pt;">PL/SQL</a>
+<a href="https://thesolidsnake.wordpress.com/tag/powershell/" class="tag-link-178495" title="5 topik" style="font-size: 10.423076923077pt;">PowerShell</a>
+<a href="https://thesolidsnake.wordpress.com/tag/protocol/" class="tag-link-177410" title="7 topik" style="font-size: 12.038461538462pt;">protocol</a>
+<a href="https://thesolidsnake.wordpress.com/tag/quartz/" class="tag-link-322544" title="3 topik" style="font-size: 8pt;">Quartz</a>
+<a href="https://thesolidsnake.wordpress.com/tag/reporting/" class="tag-link-38379" title="3 topik" style="font-size: 8pt;">reporting</a>
+<a href="https://thesolidsnake.wordpress.com/tag/scheduler/" class="tag-link-464101" title="3 topik" style="font-size: 8pt;">scheduler</a>
+<a href="https://thesolidsnake.wordpress.com/tag/security/" class="tag-link-801" title="13 topik" style="font-size: 15.403846153846pt;">security</a>
+<a href="https://thesolidsnake.wordpress.com/tag/simple-escp/" class="tag-link-252590892" title="4 topik" style="font-size: 9.3461538461538pt;">simple-escp</a>
+<a href="https://thesolidsnake.wordpress.com/tag/simple-jpa/" class="tag-link-159495621" title="43 topik" style="font-size: 22pt;">simple-jpa</a>
+<a href="https://thesolidsnake.wordpress.com/tag/snort/" class="tag-link-58396" title="4 topik" style="font-size: 9.3461538461538pt;">Snort</a>
+<a href="https://thesolidsnake.wordpress.com/tag/spring-data/" class="tag-link-51694791" title="6 topik" style="font-size: 11.365384615385pt;">Spring Data</a>
+<a href="https://thesolidsnake.wordpress.com/tag/spring-framework/" class="tag-link-68724" title="8 topik" style="font-size: 12.711538461538pt;">Spring Framework</a>
+<a href="https://thesolidsnake.wordpress.com/tag/spring-web-mvc/" class="tag-link-14233432" title="7 topik" style="font-size: 12.038461538462pt;">Spring Web MVC</a>
+<a href="https://thesolidsnake.wordpress.com/tag/sql/" class="tag-link-10346" title="14 topik" style="font-size: 15.807692307692pt;">SQL</a>
+<a href="https://thesolidsnake.wordpress.com/tag/statistika/" class="tag-link-140149" title="5 topik" style="font-size: 10.423076923077pt;">statistika</a>
+<a href="https://thesolidsnake.wordpress.com/tag/swing/" class="tag-link-8688" title="23 topik" style="font-size: 18.5pt;">Swing</a>
+<a href="https://thesolidsnake.wordpress.com/tag/swingx/" class="tag-link-1140971" title="6 topik" style="font-size: 11.365384615385pt;">SwingX</a>
+<a href="https://thesolidsnake.wordpress.com/tag/system-programming/" class="tag-link-650038" title="3 topik" style="font-size: 8pt;">system programming</a>
+<a href="https://thesolidsnake.wordpress.com/tag/testing/" class="tag-link-12" title="11 topik" style="font-size: 14.461538461538pt;">testing</a>
+<a href="https://thesolidsnake.wordpress.com/tag/uml/" class="tag-link-3616" title="8 topik" style="font-size: 12.711538461538pt;">UML</a>
+<a href="https://thesolidsnake.wordpress.com/tag/visual-studio-2010/" class="tag-link-11664360" title="18 topik" style="font-size: 17.153846153846pt;">Visual Studio 2010</a>
+<a href="https://thesolidsnake.wordpress.com/tag/web-services/" class="tag-link-2358" title="9 topik" style="font-size: 13.384615384615pt;">web services</a>
+<a href="https://thesolidsnake.wordpress.com/tag/widget/" class="tag-link-1368" title="5 topik" style="font-size: 10.423076923077pt;">widget</a>
+<a href="https://thesolidsnake.wordpress.com/tag/windows-debugger/" class="tag-link-43835720" title="4 topik" style="font-size: 9.3461538461538pt;">Windows Debugger</a>
+<a href="https://thesolidsnake.wordpress.com/tag/windows-workflow-foundation/" class="tag-link-20062" title="4 topik" style="font-size: 9.3461538461538pt;">Windows Workflow Foundation</a>
+<a href="https://thesolidsnake.wordpress.com/tag/winpcap/" class="tag-link-1103353" title="4 topik" style="font-size: 9.3461538461538pt;">WinPcap</a>
+<a href="https://thesolidsnake.wordpress.com/tag/xml/" class="tag-link-6852" title="4 topik" style="font-size: 9.3461538461538pt;">XML</a>
+<a href="https://thesolidsnake.wordpress.com/tag/xml-db/" class="tag-link-513870" title="4 topik" style="font-size: 9.3461538461538pt;">XML DB</a>
+<a href="https://thesolidsnake.wordpress.com/tag/zend-server/" class="tag-link-20659004" title="5 topik" style="font-size: 10.423076923077pt;">Zend Server</a>
+<a href="https://thesolidsnake.wordpress.com/tag/zend-studio/" class="tag-link-2446790" title="5 topik" style="font-size: 10.423076923077pt;">Zend Studio</a></div></div><div id="top-posts-3" class="widget widget_top-posts"><h4>Top Posts</h4><ul class="widgets-list-layout no-grav">
+					<li>
+												<a href="https://thesolidsnake.wordpress.com/2013/08/09/mencoba-memakai-android-studio/" title="Mencoba Memakai Android Studio" class="bump-view" data-bump-view="tp">
+							<img src="fork_join%20_%20The%20Solid%20Snake_files/gambar14_002.png" class="widgets-list-layout-blavatar" alt="Mencoba Memakai Android Studio" data-pin-nopin="true">
+						</a>
+						<div class="widgets-list-layout-links">
+							<a href="https://thesolidsnake.wordpress.com/2013/08/09/mencoba-memakai-android-studio/" class="bump-view" data-bump-view="tp">
+								Mencoba Memakai Android Studio							</a>
+						</div>
+											</li>
+									<li>
+												<a href="https://thesolidsnake.wordpress.com/2013/02/19/merancang-sistem-dengan-uml-mulai-dari-mana/" title="Merancang Sistem Dengan UML: Mulai Dari Mana?" class="bump-view" data-bump-view="tp">
+							<img src="fork_join%20_%20The%20Solid%20Snake_files/fig1.jpg" class="widgets-list-layout-blavatar" alt="Merancang Sistem Dengan UML: Mulai Dari Mana?" data-pin-nopin="true">
+						</a>
+						<div class="widgets-list-layout-links">
+							<a href="https://thesolidsnake.wordpress.com/2013/02/19/merancang-sistem-dengan-uml-mulai-dari-mana/" class="bump-view" data-bump-view="tp">
+								Merancang Sistem Dengan UML: Mulai Dari Mana?							</a>
+						</div>
+											</li>
+									<li>
+												<a href="https://thesolidsnake.wordpress.com/2014/05/23/tips-memakai-enterprise-architect-untuk-merancang-domain-model/" title="Tips Memakai Enterprise Architect Untuk Merancang Domain Model" class="bump-view" data-bump-view="tp">
+							<img src="fork_join%20_%20The%20Solid%20Snake_files/gambar19.png" class="widgets-list-layout-blavatar" alt="Tips Memakai Enterprise Architect Untuk Merancang Domain Model" data-pin-nopin="true">
+						</a>
+						<div class="widgets-list-layout-links">
+							<a href="https://thesolidsnake.wordpress.com/2014/05/23/tips-memakai-enterprise-architect-untuk-merancang-domain-model/" class="bump-view" data-bump-view="tp">
+								Tips Memakai Enterprise Architect Untuk Merancang Domain Model							</a>
+						</div>
+											</li>
+									<li>
+												<a href="https://thesolidsnake.wordpress.com/2013/12/17/mencari-password-dengan-kali-linux/" title="Mencari Password Dengan Kali Linux" class="bump-view" data-bump-view="tp">
+							<img src="fork_join%20_%20The%20Solid%20Snake_files/0bf0fdc6fc0326e05910873a1f719b26.jpg" class="widgets-list-layout-blavatar" alt="Mencari Password Dengan Kali Linux" data-pin-nopin="true">
+						</a>
+						<div class="widgets-list-layout-links">
+							<a href="https://thesolidsnake.wordpress.com/2013/12/17/mencari-password-dengan-kali-linux/" class="bump-view" data-bump-view="tp">
+								Mencari Password Dengan Kali Linux							</a>
+						</div>
+											</li>
+									<li>
+												<a href="https://thesolidsnake.wordpress.com/2012/07/04/membuat-web-service-soap-dengan-php-dan-memanggilnya-di-client-java/" title="Membuat Web Service SOAP dengan PHP Dan Memanggilnya Di Client Java" class="bump-view" data-bump-view="tp">
+							<img src="fork_join%20_%20The%20Solid%20Snake_files/gambar11.png" class="widgets-list-layout-blavatar" alt="Membuat Web Service SOAP dengan PHP Dan Memanggilnya Di Client Java" data-pin-nopin="true">
+						</a>
+						<div class="widgets-list-layout-links">
+							<a href="https://thesolidsnake.wordpress.com/2012/07/04/membuat-web-service-soap-dengan-php-dan-memanggilnya-di-client-java/" class="bump-view" data-bump-view="tp">
+								Membuat Web Service SOAP dengan PHP Dan Memanggilnya Di Client Java							</a>
+						</div>
+											</li>
+									<li>
+												<a href="https://thesolidsnake.wordpress.com/2013/05/24/mysql-for-excel-menyatukan-microsoft-excel-dan-database/" title="MySQL for Excel: Menyatukan Microsoft Excel Dan Database" class="bump-view" data-bump-view="tp">
+							<img src="fork_join%20_%20The%20Solid%20Snake_files/gambar15.png" class="widgets-list-layout-blavatar" alt="MySQL for Excel: Menyatukan Microsoft Excel Dan Database" data-pin-nopin="true">
+						</a>
+						<div class="widgets-list-layout-links">
+							<a href="https://thesolidsnake.wordpress.com/2013/05/24/mysql-for-excel-menyatukan-microsoft-excel-dan-database/" class="bump-view" data-bump-view="tp">
+								MySQL for Excel: Menyatukan Microsoft Excel Dan Database							</a>
+						</div>
+											</li>
+									<li>
+												<a href="https://thesolidsnake.wordpress.com/2013/07/11/meningkatkan-kinerja-database-mysql-lama/" title=" Meningkatkan Kinerja Database MySQL Lama" class="bump-view" data-bump-view="tp">
+							<img src="fork_join%20_%20The%20Solid%20Snake_files/gambar1_002.png" class="widgets-list-layout-blavatar" alt=" Meningkatkan Kinerja Database MySQL Lama" data-pin-nopin="true">
+						</a>
+						<div class="widgets-list-layout-links">
+							<a href="https://thesolidsnake.wordpress.com/2013/07/11/meningkatkan-kinerja-database-mysql-lama/" class="bump-view" data-bump-view="tp">
+								 Meningkatkan Kinerja Database MySQL Lama							</a>
+						</div>
+											</li>
+									<li>
+												<a href="https://thesolidsnake.wordpress.com/2013/11/01/emulator-android-dan-dukungan-virtualisasi-di-prosesor/" title="Emulator Android Dan Dukungan Virtualisasi Di Prosesor" class="bump-view" data-bump-view="tp">
+							<img src="fork_join%20_%20The%20Solid%20Snake_files/gambar1.png" class="widgets-list-layout-blavatar" alt="Emulator Android Dan Dukungan Virtualisasi Di Prosesor" data-pin-nopin="true">
+						</a>
+						<div class="widgets-list-layout-links">
+							<a href="https://thesolidsnake.wordpress.com/2013/11/01/emulator-android-dan-dukungan-virtualisasi-di-prosesor/" class="bump-view" data-bump-view="tp">
+								Emulator Android Dan Dukungan Virtualisasi Di Prosesor							</a>
+						</div>
+											</li>
+									<li>
+												<a href="https://thesolidsnake.wordpress.com/2014/07/20/mencetak-ke-printer-dot-matrix-di-java-dengan-simple-escp/" title="Mencetak Ke Printer Dot-Matrix Di Java Dengan simple-escp" class="bump-view" data-bump-view="tp">
+							<img src="fork_join%20_%20The%20Solid%20Snake_files/gambar13.png" class="widgets-list-layout-blavatar" alt="Mencetak Ke Printer Dot-Matrix Di Java Dengan simple-escp" data-pin-nopin="true">
+						</a>
+						<div class="widgets-list-layout-links">
+							<a href="https://thesolidsnake.wordpress.com/2014/07/20/mencetak-ke-printer-dot-matrix-di-java-dengan-simple-escp/" class="bump-view" data-bump-view="tp">
+								Mencetak Ke Printer Dot-Matrix Di Java Dengan simple-escp							</a>
+						</div>
+											</li>
+									<li>
+												<a href="https://thesolidsnake.wordpress.com/2013/09/16/membuat-aplikasi-database-tanpa-coding-dengan-netbeans/" title="Membuat Aplikasi Database Tanpa Coding Dengan NetBeans" class="bump-view" data-bump-view="tp">
+							<img src="fork_join%20_%20The%20Solid%20Snake_files/gambar17.png" class="widgets-list-layout-blavatar" alt="Membuat Aplikasi Database Tanpa Coding Dengan NetBeans" data-pin-nopin="true">
+						</a>
+						<div class="widgets-list-layout-links">
+							<a href="https://thesolidsnake.wordpress.com/2013/09/16/membuat-aplikasi-database-tanpa-coding-dengan-netbeans/" class="bump-view" data-bump-view="tp">
+								Membuat Aplikasi Database Tanpa Coding Dengan NetBeans							</a>
+						</div>
+											</li>
+				</ul>
+</div><div id="pd_top_rated-4" class="widget top_rated"><h4>Top Rated</h4><div id="pd_top_rated_holder" class="pd_top_rated_holder_posts"><p><strong>Posts</strong></p><p><strong><small>All</small></strong> | <a href="javascript:" title="Posts created today" onclick="PDRTJS_TOP.get_top( 'posts', '1' );"><small>Today</small></a> | <a href="javascript:" title="Posts created this week" onclick="PDRTJS_TOP.get_top( 'posts', '7' );"><small>This Week</small></a> | <a href="javascript:" title="Posts created this month" onclick="PDRTJS_TOP.get_top( 'posts', '31' );"><small>This Month</small></a></p> <ul id="top_posts"><li><a href="https://thesolidsnake.wordpress.com/2013/08/09/mencoba-memakai-android-studio/">Mencoba Memakai Android&nbsp;Studio</a><br><strong> 5/5</strong> (3 votes)</li><li><a href="http://thesolidsnake.wordpress.com/2012/01/14/memanggil-dll-dari-php/">Memanggil DLL dari&nbsp;PHP</a><br><strong> 5/5</strong> (2 votes)</li><li><a href="http://thesolidsnake.wordpress.com/2012/05/26/memanggil-web-service-dari-server-java-ee-di-client-php/">Memanggil web service dari server Java EE di client PHP</a><br><strong> 5/5</strong> (2 votes)</li><li><a href="http://thesolidsnake.wordpress.com/2012/07/10/hosting-jsp-gratis-dengan-google-app-engine/">Hosting JSP Gratis Dengan Google App&nbsp;Engine</a><br><strong> 5/5</strong> (2 votes)</li><li><a href="http://thesolidsnake.wordpress.com/2012/11/16/membuat-restful-web-service-dengan-spring-data-rest/">Membuat RESTful Web Service Dengan Spring Data REST</a><br><strong> 5/5</strong> (2 votes)</li><li><a href="https://thesolidsnake.wordpress.com/2013/04/03/membuat-aplikasi-crud-mysql-dalam-10-menit-dengan-griffon/">Membuat Aplikasi CRUD MySQL Dalam 10 Menit Dengan&nbsp;Griffon</a><br><strong> 5/5</strong> (2 votes)</li><li><a href="http://thesolidsnake.wordpress.com/2013/05/21/seberapa-jauh-bedanya-program-yang-multithreading/">Seberapa Jauh Bedanya Program Yang&nbsp;Multithreading?</a><br><strong> 5/5</strong> (2 votes)</li><li><a href="http://thesolidsnake.wordpress.com/2013/08/04/mencetak-object-dengan-jasperreport-merancang-laporan/">Mencetak ‘Object’ Dengan JasperReports: Merancang&nbsp;Laporan</a><br><strong> 5/5</strong> (2 votes)</li><li><a href="https://thesolidsnake.wordpress.com/2014/01/11/membuat-web-service-dengan-windows-communication-foundation-wcf/">Membuat Web Service Dengan Windows Communication Foundation&nbsp;(WCF)</a><br><strong> 5/5</strong> (2 votes)</li><li><a href="https://thesolidsnake.wordpress.com/2014/02/28/a-sample-application-for-simple-jpa-laundry/">A sample application for simple-jpa:&nbsp;laundry</a><br><strong> 5/5</strong> (2 votes)</li><li><a href="http://thesolidsnake.wordpress.com/2010/08/30/boot-process-di-windows-7/">Boot Process di Windows 7</a><br><strong> 5/5</strong> (1 vote)</li><li><a href="http://thesolidsnake.wordpress.com/2012/06/04/memakai-spring-mvc-di-springsource-tool-suite/">Memakai Spring MVC di SpringSource Tool Suite</a><br><strong> 5/5</strong> (1 vote)</li><li><a href="http://thesolidsnake.wordpress.com/2012/08/09/com-dll-akses-mysql-bagian-3-operasi-database-insert/">COM DLL Akses MySQL – Bagian 3: Operasi Database&nbsp;Insert</a><br><strong> 5/5</strong> (1 vote)</li><li><a href="https://thesolidsnake.wordpress.com/2012/11/21/memahami-struktur-kode-program-function-di-jquery/">Memahami struktur kode program function($) di&nbsp;jQuery</a><br><strong> 5/5</strong> (1 vote)</li><li><a href="http://thesolidsnake.wordpress.com/2013/01/19/operasi-crud-database-pada-aplikasi-desktop-dengan-griffon/">Operasi CRUD Database Pada Aplikasi Desktop Dengan&nbsp;Griffon</a><br><strong> 5/5</strong> (1 vote)</li><li><a href="https://thesolidsnake.wordpress.com/2013/04/08/memakai-parameter-konfigurasi-untuk-finders-di-simple-jpa/">Memakai parameter konfigurasi untuk finders di&nbsp;simple-jpa</a><br><strong> 5/5</strong> (1 vote)</li><li><a href="http://thesolidsnake.wordpress.com/2013/06/25/membuat-program-pemutar-musik-dengan-mudah-memakai-jfugue/">Membuat Program Pemutar Musik Dengan Mudah Memakai JFugue</a><br><strong> 5/5</strong> (1 vote)</li><li><a href="https://thesolidsnake.wordpress.com/2013/07/11/meningkatkan-kinerja-database-mysql-lama/">Meningkatkan Kinerja Database MySQL&nbsp;Lama</a><br><strong> 5/5</strong> (1 vote)</li><li><a href="https://thesolidsnake.wordpress.com/2013/07/14/apa-bedanya-merancang-sebuah-class-dan-sebuah-tabel/">Apa Bedanya Merancang Sebuah Class Dan Sebuah Tabel?</a><br><strong> 5/5</strong> (1 vote)</li><li><a href="http://thesolidsnake.wordpress.com/2013/10/14/membuat-dan-mengatur-jtable-glazedlists-dengan-mudah-di-simple-jpa-0-5/">Membuat dan Mengatur JTable + GlazedLists Dengan Mudah Di simple-jpa&nbsp;0.5</a><br><strong> 5/5</strong> (1 vote)</li></ul></div><script language="javascript" src="fork_join%20_%20The%20Solid%20Snake_files/top-rated.js"></script><script language="javascript" type="text/javascript">PDRTJS_TOP = new PDRTJS_RATING_TOP( 1449883, 1449884, 1449885, '100', 20 );PDRTJS_TOP.get_top( 'posts', '0' );</script></div>
+</div>
+</div>
+
+
+<div id="footer">
+	<div class="footerleft">
+		<p><a href="https://id.wordpress.com/?ref=footer_website">Buat situs web atau blog gratis di WordPress.com.</a></p>
+    </div>
+    <div class="footerright">
+	    <a href="https://wordpress.com/themes/enterprise/" title="Pelajari lebih lanjut tentang tema ini">Tema Enterprise</a>.    </div>
+</div>
+
+</div>
+
+<!-- wpcom_wp_footer -->
+	<div style="display:none">
+	</div>
+
+	<div style="bottom: -295px;" id="bit" class="loggedout-follow-normal">
+		<a class="bsub" href="javascript:void(0)"><span id="bsub-text">Ikuti</span></a>
+		<div id="bitsubscribe">
+
+					<h3><label for="loggedout-follow-field">Ikuti “The Solid Snake”</label></h3>
+
+			<form action="https://subscribe.wordpress.com" method="post" accept-charset="utf-8" id="loggedout-follow">
+			<p>Kirimkan setiap pos baru ke Kotak Masuk Anda.</p>
+
+			<p id="loggedout-follow-error" style="display: none;"></p>
+
+						<p class="bit-follow-count">Bergabunglah dengan 57 pengikut lainnya</p>
+			<p><input name="email" placeholder="Masukkan alamat email Anda" id="loggedout-follow-field" type="email"></p>
+
+			<input name="action" value="subscribe" type="hidden">
+			<input name="blog_id" value="4840535" type="hidden">
+			<input name="source" value="https://thesolidsnake.wordpress.com/tag/forkjoin/" type="hidden">
+			<input name="sub-type" value="loggedout-follow" type="hidden">
+
+			<input id="_wpnonce" name="_wpnonce" value="115c29252b" type="hidden"><input name="_wp_http_referer" value="/tag/forkjoin/" type="hidden">
+			<p id="bsub-subscribe-button"><input value="Daftarkan saya" type="submit"></p>
+			</form>
+					<div id="bsub-credit"><a href="https://id.wordpress.com/?ref=lof">Buat situs dengan WordPress.com</a></div>
+		</div><!-- #bitsubscribe -->
+	</div><!-- #bit -->
+<script type="text/javascript" src="fork_join%20_%20The%20Solid%20Snake_files/a_002.js"></script>
+<script type="text/javascript">
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "https://s0.wp.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "https://s0.wp.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?m=1363304414g&amp;ver=3.0.9b";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var JetpackEmojiSettings = {"base_url":"https:\/\/s0.wp.com\/wp-content\/mu-plugins\/emoji\/twemoji\/"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="fork_join%20_%20The%20Solid%20Snake_files/a.js"></script>
+<script type="text/javascript">
+// <![CDATA[
+(function() {
+try{
+  if ( window.external &&'msIsSiteMode' in window.external) {
+    if (window.external.msIsSiteMode()) {
+      var jl = document.createElement('script');
+      jl.type='text/javascript';
+      jl.async=true;
+      jl.src='/wp-content/plugins/ie-sitemode/custom-jumplist.php';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(jl, s);
+    }
+  }
+}catch(e){}
+})();
+// ]]>
+</script><script src="fork_join%20_%20The%20Solid%20Snake_files/w.js" type="text/javascript" async="" defer="defer"></script>
+<script type="text/javascript">
+_tkq = window._tkq || [];
+_stq = window._stq || [];
+_tkq.push(['storeContext', {'blog_id':'4840535','blog_tz':'7','user_lang':'id','blog_lang':'id','user_id':'0'}]);
+_stq.push(['view', {'blog':'4840535','v':'wpcom','tz':'7','user_id':'0','subd':'thesolidsnake'}]);
+_stq.push(['extra', {'crypt':'UE40eW5QN0p8M2Y/RE1LVmwrVi5vQS5fVFtfdHBbPyw1VXIrU3hWLHhmNkZjXy9tUVB0TD0mT2c5dllDUk9HSnNqLnlCalNDYmFbLDY0b3g9cno9YlRtT1AuYUQ/WVVuMixqQVBIVDN5fjlsc2NxS2xzQk5OXWtbZkwwdUQvMWZlSmg4Pz9CfD1sTz18SkZ6SkZrOHp0WkU1bVVUbU5PbU8sTGEraVNWd1tqbkhnby18YzZtVl93fCxxRmxEN0NSZDFZald3WUVqMXU9cWU3OX5HdkdhcXZEa2VKUzY5QX53YzJmbGE9QVZCZixfMGlDRzFOcn4vR0ZFbGw9OUhmbTB+S1djWzlady58OU8vZWVmbUdmLXJZYlEmJWVLfC5fWUpEd3UrTnNvQnc5'}]);
+_stq.push([ 'clickTrackerInit', '4840535', '0' ]);
+	</script>
+<noscript><img src="https://pixel.wp.com/b.gif?v=noscript" style="height:0px;width:0px;overflow:hidden" alt="" /></noscript>
+<script>
+if ( 'object' === typeof wpcom_mobile_user_agent_info ) {
+
+	wpcom_mobile_user_agent_info.init();
+	var mobileStatsQueryString = "";
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedPlatformName )
+		mobileStatsQueryString += "&x_" + 'mobile_platforms' + '=' + wpcom_mobile_user_agent_info.matchedPlatformName;
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedUserAgentName )
+		mobileStatsQueryString += "&x_" + 'mobile_devices' + '=' + wpcom_mobile_user_agent_info.matchedUserAgentName;
+	
+	if( wpcom_mobile_user_agent_info.isIPad() )
+		mobileStatsQueryString += "&x_" + 'ipad_views' + '=' + 'views';
+
+	if( "" != mobileStatsQueryString ) {
+		new Image().src = document.location.protocol + '//pixel.wp.com/g.gif?v=wpcom-no-pv' + mobileStatsQueryString + '&baba=' + Math.random();
+	}
+	
+}
+</script>
+
+<img id="wpstats" src="fork_join%20_%20The%20Solid%20Snake_files/g.gif"></body></html>

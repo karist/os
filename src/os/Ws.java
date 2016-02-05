@@ -16,7 +16,6 @@ import javax.swing.JPanel;
  * @author nugraha
  */
 public class Ws extends javax.swing.JPanel {
-
     /**
      * Creates new form NewJPanel
      */
@@ -91,7 +90,7 @@ public class Ws extends javax.swing.JPanel {
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setFont(new java.awt.Font("Trajan Pro 3", 3, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("PDF Classisfier");
+        jLabel1.setText("PDF Classifier");
         jLabel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         wsPanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 23, 430, 89));
 
@@ -111,6 +110,11 @@ public class Ws extends javax.swing.JPanel {
         aboutButton.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         aboutButton.setPreferredSize(new java.awt.Dimension(60, 60));
         aboutButton.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/os/png/leader.png"))); // NOI18N
+        aboutButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                aboutButtonActionPerformed(evt);
+            }
+        });
         wsPanel.add(aboutButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(299, 130, 141, 143));
 
         helpButton.setBackground(new java.awt.Color(204, 204, 204));
@@ -120,6 +124,11 @@ public class Ws extends javax.swing.JPanel {
         helpButton.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         helpButton.setPreferredSize(new java.awt.Dimension(60, 60));
         helpButton.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/os/png/chemistry8(1).png"))); // NOI18N
+        helpButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                helpButtonActionPerformed(evt);
+            }
+        });
         wsPanel.add(helpButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 143, 143));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -139,6 +148,14 @@ public class Ws extends javax.swing.JPanel {
                 .addContainerGap(31, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void helpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_helpButtonActionPerformed
+
+    private void aboutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aboutButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_aboutButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

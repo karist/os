@@ -21,7 +21,7 @@ public class MainScreen extends javax.swing.JFrame {
      */
     public MainScreen() {
         initComponents();
-        wcon = new WsController(up1);
+        wcon = new WsController(ws1, msPanel, ws1.getStartButton());
     }
 
     public WsController getWcon() {
@@ -30,14 +30,6 @@ public class MainScreen extends javax.swing.JFrame {
 
     public void setWcon(WsController wcon) {
         this.wcon = wcon;
-    }
-
-    public GettingStarted getGettingStarted1() {
-        return gettingStarted1;
-    }
-
-    public void setGettingStarted1(GettingStarted gettingStarted1) {
-        this.gettingStarted1 = gettingStarted1;
     }
 
     public JLayeredPane getMsPanel() {
@@ -49,11 +41,11 @@ public class MainScreen extends javax.swing.JFrame {
     }
 
     public Ws getUp1() {
-        return up1;
+        return ws1;
     }
 
     public void setUp1(Ws up1) {
-        this.up1 = up1;
+        this.ws1 = up1;
     }
 
     /**
@@ -66,8 +58,10 @@ public class MainScreen extends javax.swing.JFrame {
     private void initComponents() {
 
         msPanel = new javax.swing.JLayeredPane();
-        up1 = new os.Ws();
-        gettingStarted1 = new os.GettingStarted();
+        ws1 = new os.Ws();
+        aboutUs1 = new os.AboutUs();
+        howTo1 = new os.HowTo();
+        gettingStarted2 = new os.GettingStarted();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 0));
@@ -75,38 +69,51 @@ public class MainScreen extends javax.swing.JFrame {
 
         msPanel.setBackground(new java.awt.Color(0, 0, 0));
         msPanel.setForeground(new java.awt.Color(204, 204, 204));
-        msPanel.setPreferredSize(new java.awt.Dimension(800, 350));
-        msPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        msPanel.add(up1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, -1, -1));
+        msPanel.setPreferredSize(new java.awt.Dimension(450, 350));
+        msPanel.setLayout(new java.awt.CardLayout());
+        msPanel.add(ws1, "welcomeCard");
+        ws1.getAccessibleContext().setAccessibleName("");
 
-        javax.swing.GroupLayout gettingStarted1Layout = new javax.swing.GroupLayout(gettingStarted1);
-        gettingStarted1.setLayout(gettingStarted1Layout);
-        gettingStarted1Layout.setHorizontalGroup(
-            gettingStarted1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout aboutUs1Layout = new javax.swing.GroupLayout(aboutUs1);
+        aboutUs1.setLayout(aboutUs1Layout);
+        aboutUs1Layout.setHorizontalGroup(
+            aboutUs1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 500, Short.MAX_VALUE)
         );
-        gettingStarted1Layout.setVerticalGroup(
-            gettingStarted1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        aboutUs1Layout.setVerticalGroup(
+            aboutUs1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 350, Short.MAX_VALUE)
         );
 
-        msPanel.add(gettingStarted1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 500, 350));
+        msPanel.add(aboutUs1, "aboutCard");
+
+        javax.swing.GroupLayout howTo1Layout = new javax.swing.GroupLayout(howTo1);
+        howTo1.setLayout(howTo1Layout);
+        howTo1Layout.setHorizontalGroup(
+            howTo1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 500, Short.MAX_VALUE)
+        );
+        howTo1Layout.setVerticalGroup(
+            howTo1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 350, Short.MAX_VALUE)
+        );
+
+        msPanel.add(howTo1, "howCard");
+        msPanel.add(gettingStarted2, "startCard");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(msPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 509, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(msPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 1, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(msPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(msPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -149,8 +156,10 @@ public class MainScreen extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private os.GettingStarted gettingStarted1;
+    private os.AboutUs aboutUs1;
+    private os.GettingStarted gettingStarted2;
+    private os.HowTo howTo1;
     private javax.swing.JLayeredPane msPanel;
-    private os.Ws up1;
+    private os.Ws ws1;
     // End of variables declaration//GEN-END:variables
 }

@@ -5,24 +5,40 @@
  */
 package os;
 
+import java.awt.CardLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JButton;
+import javax.swing.JLayeredPane;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author nugraha
  */
-public class WsController {
+public final class WsController {
     Ws pane;
+    MainScreen msPanel;
     JButton startButton, helpButton, aboutButton;
+    CardLayout cl;
 
-    public WsController(Ws pane) {
+    public WsController(Ws pane, JLayeredPane msPanel, JButton startButton) {
         this.pane = pane;
-        startButton = pane.getStartButton();
+        this.msPanel = this.msPanel;
+        this.startButton = startButton;
         helpButton = pane.getHelpButton();
         aboutButton = pane.getAboutButton();
+        cl = (CardLayout)(msPanel.getLayout());
+        buttonListener();
     }
     
-    private void helpButtonActionPerformed(java.awt.event.ActionEvent evt) {                                           
-        // TODO add your handling code here:
-    } 
+    public void buttonListener(){
+        startButton.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cl.show(pane.getParent(), "startCard");
+            }
+        });
+    }
 }
