@@ -1,4 +1,4 @@
-package os;
+package os.view;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -32,11 +32,11 @@ public class Ws extends javax.swing.JPanel {
     }
 
     public JButton getHelpButton() {
-        return helpButton;
+        return howButton;
     }
 
     public void setHelpButton(JButton helpButton) {
-        this.helpButton = helpButton;
+        this.howButton = helpButton;
     }
 
     public JLabel getjLabel1() {
@@ -78,7 +78,7 @@ public class Ws extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         startButton = new javax.swing.JButton();
         aboutButton = new javax.swing.JButton();
-        helpButton = new javax.swing.JButton();
+        howButton = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(0, 0, 0));
         setPreferredSize(new java.awt.Dimension(500, 350));
@@ -117,19 +117,19 @@ public class Ws extends javax.swing.JPanel {
         });
         wsPanel.add(aboutButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(299, 130, 141, 143));
 
-        helpButton.setBackground(new java.awt.Color(204, 204, 204));
-        helpButton.setForeground(new java.awt.Color(255, 255, 255));
-        helpButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/os/png/chemistry8.png"))); // NOI18N
-        helpButton.setToolTipText("Instruction");
-        helpButton.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        helpButton.setPreferredSize(new java.awt.Dimension(60, 60));
-        helpButton.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/os/png/chemistry8(1).png"))); // NOI18N
-        helpButton.addActionListener(new java.awt.event.ActionListener() {
+        howButton.setBackground(new java.awt.Color(204, 204, 204));
+        howButton.setForeground(new java.awt.Color(255, 255, 255));
+        howButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/os/png/chemistry8.png"))); // NOI18N
+        howButton.setToolTipText("Instruction");
+        howButton.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        howButton.setPreferredSize(new java.awt.Dimension(60, 60));
+        howButton.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/os/png/chemistry8(1).png"))); // NOI18N
+        howButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                helpButtonActionPerformed(evt);
+                howButtonActionPerformed(evt);
             }
         });
-        wsPanel.add(helpButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 143, 143));
+        wsPanel.add(howButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 143, 143));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -149,9 +149,9 @@ public class Ws extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void helpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpButtonActionPerformed
+    private void howButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_howButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_helpButtonActionPerformed
+    }//GEN-LAST:event_howButtonActionPerformed
 
     private void aboutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aboutButtonActionPerformed
         // TODO add your handling code here:
@@ -160,7 +160,7 @@ public class Ws extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton aboutButton;
-    private javax.swing.JButton helpButton;
+    private javax.swing.JButton howButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JButton startButton;
     private javax.swing.JPanel wsPanel;

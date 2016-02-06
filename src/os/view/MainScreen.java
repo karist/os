@@ -1,6 +1,7 @@
-package os;
+package os.view;
 
 import javax.swing.JLayeredPane;
+import os.WsController;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -58,10 +59,11 @@ public class MainScreen extends javax.swing.JFrame {
     private void initComponents() {
 
         msPanel = new javax.swing.JLayeredPane();
-        ws1 = new os.Ws();
-        aboutUs1 = new os.AboutUs();
-        howTo1 = new os.HowTo();
-        gettingStarted2 = new os.GettingStarted();
+        ws1 = new os.view.Ws();
+        aboutUs1 = new os.view.AboutUs();
+        howTo1 = new os.view.HowTo();
+        gettingStarted2 = new os.view.AutoPanel();
+        manualPanel1 = new os.view.ManualPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 0));
@@ -100,6 +102,7 @@ public class MainScreen extends javax.swing.JFrame {
 
         msPanel.add(howTo1, "howCard");
         msPanel.add(gettingStarted2, "startCard");
+        msPanel.add(manualPanel1, "card6");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -156,10 +159,11 @@ public class MainScreen extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private os.AboutUs aboutUs1;
-    private os.GettingStarted gettingStarted2;
-    private os.HowTo howTo1;
+    private os.view.AboutUs aboutUs1;
+    private os.view.AutoPanel gettingStarted2;
+    private os.view.HowTo howTo1;
+    private os.view.ManualPanel manualPanel1;
     private javax.swing.JLayeredPane msPanel;
-    private os.Ws ws1;
+    private os.view.Ws ws1;
     // End of variables declaration//GEN-END:variables
 }

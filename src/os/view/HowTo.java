@@ -3,18 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package os;
+package os.view;
 
 /**
  *
  * @author nugraha
  */
-public class AboutUs extends javax.swing.JPanel {
+public class HowTo extends javax.swing.JPanel {
 
     /**
-     * Creates new form About
+     * Creates new form HowTo
      */
-    public AboutUs() {
+    public HowTo() {
         initComponents();
     }
 
@@ -26,6 +26,8 @@ public class AboutUs extends javax.swing.JPanel {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+
+        setBackground(new java.awt.Color(0, 0, 0));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

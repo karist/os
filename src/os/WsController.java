@@ -5,6 +5,8 @@
  */
 package os;
 
+import os.view.Ws;
+import os.view.MainScreen;
 import java.awt.CardLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -38,6 +40,22 @@ public final class WsController {
             @Override
             public void actionPerformed(ActionEvent e) {
                 cl.show(pane.getParent(), "startCard");
+            }
+        });
+        
+        pane.getAboutButton().addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cl.show(pane.getParent(), "aboutCard");
+            }
+        });
+        
+        pane.getHelpButton().addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cl.show(pane.getParent(), "howCard");
             }
         });
     }

@@ -60,7 +60,7 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.DesignCardLayout"/>
       <SubComponents>
-        <Component class="os.Ws" name="ws1">
+        <Component class="os.view.Ws" name="ws1">
           <AccessibilityProperties>
             <Property name="AccessibleContext.accessibleName" type="java.lang.String" value=""/>
           </AccessibilityProperties>
@@ -70,7 +70,7 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Container class="os.AboutUs" name="aboutUs1">
+        <Container class="os.view.AboutUs" name="aboutUs1">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
               <CardConstraints cardName="aboutCard"/>
@@ -90,7 +90,7 @@
             </DimensionLayout>
           </Layout>
         </Container>
-        <Container class="os.HowTo" name="howTo1">
+        <Container class="os.view.HowTo" name="howTo1">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
               <CardConstraints cardName="howCard"/>
@@ -110,10 +110,17 @@
             </DimensionLayout>
           </Layout>
         </Container>
-        <Component class="os.GettingStarted" name="gettingStarted2">
+        <Component class="os.view.AutoPanel" name="gettingStarted2">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
               <CardConstraints cardName="startCard"/>
+            </Constraint>
+          </Constraints>
+        </Component>
+        <Component class="os.view.ManualPanel" name="manualPanel1">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+              <CardConstraints cardName="card6"/>
             </Constraint>
           </Constraints>
         </Component>

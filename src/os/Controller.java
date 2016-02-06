@@ -18,6 +18,7 @@ import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.StringTokenizer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JButton;
@@ -73,12 +74,14 @@ public class Controller {
         fileChooser.showOpenDialog(null);
 
         File[] files = fileChooser.getSelectedFiles();
-//        if (checkSelection(files) == true) {
-            for (File f : files) {
-                displayedText.append(f.getName() + "\n");
-                creatthread(files, f.getAbsolutePath());
-            }
-            displayedText.append("You've selected " + files.length + " PDF file(s).\n");
+        try {
+            //        if (checkSelection(files) == true) {
+//            singleThread(files);
+            multiThread(files);
+        } catch (Exception ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        displayedText.append("You've selected " + files.length + " PDF file(s).\n");
 //        } else {
 //            JOptionPane.showMessageDialog(fileChooser, "Please select PDF file(s) only");
 //        }
@@ -104,7 +107,8 @@ public class Controller {
 
     public void fileProcessing(String uri) throws IOException, FileNotFoundException, SAXException, TikaException {
         String textFile = pdfParse(uri);
-        String textTokenized = Tokenize(textFile);
+        String textTokenized = manualTokenize(textFile);
+//        String textTokenized = Tokenize(textFile);
         String textAfterPOSTagging = POSTag(textTokenized);
         createTxt(FilenameUtils.getBaseName(uri), textAfterPOSTagging);
         createTxt("text prop", uri + "\t: " + textFile.length());
@@ -205,6 +209,21 @@ public class Controller {
         return result;
     }
 
+    public String manualTokenize(String teks) {
+        String result = "";
+        StringTokenizer defaultTokenizer = new StringTokenizer(teks);
+        String teks1 = "";
+        while (defaultTokenizer.hasMoreTokens()) {
+            teks1 += defaultTokenizer.nextToken() + "\n";
+        }
+        StringTokenizer multiTokenizer = new StringTokenizer(teks1, ":/.,-+=~!@#$%^&*()_?/><|';\"");
+        System.out.println("Total number of token found: " + multiTokenizer.countTokens());
+        while (multiTokenizer.hasMoreTokens()) {
+            System.out.println(multiTokenizer.nextToken());
+        }
+        return result;
+    }
+
     private boolean checkSelection(File[] files) {
         boolean check = true;
         while (check == true) {
@@ -217,5 +236,19 @@ public class Controller {
             }
         }
         return check;
+    }
+
+    public void singleThread(File[] files) throws IOException, FileNotFoundException, SAXException, TikaException {
+        for (File file : files) {
+            displayedText.append(file.getName() + "\n");
+            fileProcessing(file.getAbsolutePath());
+        }
+    }
+
+    public void multiThread(File[] files) {
+        for (File f : files) {
+            displayedText.append(f.getName() + "\n");
+            creatthread(files, f.getAbsolutePath());
+        }
     }
 }
