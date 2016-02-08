@@ -39,7 +39,8 @@ public final class WsController {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                cl.show(pane.getParent(), "startCard");
+//                cl.show(pane.getParent(), "startCard");
+                cl.show(pane.getParent(), "manual");
             }
         });
         
