@@ -5,6 +5,12 @@
  */
 package os.view;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JScrollPane;
+import javax.swing.JSeparator;
+import javax.swing.JTextArea;
+
 /**
  *
  * @author nugraha
@@ -17,6 +23,72 @@ public class SelectingFiles extends javax.swing.JPanel {
     public SelectingFiles() {
         initComponents();
     }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public JLabel getjLabel2() {
+        return jLabel2;
+    }
+
+    public void setjLabel2(JLabel jLabel2) {
+        this.jLabel2 = jLabel2;
+    }
+
+    public JLabel getjLabel3() {
+        return jLabel3;
+    }
+
+    public void setjLabel3(JLabel jLabel3) {
+        this.jLabel3 = jLabel3;
+    }
+
+    public JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+
+    public void setjScrollPane1(JScrollPane jScrollPane1) {
+        this.jScrollPane1 = jScrollPane1;
+    }
+
+    public JSeparator getjSeparator1() {
+        return jSeparator1;
+    }
+
+    public void setjSeparator1(JSeparator jSeparator1) {
+        this.jSeparator1 = jSeparator1;
+    }
+
+    public JTextArea getjTextArea2() {
+        return jTextArea2;
+    }
+
+    public void setjTextArea1(JTextArea jTextArea1) {
+        this.jTextArea1 = jTextArea1;
+    }
+
+    public JButton getNext1Btn() {
+        return next1Btn;
+    }
+
+    public void setNext1Btn(JButton next1Btn) {
+        this.next1Btn = next1Btn;
+    }
+
+    public JButton getSelectBtn() {
+        return selectBtn;
+    }
+
+    public void setSelectBtn(JButton selectBtn) {
+        this.selectBtn = selectBtn;
+    }
+
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -32,9 +104,8 @@ public class SelectingFiles extends javax.swing.JPanel {
         jTextArea1 = new javax.swing.JTextArea();
         jLabel2 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        selectBtn = new javax.swing.JButton();
+        next1Btn = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
 
@@ -58,11 +129,9 @@ public class SelectingFiles extends javax.swing.JPanel {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/os/png/text(2).png"))); // NOI18N
         jLabel2.setPreferredSize(new java.awt.Dimension(75, 75));
 
-        jButton1.setText("Start");
+        selectBtn.setText("Start");
 
-        jButton2.setText("<<");
-
-        jButton3.setText(">>");
+        next1Btn.setText(">>");
 
         jTextArea2.setColumns(20);
         jTextArea2.setRows(5);
@@ -92,11 +161,9 @@ public class SelectingFiles extends javax.swing.JPanel {
                             .addComponent(jScrollPane1)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jButton2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton1)
+                                .addComponent(selectBtn)
                                 .addGap(3, 3, 3)
-                                .addComponent(jButton3)))
+                                .addComponent(next1Btn)))
                         .addContainerGap())))
         );
         layout.setVerticalGroup(
@@ -117,21 +184,17 @@ public class SelectingFiles extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3))
+                    .addComponent(selectBtn)
+                    .addComponent(next1Btn))
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -139,5 +202,7 @@ public class SelectingFiles extends javax.swing.JPanel {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea2;
+    private javax.swing.JButton next1Btn;
+    private javax.swing.JButton selectBtn;
     // End of variables declaration//GEN-END:variables
 }

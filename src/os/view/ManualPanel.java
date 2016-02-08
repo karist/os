@@ -5,6 +5,9 @@
  */
 package os.view;
 
+import javax.swing.JTabbedPane;
+import os.ManualController;
+
 /**
  *
  * @author nugraha
@@ -18,6 +21,64 @@ public class ManualPanel extends javax.swing.JPanel {
         initComponents();
     }
 
+    public Classifying getClassifying1() {
+        return classifying1;
+    }
+
+    public void setClassifying1(Classifying classifying1) {
+        this.classifying1 = classifying1;
+    }
+
+    public File2Text getFile2Text1() {
+        return file2Text1;
+    }
+
+    public void setFile2Text1(File2Text file2Text1) {
+        this.file2Text1 = file2Text1;
+    }
+
+    public JTabbedPane getjTabbedPane1() {
+        return jTabbedPane1;
+    }
+
+    public void setjTabbedPane1(JTabbedPane jTabbedPane1) {
+        this.jTabbedPane1 = jTabbedPane1;
+    }
+
+    public POSTagging getpOSTagging2() {
+        return pOSTagging1;
+    }
+
+    public void setpOSTagging2(POSTagging pOSTagging2) {
+        this.pOSTagging1 = pOSTagging2;
+    }
+
+    public SelectingFiles getSelectingFiles1() {
+        return selectingFiles1;
+    }
+
+    public void setSelectingFiles1(SelectingFiles selectingFiles1) {
+        this.selectingFiles1 = selectingFiles1;
+    }
+
+    public Tokenizing getTokenizing1() {
+        return tokenizing1;
+    }
+
+    public void setTokenizing1(Tokenizing tokenizing1) {
+        this.tokenizing1 = tokenizing1;
+    }
+
+    public Visualizing getVisualizing1() {
+        return visualizing1;
+    }
+
+    public void setVisualizing1(Visualizing visualizing1) {
+        this.visualizing1 = visualizing1;
+    }
+    
+    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -30,8 +91,8 @@ public class ManualPanel extends javax.swing.JPanel {
         jTabbedPane1 = new javax.swing.JTabbedPane();
         selectingFiles1 = new os.view.SelectingFiles();
         file2Text1 = new os.view.File2Text();
-        pOSTagging2 = new os.view.POSTagging();
         tokenizing1 = new os.view.Tokenizing();
+        pOSTagging1 = new os.view.POSTagging();
         classifying1 = new os.view.Classifying();
         visualizing1 = new os.view.Visualizing();
 
@@ -40,76 +101,16 @@ public class ManualPanel extends javax.swing.JPanel {
         jTabbedPane1.setBackground(new java.awt.Color(0, 0, 0));
         jTabbedPane1.setTabPlacement(javax.swing.JTabbedPane.LEFT);
         jTabbedPane1.setFont(new java.awt.Font("Tw Cen MT", 0, 11)); // NOI18N
-
-        javax.swing.GroupLayout selectingFiles1Layout = new javax.swing.GroupLayout(selectingFiles1);
-        selectingFiles1.setLayout(selectingFiles1Layout);
-        selectingFiles1Layout.setHorizontalGroup(
-            selectingFiles1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 417, Short.MAX_VALUE)
-        );
-        selectingFiles1Layout.setVerticalGroup(
-            selectingFiles1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 412, Short.MAX_VALUE)
-        );
-
         jTabbedPane1.addTab("Selecting Files", selectingFiles1);
-
-        javax.swing.GroupLayout file2Text1Layout = new javax.swing.GroupLayout(file2Text1);
-        file2Text1.setLayout(file2Text1Layout);
-        file2Text1Layout.setHorizontalGroup(
-            file2Text1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 417, Short.MAX_VALUE)
-        );
-        file2Text1Layout.setVerticalGroup(
-            file2Text1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 412, Short.MAX_VALUE)
-        );
-
         jTabbedPane1.addTab("Getting Text", file2Text1);
-
-        pOSTagging2.setPreferredSize(new java.awt.Dimension(413, 350));
-        jTabbedPane1.addTab("POS Tagging", pOSTagging2);
-
-        javax.swing.GroupLayout tokenizing1Layout = new javax.swing.GroupLayout(tokenizing1);
-        tokenizing1.setLayout(tokenizing1Layout);
-        tokenizing1Layout.setHorizontalGroup(
-            tokenizing1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 417, Short.MAX_VALUE)
-        );
-        tokenizing1Layout.setVerticalGroup(
-            tokenizing1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 412, Short.MAX_VALUE)
-        );
-
         jTabbedPane1.addTab("Tokenizing", tokenizing1);
 
-        javax.swing.GroupLayout classifying1Layout = new javax.swing.GroupLayout(classifying1);
-        classifying1.setLayout(classifying1Layout);
-        classifying1Layout.setHorizontalGroup(
-            classifying1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 417, Short.MAX_VALUE)
-        );
-        classifying1Layout.setVerticalGroup(
-            classifying1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 412, Short.MAX_VALUE)
-        );
-
+        pOSTagging1.setPreferredSize(new java.awt.Dimension(413, 350));
+        jTabbedPane1.addTab("POS Tagging", pOSTagging1);
         jTabbedPane1.addTab("Classifying", classifying1);
-
-        javax.swing.GroupLayout visualizing1Layout = new javax.swing.GroupLayout(visualizing1);
-        visualizing1.setLayout(visualizing1Layout);
-        visualizing1Layout.setHorizontalGroup(
-            visualizing1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 417, Short.MAX_VALUE)
-        );
-        visualizing1Layout.setVerticalGroup(
-            visualizing1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 412, Short.MAX_VALUE)
-        );
-
         jTabbedPane1.addTab("Visualizing", visualizing1);
 
-        add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, -1));
+        add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 360));
     }// </editor-fold>//GEN-END:initComponents
 
 
@@ -117,7 +118,7 @@ public class ManualPanel extends javax.swing.JPanel {
     private os.view.Classifying classifying1;
     private os.view.File2Text file2Text1;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private os.view.POSTagging pOSTagging2;
+    private os.view.POSTagging pOSTagging1;
     private os.view.SelectingFiles selectingFiles1;
     private os.view.Tokenizing tokenizing1;
     private os.view.Visualizing visualizing1;

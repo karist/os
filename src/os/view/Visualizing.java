@@ -5,6 +5,8 @@
  */
 package os.view;
 
+import javax.swing.JButton;
+
 /**
  *
  * @author nugraha
@@ -17,6 +19,24 @@ public class Visualizing extends javax.swing.JPanel {
     public Visualizing() {
         initComponents();
     }
+
+    public JButton getBack5Btn() {
+        return back5Btn;
+    }
+
+    public void setBack5Btn(JButton back5Btn) {
+        this.back5Btn = back5Btn;
+    }
+
+    public JButton getFinishBtn() {
+        return finishBtn;
+    }
+
+    public void setFinishBtn(JButton finishBtn) {
+        this.finishBtn = finishBtn;
+    }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -32,8 +52,8 @@ public class Visualizing extends javax.swing.JPanel {
         jTextArea1 = new javax.swing.JTextArea();
         jLabel2 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        finishBtn = new javax.swing.JButton();
+        back5Btn = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
 
         jLabel1.setFont(new java.awt.Font("Trajan Pro 3", 1, 24)); // NOI18N
@@ -56,9 +76,9 @@ public class Visualizing extends javax.swing.JPanel {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/os/png/visualization(2).png"))); // NOI18N
         jLabel2.setPreferredSize(new java.awt.Dimension(75, 75));
 
-        jButton1.setText("Finished");
+        finishBtn.setText("Finish");
 
-        jButton2.setText("<<");
+        back5Btn.setText("<<");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -84,9 +104,9 @@ public class Visualizing extends javax.swing.JPanel {
                         .addContainerGap())))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton2)
+                .addComponent(back5Btn)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
+                .addComponent(finishBtn)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -107,19 +127,19 @@ public class Visualizing extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
+                .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(finishBtn)
+                    .addComponent(back5Btn))
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton back5Btn;
+    private javax.swing.JButton finishBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

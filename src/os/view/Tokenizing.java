@@ -5,6 +5,12 @@
  */
 package os.view;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JScrollPane;
+import javax.swing.JSeparator;
+import javax.swing.JTextArea;
+
 /**
  *
  * @author nugraha
@@ -18,6 +24,87 @@ public class Tokenizing extends javax.swing.JPanel {
         initComponents();
     }
 
+    public JButton getBack1Btn() {
+        return back2Btn;
+    }
+
+    public void setBack1Btn(JButton back1Btn) {
+        this.back2Btn = back1Btn;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public JLabel getjLabel2() {
+        return jLabel2;
+    }
+
+    public void setjLabel2(JLabel jLabel2) {
+        this.jLabel2 = jLabel2;
+    }
+
+    public JLabel getjLabel3() {
+        return jLabel3;
+    }
+
+    public void setjLabel3(JLabel jLabel3) {
+        this.jLabel3 = jLabel3;
+    }
+
+    public JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+
+    public void setjScrollPane1(JScrollPane jScrollPane1) {
+        this.jScrollPane1 = jScrollPane1;
+    }
+
+    public JSeparator getjSeparator1() {
+        return jSeparator1;
+    }
+
+    public void setjSeparator1(JSeparator jSeparator1) {
+        this.jSeparator1 = jSeparator1;
+    }
+
+    public JTextArea getjTextArea1() {
+        return jTextArea1;
+    }
+
+    public void setjTextArea1(JTextArea jTextArea1) {
+        this.jTextArea1 = jTextArea1;
+    }
+
+    public JTextArea getjTextArea2() {
+        return jTextArea2;
+    }
+
+    public void setjTextArea2(JTextArea jTextArea2) {
+        this.jTextArea2 = jTextArea2;
+    }
+
+    public JButton getNext2Btn() {
+        return next3Btn;
+    }
+
+    public void setNext2Btn(JButton next2Btn) {
+        this.next3Btn = next2Btn;
+    }
+
+    public JButton getTokenBtn() {
+        return tokenBtn;
+    }
+
+    public void setTokenBtn(JButton tokenBtn) {
+        this.tokenBtn = tokenBtn;
+    }
+
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -32,9 +119,9 @@ public class Tokenizing extends javax.swing.JPanel {
         jTextArea1 = new javax.swing.JTextArea();
         jLabel2 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        tokenBtn = new javax.swing.JButton();
+        back2Btn = new javax.swing.JButton();
+        next3Btn = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
 
@@ -58,11 +145,11 @@ public class Tokenizing extends javax.swing.JPanel {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/os/png/resize18(2).png"))); // NOI18N
         jLabel2.setPreferredSize(new java.awt.Dimension(75, 75));
 
-        jButton1.setText("Start");
+        tokenBtn.setText("Start");
 
-        jButton2.setText("<<");
+        back2Btn.setText("<<");
 
-        jButton3.setText(">>");
+        next3Btn.setText(">>");
 
         jTextArea2.setColumns(20);
         jTextArea2.setRows(5);
@@ -92,11 +179,11 @@ public class Tokenizing extends javax.swing.JPanel {
                             .addComponent(jScrollPane1)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jButton2)
+                                .addComponent(back2Btn)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton1)
+                                .addComponent(tokenBtn)
                                 .addGap(3, 3, 3)
-                                .addComponent(jButton3)))
+                                .addComponent(next3Btn)))
                         .addContainerGap())))
         );
         layout.setVerticalGroup(
@@ -119,21 +206,19 @@ public class Tokenizing extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 235, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3))
+                    .addComponent(tokenBtn)
+                    .addComponent(back2Btn)
+                    .addComponent(next3Btn))
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton back2Btn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -141,5 +226,7 @@ public class Tokenizing extends javax.swing.JPanel {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea2;
+    private javax.swing.JButton next3Btn;
+    private javax.swing.JButton tokenBtn;
     // End of variables declaration//GEN-END:variables
 }

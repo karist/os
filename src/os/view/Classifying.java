@@ -5,6 +5,8 @@
  */
 package os.view;
 
+import javax.swing.JButton;
+
 /**
  *
  * @author nugraha
@@ -17,6 +19,32 @@ public class Classifying extends javax.swing.JPanel {
     public Classifying() {
         initComponents();
     }
+
+    public JButton getBack4Btn() {
+        return back4Btn;
+    }
+
+    public void setBack4Btn(JButton back4Btn) {
+        this.back4Btn = back4Btn;
+    }
+
+    public JButton getClassifyBtn() {
+        return classifyBtn;
+    }
+
+    public void setClassifyBtn(JButton classifyBtn) {
+        this.classifyBtn = classifyBtn;
+    }
+
+    public JButton getNext5Btn() {
+        return next5Btn;
+    }
+
+    public void setNext5Btn(JButton next5Btn) {
+        this.next5Btn = next5Btn;
+    }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -32,9 +60,9 @@ public class Classifying extends javax.swing.JPanel {
         jTextArea1 = new javax.swing.JTextArea();
         jLabel2 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        classifyBtn = new javax.swing.JButton();
+        back4Btn = new javax.swing.JButton();
+        next5Btn = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
 
         jLabel1.setFont(new java.awt.Font("Trajan Pro 3", 1, 24)); // NOI18N
@@ -57,11 +85,11 @@ public class Classifying extends javax.swing.JPanel {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/os/png/hierarchy1(1).png"))); // NOI18N
         jLabel2.setPreferredSize(new java.awt.Dimension(75, 75));
 
-        jButton1.setText("Start");
+        classifyBtn.setText("Start");
 
-        jButton2.setText("<<");
+        back4Btn.setText("<<");
 
-        jButton3.setText(">>");
+        next5Btn.setText(">>");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -86,11 +114,11 @@ public class Classifying extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jButton2)
+                                .addComponent(back4Btn)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton1)
+                                .addComponent(classifyBtn)
                                 .addGap(3, 3, 3)
-                                .addComponent(jButton3))
+                                .addComponent(next5Btn))
                             .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addContainerGap())))
         );
@@ -112,26 +140,26 @@ public class Classifying extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE)
+                .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3))
+                    .addComponent(classifyBtn)
+                    .addComponent(back4Btn)
+                    .addComponent(next5Btn))
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton back4Btn;
+    private javax.swing.JButton classifyBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JButton next5Btn;
     // End of variables declaration//GEN-END:variables
 }

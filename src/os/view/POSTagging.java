@@ -5,6 +5,9 @@
  */
 package os.view;
 
+import javax.swing.JButton;
+import javax.swing.JTextArea;
+
 /**
  *
  * @author nugraha
@@ -17,6 +20,40 @@ public class POSTagging extends javax.swing.JPanel {
     public POSTagging() {
         initComponents();
     }
+
+    public JTextArea getjTextArea2() {
+        return jTextArea2;
+    }
+
+    public void setjTextArea2(JTextArea jTextArea2) {
+        this.jTextArea2 = jTextArea2;
+    }
+
+    public JButton getNext4Btn() {
+        return next4Btn;
+    }
+
+    public void setNext4Btn(JButton next4Btn) {
+        this.next4Btn = next4Btn;
+    }
+
+    public JButton getPosBtn() {
+        return posBtn;
+    }
+
+    public void setPosBtn(JButton posBtn) {
+        this.posBtn = posBtn;
+    }
+
+    public JButton getBack3Btn() {
+        return back3Btn;
+    }
+
+    public void setBack3Btn(JButton back3Btn) {
+        this.back3Btn = back3Btn;
+    }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -32,9 +69,9 @@ public class POSTagging extends javax.swing.JPanel {
         jTextArea1 = new javax.swing.JTextArea();
         jLabel2 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        posBtn = new javax.swing.JButton();
+        back3Btn = new javax.swing.JButton();
+        next4Btn = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
 
@@ -58,11 +95,11 @@ public class POSTagging extends javax.swing.JPanel {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/os/png/alphabet3.png"))); // NOI18N
         jLabel2.setPreferredSize(new java.awt.Dimension(75, 75));
 
-        jButton1.setText("Start");
+        posBtn.setText("Start");
 
-        jButton2.setText("<<");
+        back3Btn.setText("<<");
 
-        jButton3.setText(">>");
+        next4Btn.setText(">>");
 
         jTextArea2.setColumns(20);
         jTextArea2.setRows(5);
@@ -92,11 +129,11 @@ public class POSTagging extends javax.swing.JPanel {
                             .addComponent(jScrollPane1)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jButton2)
+                                .addComponent(back3Btn)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton1)
+                                .addComponent(posBtn)
                                 .addGap(3, 3, 3)
-                                .addComponent(jButton3)))
+                                .addComponent(next4Btn)))
                         .addContainerGap())))
         );
         layout.setVerticalGroup(
@@ -117,12 +154,12 @@ public class POSTagging extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 235, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3))
+                    .addComponent(posBtn)
+                    .addComponent(back3Btn)
+                    .addComponent(next4Btn))
                 .addContainerGap())
         );
 
@@ -131,9 +168,7 @@ public class POSTagging extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton back3Btn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -141,5 +176,7 @@ public class POSTagging extends javax.swing.JPanel {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea2;
+    private javax.swing.JButton next4Btn;
+    private javax.swing.JButton posBtn;
     // End of variables declaration//GEN-END:variables
 }

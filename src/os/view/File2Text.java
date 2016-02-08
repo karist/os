@@ -5,6 +5,9 @@
  */
 package os.view;
 
+import javax.swing.JButton;
+import javax.swing.JTextArea;
+
 /**
  *
  * @author nugraha
@@ -17,6 +20,40 @@ public class File2Text extends javax.swing.JPanel {
     public File2Text() {
         initComponents();
     }
+
+    public JButton getBack1Btn() {
+        return back1Btn;
+    }
+
+    public void setBack1Btn(JButton back1Btn) {
+        this.back1Btn = back1Btn;
+    }
+
+    public JButton getConvertBtn() {
+        return convertBtn;
+    }
+
+    public void setConvertBtn(JButton convertBtn) {
+        this.convertBtn = convertBtn;
+    }
+
+    public JTextArea getjTextArea2() {
+        return jTextArea2;
+    }
+
+    public void setjTextArea2(JTextArea jTextArea2) {
+        this.jTextArea2 = jTextArea2;
+    }
+
+    public JButton getNext2Btn() {
+        return next2Btn;
+    }
+
+    public void setNext2Btn(JButton next2Btn) {
+        this.next2Btn = next2Btn;
+    }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -32,9 +69,9 @@ public class File2Text extends javax.swing.JPanel {
         jTextArea1 = new javax.swing.JTextArea();
         jLabel2 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        convertBtn = new javax.swing.JButton();
+        back1Btn = new javax.swing.JButton();
+        next2Btn = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
 
@@ -58,11 +95,11 @@ public class File2Text extends javax.swing.JPanel {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/os/png/computer367.png"))); // NOI18N
         jLabel2.setPreferredSize(new java.awt.Dimension(75, 75));
 
-        jButton1.setText("Start");
+        convertBtn.setText("Start");
 
-        jButton2.setText("<<");
+        back1Btn.setText("<<");
 
-        jButton3.setText(">>");
+        next2Btn.setText(">>");
 
         jTextArea2.setColumns(20);
         jTextArea2.setRows(5);
@@ -92,11 +129,11 @@ public class File2Text extends javax.swing.JPanel {
                             .addComponent(jScrollPane1)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jButton2)
+                                .addComponent(back1Btn)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton1)
+                                .addComponent(convertBtn)
                                 .addGap(3, 3, 3)
-                                .addComponent(jButton3)))
+                                .addComponent(next2Btn)))
                         .addContainerGap())))
         );
         layout.setVerticalGroup(
@@ -117,21 +154,20 @@ public class File2Text extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 235, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3))
+                    .addComponent(convertBtn)
+                    .addComponent(back1Btn)
+                    .addComponent(next2Btn))
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton back1Btn;
+    private javax.swing.JButton convertBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -139,5 +175,6 @@ public class File2Text extends javax.swing.JPanel {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea2;
+    private javax.swing.JButton next2Btn;
     // End of variables declaration//GEN-END:variables
 }

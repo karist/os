@@ -1,6 +1,7 @@
 package os.view;
 
 import javax.swing.JLayeredPane;
+import os.ManualController;
 import os.WsController;
 
 /*
@@ -16,6 +17,7 @@ import os.WsController;
  */
 public class MainScreen extends javax.swing.JFrame {
     WsController wcon;
+    ManualController mcon;
 
     /**
      * Creates new form NewJFrame
@@ -23,6 +25,7 @@ public class MainScreen extends javax.swing.JFrame {
     public MainScreen() {
         initComponents();
         wcon = new WsController(ws1, msPanel, ws1.getStartButton());
+        mcon = new ManualController(manualPanel1);
     }
 
     public WsController getWcon() {
@@ -102,7 +105,7 @@ public class MainScreen extends javax.swing.JFrame {
 
         msPanel.add(howTo1, "howCard");
         msPanel.add(gettingStarted2, "startCard");
-        msPanel.add(manualPanel1, "card6");
+        msPanel.add(manualPanel1, "manual");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

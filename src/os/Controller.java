@@ -59,6 +59,9 @@ public class Controller {
     JTextArea displayedText;
     static List<String> textList = new ArrayList<>();
 
+    public Controller() {
+    }
+    
     public Controller(JScrollPane jScrollPane1, JButton browseBtn, JTextArea selectedTxt) {
         spane = jScrollPane1;
         button = browseBtn;
@@ -87,7 +90,7 @@ public class Controller {
 //        }
     }
 
-    public void creatthread(File[] files, String uri) {
+    public void creatthread(String uri) {
         Thread thread = new Thread(new Runnable() {
 
             @Override
@@ -190,7 +193,7 @@ public class Controller {
         return result;
     }
 
-    public static String Tokenize(String teks) throws InvalidFormatException, IOException {
+    public String tokenize(String teks) throws InvalidFormatException, IOException {
         InputStream is = new FileInputStream("en-token.bin");
 
         TokenizerModel model = new TokenizerModel(is);
@@ -248,7 +251,7 @@ public class Controller {
     public void multiThread(File[] files) {
         for (File f : files) {
             displayedText.append(f.getName() + "\n");
-            creatthread(files, f.getAbsolutePath());
+            creatthread(f.getAbsolutePath());
         }
     }
 }

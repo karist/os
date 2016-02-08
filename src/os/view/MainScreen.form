@@ -120,7 +120,7 @@
         <Component class="os.view.ManualPanel" name="manualPanel1">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
-              <CardConstraints cardName="card6"/>
+              <CardConstraints cardName="manual"/>
             </Constraint>
           </Constraints>
         </Component>
