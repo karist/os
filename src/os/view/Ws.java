@@ -80,10 +80,8 @@ public class Ws extends javax.swing.JPanel {
         aboutButton = new javax.swing.JButton();
         howButton = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(0, 0, 0));
         setPreferredSize(new java.awt.Dimension(500, 350));
 
-        wsPanel.setBackground(new java.awt.Color(204, 204, 204));
         wsPanel.setPreferredSize(new java.awt.Dimension(450, 300));
         wsPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -91,7 +89,6 @@ public class Ws extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Trajan Pro 3", 3, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("PDF Classifier");
-        jLabel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         wsPanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 23, 430, 89));
 
         startButton.setBackground(new java.awt.Color(204, 204, 204));

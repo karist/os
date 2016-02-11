@@ -83,7 +83,7 @@ public class POSTagging extends javax.swing.JPanel {
         jTextArea1.setEditable(false);
         jTextArea1.setBackground(new java.awt.Color(204, 204, 204));
         jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("Tw Cen MT", 0, 12)); // NOI18N
+        jTextArea1.setFont(new java.awt.Font("Tw Cen MT", 0, 11)); // NOI18N
         jTextArea1.setLineWrap(true);
         jTextArea1.setRows(5);
         jTextArea1.setText("Part-of-speech tagging is the process of assigning a part-of-speech label to each of a sequence of words. (Jurafsky & Martin, 2014)");
@@ -162,8 +162,6 @@ public class POSTagging extends javax.swing.JPanel {
                     .addComponent(next4Btn))
                 .addContainerGap())
         );
-
-        jTextArea1.getAccessibleContext().setAccessibleParent(null);
     }// </editor-fold>//GEN-END:initComponents
 
 

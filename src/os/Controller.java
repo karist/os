@@ -61,7 +61,7 @@ public class Controller {
 
     public Controller() {
     }
-    
+
     public Controller(JScrollPane jScrollPane1, JButton browseBtn, JTextArea selectedTxt) {
         spane = jScrollPane1;
         button = browseBtn;
@@ -156,7 +156,7 @@ public class Controller {
         File f = new File("src/os/txt/" + fileName + ".txt");
         try {
             if (f.exists() == false) {
-                JOptionPane.showMessageDialog(null, "Create new file succeed");
+//                JOptionPane.showMessageDialog(null, "Create new file succeed");
                 f.createNewFile();
             }
             PrintWriter out = new PrintWriter(new FileWriter(f, false));
@@ -166,7 +166,7 @@ public class Controller {
         } catch (HeadlessException | IOException e) {
             System.out.println(e.getMessage());
         }
-        JOptionPane.showMessageDialog(null, "File Saved");
+//        JOptionPane.showMessageDialog(null, "File Saved");
     }
 
     public static String POSTag(String a) throws IOException {
@@ -242,10 +242,21 @@ public class Controller {
     }
 
     public void singleThread(File[] files) throws IOException, FileNotFoundException, SAXException, TikaException {
-        for (File file : files) {
-            displayedText.append(file.getName() + "\n");
-            fileProcessing(file.getAbsolutePath());
-        }
+        Thread thread = new Thread(new Runnable() {
+
+            @Override
+            public void run() {
+                try {
+                    for (File file : files) {
+                        displayedText.append(file.getName() + "\n");
+                        fileProcessing(file.getAbsolutePath());
+                    }
+                } catch (IOException | SAXException | TikaException ex) {
+                    Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        });
+        thread.start();
     }
 
     public void multiThread(File[] files) {

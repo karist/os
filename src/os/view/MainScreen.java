@@ -1,7 +1,7 @@
 package os.view;
 
 import javax.swing.JLayeredPane;
-import os.ManualController;
+import os.Navigate;
 import os.WsController;
 
 /*
@@ -17,15 +17,15 @@ import os.WsController;
  */
 public class MainScreen extends javax.swing.JFrame {
     WsController wcon;
-    ManualController mcon;
+    Navigate mcon;
 
     /**
      * Creates new form NewJFrame
      */
     public MainScreen() {
         initComponents();
-        wcon = new WsController(ws1, msPanel, ws1.getStartButton());
-        mcon = new ManualController(manualPanel1);
+        wcon = new WsController(ws1, msPanel, ws1.getStartButton(), newJPanel1, this);
+        mcon = new Navigate(manualPanel1);
     }
 
     public WsController getWcon() {
@@ -52,6 +52,54 @@ public class MainScreen extends javax.swing.JFrame {
         this.ws1 = up1;
     }
 
+    public Landing getNewJPanel1() {
+        return newJPanel1;
+    }
+
+    public void setNewJPanel1(Landing newJPanel1) {
+        this.newJPanel1 = newJPanel1;
+    }
+
+    public AboutUs getAboutUs1() {
+        return aboutUs1;
+    }
+
+    public void setAboutUs1(AboutUs aboutUs1) {
+        this.aboutUs1 = aboutUs1;
+    }
+
+    public AutoPanel getGettingStarted2() {
+        return gettingStarted2;
+    }
+
+    public void setGettingStarted2(AutoPanel gettingStarted2) {
+        this.gettingStarted2 = gettingStarted2;
+    }
+
+    public HowTo getHowTo1() {
+        return howTo1;
+    }
+
+    public void setHowTo1(HowTo howTo1) {
+        this.howTo1 = howTo1;
+    }
+
+    public ManualPanel getManualPanel1() {
+        return manualPanel1;
+    }
+
+    public void setManualPanel1(ManualPanel manualPanel1) {
+        this.manualPanel1 = manualPanel1;
+    }
+
+    public Ws getWs1() {
+        return ws1;
+    }
+
+    public void setWs1(Ws ws1) {
+        this.ws1 = ws1;
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -63,10 +111,20 @@ public class MainScreen extends javax.swing.JFrame {
 
         msPanel = new javax.swing.JLayeredPane();
         ws1 = new os.view.Ws();
-        aboutUs1 = new os.view.AboutUs();
-        howTo1 = new os.view.HowTo();
         gettingStarted2 = new os.view.AutoPanel();
         manualPanel1 = new os.view.ManualPanel();
+        aboutUs1 = new os.view.AboutUs();
+        howTo1 = new os.view.HowTo();
+        newJPanel1 = new os.view.Landing();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenuItem5 = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenu3 = new javax.swing.JMenu();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 0));
@@ -79,33 +137,40 @@ public class MainScreen extends javax.swing.JFrame {
         msPanel.add(ws1, "welcomeCard");
         ws1.getAccessibleContext().setAccessibleName("");
 
-        javax.swing.GroupLayout aboutUs1Layout = new javax.swing.GroupLayout(aboutUs1);
-        aboutUs1.setLayout(aboutUs1Layout);
-        aboutUs1Layout.setHorizontalGroup(
-            aboutUs1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 500, Short.MAX_VALUE)
-        );
-        aboutUs1Layout.setVerticalGroup(
-            aboutUs1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 350, Short.MAX_VALUE)
-        );
-
-        msPanel.add(aboutUs1, "aboutCard");
-
-        javax.swing.GroupLayout howTo1Layout = new javax.swing.GroupLayout(howTo1);
-        howTo1.setLayout(howTo1Layout);
-        howTo1Layout.setHorizontalGroup(
-            howTo1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 500, Short.MAX_VALUE)
-        );
-        howTo1Layout.setVerticalGroup(
-            howTo1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 350, Short.MAX_VALUE)
-        );
-
-        msPanel.add(howTo1, "howCard");
         msPanel.add(gettingStarted2, "startCard");
         msPanel.add(manualPanel1, "manual");
+        msPanel.add(aboutUs1, "aboutCard");
+        msPanel.add(howTo1, "howCard");
+        msPanel.add(newJPanel1, "selectCard");
+
+        jMenu1.setText("File");
+
+        jMenuItem5.setText("Exit");
+        jMenu1.add(jMenuItem5);
+
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Run");
+
+        jMenuItem1.setText("Auto");
+        jMenu2.add(jMenuItem1);
+
+        jMenuItem2.setText("Manual");
+        jMenu2.add(jMenuItem2);
+
+        jMenuBar1.add(jMenu2);
+
+        jMenu3.setText("Help");
+
+        jMenuItem3.setText("Instruction");
+        jMenu3.add(jMenuItem3);
+
+        jMenuItem4.setText("About");
+        jMenu3.add(jMenuItem4);
+
+        jMenuBar1.add(jMenu3);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -165,8 +230,18 @@ public class MainScreen extends javax.swing.JFrame {
     private os.view.AboutUs aboutUs1;
     private os.view.AutoPanel gettingStarted2;
     private os.view.HowTo howTo1;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem5;
     private os.view.ManualPanel manualPanel1;
     private javax.swing.JLayeredPane msPanel;
+    private os.view.Landing newJPanel1;
     private os.view.Ws ws1;
     // End of variables declaration//GEN-END:variables
 }

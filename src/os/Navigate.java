@@ -33,13 +33,13 @@ import os.view.ManualPanel;
  *
  * @author nugraha
  */
-public class ManualController {
+public class Navigate {
 
     ManualPanel mpane;
     File[] files;
     List<String> text, tokenizedText, posText;
 
-    public ManualController(ManualPanel mpane) {
+    public Navigate(ManualPanel mpane) {
         this.mpane = mpane;
         disableComponent();
         buttonListener();
@@ -84,12 +84,12 @@ public class ManualController {
                 String tname = Thread.currentThread().getName();
 //                switch (a) {
 //                    case "convert":
-                        try {
-                            String x = pdfParse(b);
-                            text.add(x);
-                        } catch (IOException | SAXException | TikaException e) {
-                            System.out.println(e.getCause());
-                        }
+                try {
+                    String x = pdfParse(b);
+                    text.add(x);
+                } catch (IOException | SAXException | TikaException e) {
+                    System.out.println(e.getCause());
+                }
 //                        break;
 //                    case "token": {
 //                        try {
@@ -128,6 +128,7 @@ public class ManualController {
                 int count = 1;
                 for (File f : files) {
                     mpane.getSelectingFiles1().getjTextArea2().append(count + f.getName() + "\n");
+                    
                     count++;
                 }
                 mpane.getSelectingFiles1().getNext1Btn().setEnabled(true);
@@ -147,10 +148,10 @@ public class ManualController {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println(files.length);;
-                for (File f : files) {
-                    createThread("convert", f.getAbsolutePath());
-                }
+//                System.out.println(files.length);
+//                for (File f : files) {
+//                    createThread("convert", f.getAbsolutePath());
+//                }
                 mpane.getFile2Text1().getNext2Btn().setEnabled(true);
             }
         });
@@ -161,6 +162,7 @@ public class ManualController {
             public void actionPerformed(ActionEvent e) {
                 mpane.getjTabbedPane1().setEnabledAt(2, true);
                 mpane.getjTabbedPane1().setSelectedIndex(2);
+                mpane.getFile2Text1().getConvertBtn().setEnabled(false);
             }
         });
 
@@ -176,10 +178,10 @@ public class ManualController {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                tokenizedText = new ArrayList<>();
-                for (String t : text) {
-                    createThread("token", t);
-                }
+//                tokenizedText = new ArrayList<>();
+//                for (String t : text) {
+//                    createThread("token", t);
+//                }
                 mpane.getTokenizing1().getNext2Btn().setEnabled(true);
             }
         });
@@ -198,6 +200,7 @@ public class ManualController {
             public void actionPerformed(ActionEvent e) {
                 mpane.getjTabbedPane1().setEnabledAt(3, true);
                 mpane.getjTabbedPane1().setSelectedIndex(3);
+                mpane.getTokenizing1().getTokenBtn().setEnabled(false);
             }
         });
 
@@ -205,9 +208,9 @@ public class ManualController {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                for (String s : tokenizedText) {
-                    createThread("pos", s);
-                }
+//                for (String s : tokenizedText) {
+//                    createThread("pos", s);
+//                }
                 mpane.getpOSTagging2().getNext4Btn().setEnabled(true);
             }
         });
@@ -226,6 +229,7 @@ public class ManualController {
             public void actionPerformed(ActionEvent e) {
                 mpane.getjTabbedPane1().setEnabledAt(4, true);
                 mpane.getjTabbedPane1().setSelectedIndex(4);
+                mpane.getpOSTagging2().getPosBtn().setEnabled(false);
             }
         });
 
@@ -251,6 +255,7 @@ public class ManualController {
             public void actionPerformed(ActionEvent e) {
                 mpane.getjTabbedPane1().setEnabledAt(5, true);
                 mpane.getjTabbedPane1().setSelectedIndex(5);
+                mpane.getClassifying1().getClassifyBtn().setEnabled(false);
             }
         });
 
@@ -258,7 +263,7 @@ public class ManualController {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                mpane.setVisible(false);
             }
         });
 

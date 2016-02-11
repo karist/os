@@ -11,8 +11,10 @@ import java.awt.CardLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JLayeredPane;
 import javax.swing.JOptionPane;
+import os.view.Landing;
 
 /**
  *
@@ -20,18 +22,23 @@ import javax.swing.JOptionPane;
  */
 public final class WsController {
     Ws pane;
-    MainScreen msPanel;
+    JLayeredPane msPanel;
     JButton startButton, helpButton, aboutButton;
     CardLayout cl;
+    Landing njp;
+    MainScreen x;
 
-    public WsController(Ws pane, JLayeredPane msPanel, JButton startButton) {
+    public WsController(Ws pane, JLayeredPane msPanel, JButton startButton, Landing njp, MainScreen x) {
         this.pane = pane;
-        this.msPanel = this.msPanel;
+        this.msPanel = msPanel;
         this.startButton = startButton;
         helpButton = pane.getHelpButton();
         aboutButton = pane.getAboutButton();
+        this.njp = njp;
+        this.x = x;
         cl = (CardLayout)(msPanel.getLayout());
         buttonListener();
+        
     }
     
     public void buttonListener(){
@@ -40,7 +47,7 @@ public final class WsController {
             @Override
             public void actionPerformed(ActionEvent e) {
 //                cl.show(pane.getParent(), "startCard");
-                cl.show(pane.getParent(), "manual");
+                cl.show(pane.getParent(), "selectCard");
             }
         });
         
@@ -57,6 +64,62 @@ public final class WsController {
             @Override
             public void actionPerformed(ActionEvent e) {
                 cl.show(pane.getParent(), "howCard");
+            }
+        });
+        
+        njp.getAutoBtn().addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cl.show(pane.getParent(), "startCard");
+            }
+        });
+        
+        njp.getManButton().addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cl.show(pane.getParent(), "manual");
+            }
+        });
+        
+        njp.getjButton1().addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cl.show(pane.getParent(), "welcomeCard");
+            }
+        });
+        
+        x.getAboutUs1().getjButton1().addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cl.show(pane.getParent(), "welcomeCard");
+            }
+        });
+        
+        x.getHowTo1().getjButton1().addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cl.show(pane.getParent(), "welcomeCard");
+            }
+        });
+        
+        x.getGettingStarted2().getjButton1().addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cl.show(pane.getParent(), "welcomeCard");
+            }
+        });
+        
+        x.getManualPanel1().getSelectingFiles1().getjButton2().addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cl.show(pane.getParent(), "welcomeCard");
             }
         });
     }

@@ -6,7 +6,7 @@
 package os.view;
 
 import javax.swing.JTabbedPane;
-import os.ManualController;
+import os.Navigate;
 
 /**
  *
@@ -110,7 +110,7 @@ public class ManualPanel extends javax.swing.JPanel {
         jTabbedPane1.addTab("Classifying", classifying1);
         jTabbedPane1.addTab("Visualizing", visualizing1);
 
-        add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 360));
+        add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, -1));
     }// </editor-fold>//GEN-END:initComponents
 
 
