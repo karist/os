@@ -21,6 +21,7 @@ import os.view.Landing;
  * @author nugraha
  */
 public final class WsController {
+
     Ws pane;
     JLayeredPane msPanel;
     JButton startButton, helpButton, aboutButton;
@@ -36,12 +37,12 @@ public final class WsController {
         aboutButton = pane.getAboutButton();
         this.njp = njp;
         this.x = x;
-        cl = (CardLayout)(msPanel.getLayout());
+        cl = (CardLayout) (msPanel.getLayout());
         buttonListener();
-        
+
     }
-    
-    public void buttonListener(){
+
+    public void buttonListener() {
         startButton.addActionListener(new ActionListener() {
 
             @Override
@@ -50,7 +51,7 @@ public final class WsController {
                 cl.show(pane.getParent(), "selectCard");
             }
         });
-        
+
         pane.getAboutButton().addActionListener(new ActionListener() {
 
             @Override
@@ -58,7 +59,7 @@ public final class WsController {
                 cl.show(pane.getParent(), "aboutCard");
             }
         });
-        
+
         pane.getHelpButton().addActionListener(new ActionListener() {
 
             @Override
@@ -66,7 +67,7 @@ public final class WsController {
                 cl.show(pane.getParent(), "howCard");
             }
         });
-        
+
         njp.getAutoBtn().addActionListener(new ActionListener() {
 
             @Override
@@ -74,7 +75,7 @@ public final class WsController {
                 cl.show(pane.getParent(), "startCard");
             }
         });
-        
+
         njp.getManButton().addActionListener(new ActionListener() {
 
             @Override
@@ -82,7 +83,7 @@ public final class WsController {
                 cl.show(pane.getParent(), "manual");
             }
         });
-        
+
         njp.getjButton1().addActionListener(new ActionListener() {
 
             @Override
@@ -90,7 +91,7 @@ public final class WsController {
                 cl.show(pane.getParent(), "welcomeCard");
             }
         });
-        
+
         x.getAboutUs1().getjButton1().addActionListener(new ActionListener() {
 
             @Override
@@ -98,7 +99,7 @@ public final class WsController {
                 cl.show(pane.getParent(), "welcomeCard");
             }
         });
-        
+
         x.getHowTo1().getjButton1().addActionListener(new ActionListener() {
 
             @Override
@@ -106,7 +107,7 @@ public final class WsController {
                 cl.show(pane.getParent(), "welcomeCard");
             }
         });
-        
+
         x.getGettingStarted2().getjButton1().addActionListener(new ActionListener() {
 
             @Override
@@ -114,7 +115,7 @@ public final class WsController {
                 cl.show(pane.getParent(), "welcomeCard");
             }
         });
-        
+
         x.getManualPanel1().getSelectingFiles1().getjButton2().addActionListener(new ActionListener() {
 
             @Override
@@ -122,5 +123,14 @@ public final class WsController {
                 cl.show(pane.getParent(), "welcomeCard");
             }
         });
+
+        x.getGettingStarted2().getjButton2().addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cl.show(pane.getParent(), "welcomeCard");
+            }
+        }
+        );
     }
 }

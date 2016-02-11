@@ -5,6 +5,7 @@
  */
 package os;
 
+import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -17,8 +18,11 @@ import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JCheckBox;
 import javax.swing.JFileChooser;
+import javax.swing.JList;
 import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import org.apache.tika.exception.TikaException;
@@ -123,15 +127,19 @@ public class Navigate {
                 fileChooser.showOpenDialog(null);
 
                 files = fileChooser.getSelectedFiles();
-
+//                List<JCheckBox> checkList = new ArrayList<>();
+                JList checkList = new JList();
                 mpane.getSelectingFiles1().getjTextArea2().append("You've selected " + files.length + " PDF file(s).\n");
                 int count = 1;
                 for (File f : files) {
                     mpane.getSelectingFiles1().getjTextArea2().append(count + f.getName() + "\n");
-                    
+                    JCheckBox a = new JCheckBox(f.getName());
                     count++;
+                    checkList.add(a);
                 }
                 mpane.getSelectingFiles1().getNext1Btn().setEnabled(true);
+//                JScrollPane jsp = new JScrollPane(checkList);
+                mpane.getSelectingFiles1().getjScrollPane1().add((Component) checkList);
             }
         });
 

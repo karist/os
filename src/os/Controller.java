@@ -56,16 +56,17 @@ public class Controller {
 
     JScrollPane spane;
     JButton button;
-    JTextArea displayedText;
+    JTextArea selectedTxt, displayTxt;
     static List<String> textList = new ArrayList<>();
 
     public Controller() {
     }
 
-    public Controller(JScrollPane jScrollPane1, JButton browseBtn, JTextArea selectedTxt) {
+    public Controller(JScrollPane jScrollPane1, JButton browseBtn, JTextArea selectedTxt, JTextArea displayTxt) {
         spane = jScrollPane1;
         button = browseBtn;
-        displayedText = selectedTxt;
+        this.selectedTxt = selectedTxt;
+        this.displayTxt = displayTxt;
     }
 
     public void browse() {
@@ -84,7 +85,7 @@ public class Controller {
         } catch (Exception ex) {
             Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
-        displayedText.append("You've selected " + files.length + " PDF file(s).\n");
+        selectedTxt.append("You've selected " + files.length + " PDF file(s).\n");
 //        } else {
 //            JOptionPane.showMessageDialog(fileChooser, "Please select PDF file(s) only");
 //        }
@@ -114,7 +115,7 @@ public class Controller {
 //        String textTokenized = Tokenize(textFile);
         String textAfterPOSTagging = POSTag(textTokenized);
         createTxt(FilenameUtils.getBaseName(uri), textAfterPOSTagging);
-        createTxt("text prop", uri + "\t: " + textFile.length());
+//        createTxt("text prop", uri + "\t: " + textFile.length());
     }
 
     public String pdfParse(String uri) throws IOException, SAXException, TikaException {
@@ -162,6 +163,7 @@ public class Controller {
             PrintWriter out = new PrintWriter(new FileWriter(f, false));
             out.append(text).println();
             out.close();
+            displayTxt.append(fileName + " txt created\n");
 
         } catch (HeadlessException | IOException e) {
             System.out.println(e.getMessage());
@@ -248,7 +250,7 @@ public class Controller {
             public void run() {
                 try {
                     for (File file : files) {
-                        displayedText.append(file.getName() + "\n");
+                        selectedTxt.append(file.getName() + "\n");
                         fileProcessing(file.getAbsolutePath());
                     }
                 } catch (IOException | SAXException | TikaException ex) {
@@ -261,7 +263,7 @@ public class Controller {
 
     public void multiThread(File[] files) {
         for (File f : files) {
-            displayedText.append(f.getName() + "\n");
+            selectedTxt.append(f.getName() + "\n");
             creatthread(f.getAbsolutePath());
         }
     }

@@ -133,7 +133,7 @@ public class Tokenizing extends javax.swing.JPanel {
         jTextArea1.setEditable(false);
         jTextArea1.setBackground(new java.awt.Color(204, 204, 204));
         jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("Tw Cen MT", 0, 11)); // NOI18N
+        jTextArea1.setFont(new java.awt.Font("Tw Cen MT", 0, 10)); // NOI18N
         jTextArea1.setLineWrap(true);
         jTextArea1.setRows(5);
         jTextArea1.setText("Tokenization is the process of breaking a stream of the text up into phrases, words, symbols, or other meaningful elements called tokens. (Verma, Renu, and Gaur, 2014)\n\n");

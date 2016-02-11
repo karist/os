@@ -23,7 +23,7 @@ public class Main extends javax.swing.JFrame {
      */
     public Main() throws IOException {
         initComponents();
-        con = new Controller(jScrollPane1, browseBtn, selectedTxt);
+        con = new Controller(jScrollPane1, browseBtn, selectedTxt, jTextArea1);
     }
 
     /**
@@ -38,6 +38,8 @@ public class Main extends javax.swing.JFrame {
         browseBtn = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         selectedTxt = new javax.swing.JTextArea();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(2, 28, 30));
@@ -60,7 +62,13 @@ public class Main extends javax.swing.JFrame {
         selectedTxt.setRows(5);
         jScrollPane1.setViewportView(selectedTxt);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 117, 379, 172));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 117, 260, 172));
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane2.setViewportView(jTextArea1);
+
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 120, 110, 170));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -109,6 +117,8 @@ public class Main extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton browseBtn;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea selectedTxt;
     // End of variables declaration//GEN-END:variables
 }
