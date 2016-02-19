@@ -112,10 +112,11 @@ public class Controller {
     public void fileProcessing(String uri) throws IOException, FileNotFoundException, SAXException, TikaException {
         String textFile = pdfParse(uri);
         String textTokenized = manualTokenize(textFile);
-//        String textTokenized = Tokenize(textFile);
-        String textAfterPOSTagging = POSTag(textTokenized);
+//        String textTokenized = tokenize(textFile);
+//        String textAfterPOSTagging = POSTag(textTokenized);
+        String textAfterPOSTagging = POSTag(textFile);
+//        String textAfterPOSTagging = textPOSTagging(textTokenized);
         createTxt(FilenameUtils.getBaseName(uri), textAfterPOSTagging);
-//        createTxt("text prop", uri + "\t: " + textFile.length());
     }
 
     public String pdfParse(String uri) throws IOException, SAXException, TikaException {
@@ -160,10 +161,11 @@ public class Controller {
 //                JOptionPane.showMessageDialog(null, "Create new file succeed");
                 f.createNewFile();
             }
-            PrintWriter out = new PrintWriter(new FileWriter(f, false));
-            out.append(text).println();
-            out.close();
-            displayTxt.append(fileName + " txt created\n");
+            try (PrintWriter out = new PrintWriter(new FileWriter(f, false))) {
+                out.append(text).println();
+                out.close();
+//            displayTxt.append(fileName + " txt created\n");
+            }
 
         } catch (HeadlessException | IOException e) {
             System.out.println(e.getMessage());
@@ -222,10 +224,10 @@ public class Controller {
             teks1 += defaultTokenizer.nextToken() + "\n";
         }
         StringTokenizer multiTokenizer = new StringTokenizer(teks1, ":/.,-+=~!@#$%^&*()_?/><|';\"");
-        System.out.println("Total number of token found: " + multiTokenizer.countTokens());
         while (multiTokenizer.hasMoreTokens()) {
             System.out.println(multiTokenizer.nextToken());
         }
+        System.out.println("Total number of token found: " + multiTokenizer.countTokens());
         return result;
     }
 
