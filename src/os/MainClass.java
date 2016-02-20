@@ -238,5 +238,4 @@ public class MainClass {
         System.out.println("\nSingle thread process took " + singleThreadTimes + "ms");
         System.out.println("Multithread process took " + multiThreadTimes + "ms");
     }
-
 }
