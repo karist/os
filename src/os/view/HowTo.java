@@ -48,7 +48,10 @@ public class HowTo extends javax.swing.JPanel {
         jLabel1.setText("Getting Started");
 
         jTextArea1.setColumns(20);
+        jTextArea1.setLineWrap(true);
         jTextArea1.setRows(5);
+        jTextArea1.setText("PDFClassifier is created to help you classifying your PDF Journal collection based on method used in the journal. The method is obtained automatically by this application.\n\nYou can do used this application both manually - step by step - and automatically. To start it automatically, make sure you have saved all of your pdf collection in the right folder. Then, you can start this application by selecting the 'auto' menu. To start it manually, just select 'manual' menu and follow the steps.\n\nHopefully you love this application. ");
+        jTextArea1.setOpaque(false);
         jScrollPane1.setViewportView(jTextArea1);
 
         jButton1.setText("Close");

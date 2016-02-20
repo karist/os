@@ -67,7 +67,10 @@
         <Component class="javax.swing.JTextArea" name="jTextArea1">
           <Properties>
             <Property name="columns" type="int" value="20"/>
+            <Property name="lineWrap" type="boolean" value="true"/>
             <Property name="rows" type="int" value="5"/>
+            <Property name="text" type="java.lang.String" value="PDFClassifier is created to help you classifying your PDF Journal collection based on method used in the journal. The method is obtained automatically by this application.&#xa;&#xa;You can do used this application both manually - step by step - and automatically. To start it automatically, make sure you have saved all of your pdf collection in the right folder. Then, you can start this application by selecting the &apos;auto&apos; menu. To start it manually, just select &apos;manual&apos; menu and follow the steps.&#xa;&#xa;Hopefully you love this application. "/>
+            <Property name="opaque" type="boolean" value="false"/>
           </Properties>
         </Component>
       </SubComponents>

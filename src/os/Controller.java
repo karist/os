@@ -54,7 +54,6 @@ import org.xml.sax.SAXException;
  */
 public class Controller {
 
-    JScrollPane spane;
     JButton button;
     JTextArea selectedTxt, displayTxt;
     static List<String> textList = new ArrayList<>();
@@ -62,8 +61,7 @@ public class Controller {
     public Controller() {
     }
 
-    public Controller(JScrollPane jScrollPane1, JButton browseBtn, JTextArea selectedTxt, JTextArea displayTxt) {
-        spane = jScrollPane1;
+    public Controller(JButton browseBtn, JTextArea selectedTxt, JTextArea displayTxt) {
         button = browseBtn;
         this.selectedTxt = selectedTxt;
         this.displayTxt = displayTxt;
@@ -116,7 +114,7 @@ public class Controller {
 //        String textAfterPOSTagging = POSTag(textTokenized);
         String textAfterPOSTagging = POSTag(textFile);
 //        String textAfterPOSTagging = textPOSTagging(textTokenized);
-        createTxt(FilenameUtils.getBaseName(uri), textAfterPOSTagging);
+        createTxt(FilenameUtils.getBaseName(uri), textAfterPOSTagging, "src/os/txt/");
     }
 
     public String pdfParse(String uri) throws IOException, SAXException, TikaException {
@@ -154,8 +152,8 @@ public class Controller {
         return tagged;
     }
 
-    public void createTxt(String fileName, String text) {
-        File f = new File("src/os/txt/" + fileName + ".txt");
+    public void createTxt(String fileName, String text, String dir) {
+        File f = new File(dir + fileName + ".txt");
         try {
             if (f.exists() == false) {
 //                JOptionPane.showMessageDialog(null, "Create new file succeed");
@@ -217,17 +215,16 @@ public class Controller {
     }
 
     public String manualTokenize(String teks) {
-        String result = "";
-        StringTokenizer defaultTokenizer = new StringTokenizer(teks);
-        String teks1 = "";
-        while (defaultTokenizer.hasMoreTokens()) {
-            teks1 += defaultTokenizer.nextToken() + "\n";
-        }
-        StringTokenizer multiTokenizer = new StringTokenizer(teks1, ":/.,-+=~!@#$%^&*()_?/><|';\"");
+        String result = "", teks1 = "";
+        StringTokenizer multiTokenizer = new StringTokenizer(teks, ":/.,-+=~!@#$%^&*()_?/><|';\"{}|[]");
         while (multiTokenizer.hasMoreTokens()) {
-            System.out.println(multiTokenizer.nextToken());
+            teks1 += multiTokenizer.nextToken() + "\n";
         }
-        System.out.println("Total number of token found: " + multiTokenizer.countTokens());
+        StringTokenizer defaultTokenizer = new StringTokenizer(teks1);
+        while (defaultTokenizer.hasMoreTokens()) {
+            result += defaultTokenizer.nextToken() + "\n";
+        }
+        System.out.println(result);
         return result;
     }
 

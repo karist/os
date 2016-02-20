@@ -93,7 +93,7 @@
               </Group>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                  <Component id="closeAuto" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="207" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -107,7 +107,7 @@
                       <Component id="jScrollPane1" alignment="0" min="-2" pref="219" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                  <Component id="closeAuto" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -138,37 +138,34 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JButton" name="jButton2">
+        <Component class="javax.swing.JButton" name="closeAuto">
           <Properties>
             <Property name="text" type="java.lang.String" value="Close"/>
           </Properties>
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JButton" name="browseButton">
+    <Component class="javax.swing.JButton" name="startButton">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Trajan Pro 3" size="14" style="1"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/os/png/text.png"/>
+          <Image iconType="3" name="/os/png/press-play-button.png"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Browse"/>
+        <Property name="text" type="java.lang.String" value="START"/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
             <EtchetBorder/>
           </Border>
         </Property>
         <Property name="pressedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/os/png/text(2).png"/>
+          <Image iconType="3" name="/os/png/press-play-button.png"/>
         </Property>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="browseButtonActionPerformed"/>
-      </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="350" y="10" width="-1" height="60"/>
+          <AbsoluteConstraints x="370" y="10" width="-1" height="60"/>
         </Constraint>
       </Constraints>
     </Component>

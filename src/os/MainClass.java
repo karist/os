@@ -17,7 +17,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.RecursiveAction;
-import java.util.concurrent.RecursiveTask;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -110,13 +109,13 @@ class PdfList {
     }
 }
 
-class PdfFileTask extends RecursiveAction {
+class PdfFileTask2 extends RecursiveAction {
 
     PdfList pList;
     static List<String> textList = new ArrayList<>();
     int index;
 
-    PdfFileTask(PdfList pList, int index) {
+    PdfFileTask2(PdfList pList, int index) {
         super();
         this.pList = pList;
         this.index = index;
@@ -131,7 +130,7 @@ class PdfFileTask extends RecursiveAction {
             int mid = number / 2;
             PdfList x = new PdfList(pList.getDocuments().subList(0, mid));
             PdfList y = new PdfList(pList.getDocuments().subList(mid, number));
-            invokeAll(new PdfFileTask(x, 0), new PdfFileTask(y, 0));
+            invokeAll(new PdfFileTask2(x, 0), new PdfFileTask2(y, 0));
         }
     }
 
@@ -195,7 +194,7 @@ public class MainClass {
 
     int numberOfProcessors = Runtime.getRuntime().availableProcessors();
     private final ForkJoinPool forkJoinPool = new ForkJoinPool(numberOfProcessors);
-    static long startTime, stopTime;
+    static long startTime1, stopTime1, startTime2, stopTime2;
 
     MainClass() {
     }
@@ -204,13 +203,13 @@ public class MainClass {
         List p = pList.getDocuments();
         int number = pList.getDocuments().size();
         for (int i = 0; i < number; i++) {
-            PdfFileTask x = new PdfFileTask(pList, i);
+            PdfFileTask2 x = new PdfFileTask2(pList, i);
             x.process("src/os/txtsingle/");
         }
     }
 
     public void inParallel(PdfList pList) {
-        forkJoinPool.invoke(new PdfFileTask(pList, 0));
+        forkJoinPool.invoke(new PdfFileTask2(pList, 0));
     }
 
     public static void main(String[] args) throws IOException, SAXException, TikaException {
@@ -227,17 +226,16 @@ public class MainClass {
         System.out.println("Number of Processors: " + mc.numberOfProcessors);
         int number = pList.getDocuments().size();
 
-        startTime = System.currentTimeMillis();
+        startTime1 = System.currentTimeMillis();
         mc.onSingleThread(pList);
-        stopTime = System.currentTimeMillis();
-        long singleThreadTimes = (stopTime - startTime);
+        stopTime1 = System.currentTimeMillis();
+        long singleThreadTimes = (stopTime1 - startTime1);
 
-        startTime = System.currentTimeMillis();
+        startTime2 = System.currentTimeMillis();
         mc.inParallel(pList);
-        stopTime = System.currentTimeMillis();
-        long multiThreadTimes = (stopTime - startTime);
-
-        System.out.println("Single thread process took " + singleThreadTimes + "ms");
+        stopTime2 = System.currentTimeMillis();
+        long multiThreadTimes = (stopTime2 - startTime2);
+        System.out.println("\nSingle thread process took " + singleThreadTimes + "ms");
         System.out.println("Multithread process took " + multiThreadTimes + "ms");
     }
 

@@ -23,7 +23,7 @@ public class Main extends javax.swing.JFrame {
      */
     public Main() throws IOException {
         initComponents();
-        con = new Controller(jScrollPane1, browseBtn, selectedTxt, jTextArea1);
+        con = new Controller(browseBtn, selectedTxt, jTextArea1);
     }
 
     /**

@@ -6,6 +6,7 @@
 package os.view;
 
 import javax.swing.JButton;
+import javax.swing.JTextArea;
 import os.Controller;
 
 /**
@@ -19,26 +20,40 @@ public class AutoPanel extends javax.swing.JPanel {
      */
     public AutoPanel() {
         initComponents();
-        con = new Controller(jScrollPane1, browseButton, jTextArea2, displayArea);
+        con = new Controller(startButton, jTextArea2, displayArea);
     }
 
     public JButton getjButton1() {
-        return jButton1;
+        return startButton;
     }
 
     public void setjButton1(JButton jButton1) {
-        this.jButton1 = jButton1;
+        this.startButton = jButton1;
     }
 
     public JButton getjButton2() {
-        return jButton2;
+        return closeAuto;
     }
 
     public void setjButton2(JButton jButton2) {
-        this.jButton2 = jButton2;
+        this.closeAuto = jButton2;
     }
-    
-    
+
+    public JTextArea getDisplayArea() {
+        return displayArea;
+    }
+
+    public void setDisplayArea(JTextArea displayArea) {
+        this.displayArea = displayArea;
+    }
+
+    public JTextArea getjTextArea2() {
+        return jTextArea2;
+    }
+
+    public void setjTextArea2(JTextArea jTextArea2) {
+        this.jTextArea2 = jTextArea2;
+    }
     
     
     /**
@@ -61,8 +76,8 @@ public class AutoPanel extends javax.swing.JPanel {
         jTextArea2 = new javax.swing.JTextArea();
         jScrollPane2 = new javax.swing.JScrollPane();
         displayArea = new javax.swing.JTextArea();
-        jButton2 = new javax.swing.JButton();
-        browseButton = new javax.swing.JButton();
+        closeAuto = new javax.swing.JButton();
+        startButton = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
 
         jMenu1.setText("File");
@@ -95,7 +110,7 @@ public class AutoPanel extends javax.swing.JPanel {
         displayArea.setRows(5);
         jScrollPane2.setViewportView(displayArea);
 
-        jButton2.setText("Close");
+        closeAuto.setText("Close");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -109,7 +124,7 @@ public class AutoPanel extends javax.swing.JPanel {
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton2)
+                .addComponent(closeAuto)
                 .addGap(207, 207, 207))
         );
         jPanel1Layout.setVerticalGroup(
@@ -120,38 +135,28 @@ public class AutoPanel extends javax.swing.JPanel {
                     .addComponent(jScrollPane2)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2)
+                .addComponent(closeAuto)
                 .addContainerGap())
         );
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 500, 280));
 
-        browseButton.setFont(new java.awt.Font("Trajan Pro 3", 1, 14)); // NOI18N
-        browseButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/os/png/text.png"))); // NOI18N
-        browseButton.setText("Browse");
-        browseButton.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        browseButton.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/os/png/text(2).png"))); // NOI18N
-        browseButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                browseButtonActionPerformed(evt);
-            }
-        });
-        add(browseButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 10, -1, 60));
+        startButton.setFont(new java.awt.Font("Trajan Pro 3", 1, 14)); // NOI18N
+        startButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/os/png/press-play-button.png"))); // NOI18N
+        startButton.setText("START");
+        startButton.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        startButton.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/os/png/press-play-button.png"))); // NOI18N
+        add(startButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 10, -1, 60));
 
         jButton1.setText("Close");
         add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 330, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void browseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_browseButtonActionPerformed
-        con.browse();
-    }//GEN-LAST:event_browseButtonActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton browseButton;
+    private javax.swing.JButton closeAuto;
     private javax.swing.JTextArea displayArea;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
@@ -162,5 +167,6 @@ public class AutoPanel extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTextArea2;
+    private javax.swing.JButton startButton;
     // End of variables declaration//GEN-END:variables
 }

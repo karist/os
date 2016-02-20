@@ -116,15 +116,6 @@ public class MainScreen extends javax.swing.JFrame {
         aboutUs1 = new os.view.AboutUs();
         howTo1 = new os.view.HowTo();
         newJPanel1 = new os.view.Landing();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenuItem5 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenu3 = new javax.swing.JMenu();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 0));
@@ -142,35 +133,6 @@ public class MainScreen extends javax.swing.JFrame {
         msPanel.add(aboutUs1, "aboutCard");
         msPanel.add(howTo1, "howCard");
         msPanel.add(newJPanel1, "selectCard");
-
-        jMenu1.setText("File");
-
-        jMenuItem5.setText("Exit");
-        jMenu1.add(jMenuItem5);
-
-        jMenuBar1.add(jMenu1);
-
-        jMenu2.setText("Run");
-
-        jMenuItem1.setText("Auto");
-        jMenu2.add(jMenuItem1);
-
-        jMenuItem2.setText("Manual");
-        jMenu2.add(jMenuItem2);
-
-        jMenuBar1.add(jMenu2);
-
-        jMenu3.setText("Help");
-
-        jMenuItem3.setText("Instruction");
-        jMenu3.add(jMenuItem3);
-
-        jMenuItem4.setText("About");
-        jMenu3.add(jMenuItem4);
-
-        jMenuBar1.add(jMenu3);
-
-        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -230,15 +192,6 @@ public class MainScreen extends javax.swing.JFrame {
     private os.view.AboutUs aboutUs1;
     private os.view.AutoPanel gettingStarted2;
     private os.view.HowTo howTo1;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
     private os.view.ManualPanel manualPanel1;
     private javax.swing.JLayeredPane msPanel;
     private os.view.Landing newJPanel1;

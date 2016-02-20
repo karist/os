@@ -10,10 +10,15 @@ import os.view.MainScreen;
 import java.awt.CardLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JLayeredPane;
-import javax.swing.JOptionPane;
+import org.apache.tika.exception.TikaException;
+import org.xml.sax.SAXException;
+import os.model.PdfList;
 import os.view.Landing;
 
 /**
@@ -28,6 +33,7 @@ public final class WsController {
     CardLayout cl;
     Landing njp;
     MainScreen x;
+    Controller con;
 
     public WsController(Ws pane, JLayeredPane msPanel, JButton startButton, Landing njp, MainScreen x) {
         this.pane = pane;
@@ -39,7 +45,7 @@ public final class WsController {
         this.x = x;
         cl = (CardLayout) (msPanel.getLayout());
         buttonListener();
-
+        con = new Controller(x.getGettingStarted2().getjButton1(), x.getGettingStarted2().getjTextArea2(), x.getGettingStarted2().getDisplayArea());
     }
 
     public void buttonListener() {
@@ -73,6 +79,17 @@ public final class WsController {
             @Override
             public void actionPerformed(ActionEvent e) {
                 cl.show(pane.getParent(), "startCard");
+                PdfList pList = null;
+                try {
+                    pList = PdfList.fromDirectory(new File("E:\\arsendi\\Documents\\NetBeansProjects\\OS\\pdf"));
+                } catch (IOException ex) {
+                    Logger.getLogger(WsController.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (SAXException ex) {
+                    Logger.getLogger(WsController.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (TikaException ex) {
+                    Logger.getLogger(WsController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                x.getGettingStarted2().getjTextArea2().append(pList.getNames());
             }
         });
 
@@ -121,6 +138,28 @@ public final class WsController {
             @Override
             public void actionPerformed(ActionEvent e) {
                 cl.show(pane.getParent(), "welcomeCard");
+            }
+        });
+        
+        x.getGettingStarted2().getjButton1().addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ForkJoinCon fjc = new ForkJoinCon();
+                x.getGettingStarted2().getDisplayArea().setText("\nNumber of Processors:  " + fjc.getNumberOfProcessors());
+                try {
+                    x.getGettingStarted2().getDisplayArea().append("\nStarting....");
+                    fjc.go();
+                } catch (IOException ex) {
+                    Logger.getLogger(WsController.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (SAXException ex) {
+                    Logger.getLogger(WsController.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (TikaException ex) {
+                    Logger.getLogger(WsController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                x.getGettingStarted2().getDisplayArea().append("\nSingle thread process took " + fjc.getSingleThreadTimes() + "ms");
+                x.getGettingStarted2().getDisplayArea().append("\nMultithread process took " + fjc.getMultiThreadTimes() + "ms");
+                cl.show(pane.getParent(), "startCard");
             }
         });
 
